@@ -1,0 +1,32 @@
+@use "color.scss";
+
+body {
+	margin: 0;
+	padding: 0;
+	background: color.$black-1;
+	color: color.$white;
+	font-family: sans-serif;
+}
+
+a {
+	color: color.$green-2;
+	fill: color.$green-2;
+	text-decoration: none;
+	transition:
+		color 150ms ease-out,
+		fill 150ms ease-out;
+
+	&:hover {
+		color: color.$green-3;
+		fill: color.$green-3;
+	}
+
+	> svg {
+		fill: inherit;
+	}
+}
+
+hr {
+	margin: 1rem 0;
+	border: 1px solid color.$gray-5;
+}
