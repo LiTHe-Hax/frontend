@@ -78,6 +78,12 @@
 				background: transparent;
 				color: color.$green-2;
 				font-size: 2rem;
+				cursor: pointer;
+				transition: color 150ms ease-out;
+
+				&:hover {
+					color: color.$green-3;
+				}
 			}
 
 			img {
@@ -128,6 +134,11 @@
 					line-height: 1;
 					font-weight: bold;
 					text-decoration: none;
+					transition: color 150ms ease-out;
+
+					&:hover {
+						color: color.$green-3;
+					}
 				}
 			}
 		}
