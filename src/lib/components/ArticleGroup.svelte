@@ -2,11 +2,14 @@
 	import type { Snippet } from "svelte";
 
 	type Layout = "normal" | "thin";
-	type Props = { children: Snippet; layout?: Layout };
-	let { children, layout = "normal" }: Props = $props();
+	type Props = { children: Snippet; layout?: Layout; h1?: string };
+	let { children, layout = "normal", h1 }: Props = $props();
 </script>
 
 <div class={layout}>
+	{#if h1}
+		<h1>{h1}</h1>
+	{/if}
 	{@render children()}
 </div>
 
@@ -50,6 +53,11 @@
 				padding: 0 $outer-desktop-gap; // Padding imitates a horizontal margin
 				max-width: 39rem;
 			}
+		}
+
+		h1 {
+			margin: 0;
+			line-height: 1;
 		}
 	}
 </style>
