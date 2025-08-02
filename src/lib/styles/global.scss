@@ -39,3 +39,46 @@ h5,
 h6 {
 	color: color.$green-2;
 }
+
+label {
+	color: color.$green-2;
+}
+
+input:not([type]),
+input[type="text"],
+input[type="email"],
+select {
+	border: 1px solid color.$gray-4;
+	padding: 0.5rem;
+	box-sizing: border-box;
+	border-radius: 0.25rem;
+	background: color.$gray-3;
+	color: color.$green-2;
+	box-shadow: inset 0 1px 3px 1px rgba(0, 0, 0, 0.25);
+}
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+	border: 0;
+	padding: 0.5rem;
+	box-sizing: border-box;
+	border-radius: 0.25rem;
+	background: color.$gray-1;
+	color: color.$green-2;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+	font-size: 1em;
+	font-weight: bold;
+	transform: scaley(1);
+	transition:
+		background 150ms ease-out,
+		color 150ms ease-out,
+		transform 150ms ease-out;
+
+	&:hover {
+		background: color.$green-2;
+		color: color.$gray-1;
+		transform: scaley(1.1);
+	}
+}

@@ -81,6 +81,14 @@
 				cursor: pointer;
 				transition: color 150ms ease-out;
 
+				// Unsets properties set by the global style
+				padding: unset;
+				box-sizing: unset;
+				border-radius: unset;
+				box-shadow: unset;
+				font-weight: unset;
+				transform: unset;
+
 				&:hover {
 					color: color.$green-3;
 				}
