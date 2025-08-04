@@ -1,0 +1,11 @@
+@mixin remove-edge-child-margins() {
+	// Ensures that there are no unnecessarily large gaps at top
+	> :global(:first-child) {
+		margin-top: 0;
+	}
+
+	// Ensures that there are no unnecessarily large gaps at bottom
+	> :global(:last-child) {
+		margin-bottom: 0;
+	}
+}
