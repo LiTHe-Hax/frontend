@@ -1,12 +1,18 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
 
-	type Props = { children: Snippet };
-	let { children }: Props = $props();
+	type Props = { children: Snippet; translucent?: boolean };
+	let { children, translucent }: Props = $props();
 </script>
 
 <article>
-	{@render children()}
+	{#if translucent}
+		<div class="translucent">
+			{@render children()}
+		</div>
+	{:else}
+		{@render children()}
+	{/if}
 </article>
 
 <style lang="scss">
@@ -27,6 +33,26 @@
 
 		@media screen and (min-width: size.$min-desktop-width) {
 			padding: 1.5rem;
+		}
+
+		.translucent {
+			@include mixin.remove-edge-child-margins();
+
+			opacity: 0.5;
+			transition: opacity 150ms ease-out;
+
+			:global(img) {
+				filter: saturate(50%);
+				transition: filter 150ms ease-out;
+			}
+		}
+
+		&:hover .translucent {
+			opacity: 1;
+
+			:global(img) {
+				filter: saturate(100%);
+			}
 		}
 	}
 </style>
