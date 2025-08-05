@@ -1,70 +1,76 @@
-<!-- <script lang="ts">
-    type Props = {
-        fullName: string,
-        hackerTag: string,
-        position: string,
-        email?: string,
-        image?: string,
-    };
-    let { fullName, hackerTag, position, email, image }: Props = $props();
+<script lang="ts">
+	import placeholderImage from "$lib/images/contacts/placeholder.png";
 
-    import placeholderImg from "$lib/images/contacts/placeholder.png";
+	type Props = {
+		fullName: string;
+		hackerTag: string;
+		role: string;
+		email?: string;
+		image?: string;
+	};
+	let { fullName, hackerTag, role, email, image }: Props = $props();
 </script>
 
-<div class="contact-card">
-    <img src={image !== undefined ? image : placeholderImg} alt={fullName} />
-    <div class="info">
-        <span class="name">{fullName} @{hackerTag}</span>
-        <span class="position">{position}</span>
-        {#if email !== undefined}
-            <a class="email" href={`mailto:${email}`}>{email}</a>
-        {:else}
-            <span class="email">(mail coming soon)</span>
-        {/if}
-    </div>
-</div>
+<article>
+	<img src={image ? image : placeholderImage} alt={fullName} />
+	<div class="info">
+		<span class="name">{fullName}</span>
+		<span class="hacker-tag">@{hackerTag}</span>
+		<span class="role">{role}</span>
+		{#if email}
+			<a class="email" href={`mailto:${email}`}>{email}</a>
+		{:else}
+			<span class="email">(email coming soon)</span>
+		{/if}
+	</div>
+</article>
 
-<style>
-    .contact-card {
-        display: flex;
-        flex-direction: row;
-        gap: 0.5rem;
-    }
+<style lang="scss">
+	@use "$lib/styles/color.scss";
 
-    img {
-        width: 8rem;
-        height: 8rem;
-        border-radius: 50%;
-    }
+	article {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 0.5rem;
 
-    .info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        min-width: 0; /* Makes info box take only remaining space when small */
-    }
+		img {
+			$size: 8rem;
 
-    .name {
-        color: var(--heading-fg);
-        font-size: 1.175em;
-        font-weight: bold;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+			width: $size;
+			height: $size;
+			border-radius: 50%;
+		}
 
-    .position {
-        margin-bottom: 1em;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+		.info {
+			display: flex;
+			flex-direction: column;
+			overflow: hidden;
 
-    .email {
-        /* Clamps the boundaries of the link */
-        width: 100%;
-        align-self: flex-start;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+			.name,
+			.hacker-tag,
+			.role,
+			.email {
+				max-width: 100%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
 
-    /* Email link is also styled by the global stylesheet */
-</style> -->
+			.name {
+				color: color.$green-2;
+				font-size: 1.175em;
+				font-weight: bold;
+			}
+
+			.hacker-tag {
+				margin-bottom: 1rem;
+				color: color.$gray-5;
+			}
+
+			.email {
+				align-self: start; // Clamps clickable area of link
+				text-wrap: nowrap; // Wrapping looks weird if no email is provided
+			}
+		}
+	}
+</style>
