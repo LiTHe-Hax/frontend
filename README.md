@@ -1,4 +1,4 @@
-# lithehax-medlem
+# LiTHe Hax Frontend
 
 The frontend for the LiTHe Hax website.
 
