@@ -36,5 +36,15 @@ export default ts.config(
 				svelteConfig
 			}
 		}
+	},
+	{
+		rules: {
+			"eqeqeq": "error",
+			"no-unneeded-ternary": "error",
+			"prefer-spread": "error",
+
+			// Stops us from accidentally triggering a security vulnerability in older browsers
+			"svelte/no-target-blank": "error"
+		}
 	}
 );
