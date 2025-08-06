@@ -39,7 +39,6 @@ export default ts.config(
 	},
 	{
 		rules: {
-			"eqeqeq": "error",
 			"no-unneeded-ternary": "error",
 			"prefer-spread": "error",
 
