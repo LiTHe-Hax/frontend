@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - 'main'
+      - "main"
 
 jobs:
   build:
@@ -14,23 +14,23 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version-file: 'package.json' # Uses the node version specified under "engines"
+          node-version-file: "package.json" # Uses the node version specified under "engines"
       - name: Install dependencies
         run: npm install
       - name: Read custom domain into variable
         uses: guibranco/github-file-reader-action-v2@latest
         id: read_custom_domain
         with:
-          path: 'static/CNAME'
+          path: "static/CNAME"
       - name: Build
         run: npm run build
         env:
-          BASE_PATH: '' # Empty since we're deploying to the root url of our domain
-          PUBLIC_BASE_URL: 'https://${{ steps.read_custom_domain.outputs.contents }}'
+          BASE_PATH: "" # Empty since we're deploying to the root url of our domain
+          PUBLIC_BASE_URL: "https://${{ steps.read_custom_domain.outputs.contents }}"
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'build/' # Should match the "pages" option in the adapter-static options
+          path: "build/" # Should match the "pages" option in the adapter-static options
   deploy:
     runs-on: ubuntu-latest
     needs: build
