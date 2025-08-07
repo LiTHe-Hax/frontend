@@ -3,8 +3,8 @@ name: Verify branch quality
 on:
   push:
     branches:
-      - '**'
-      - '!main'
+      - "**"
+      - "!main"
 
 jobs:
   verify-buildability:
@@ -15,15 +15,15 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version-file: 'package.json' # Uses the node version specified under "engines"
+          node-version-file: "package.json" # Uses the node version specified under "engines"
       - name: Install dependencies
         run: npm install
       - name: Build
         run: npm run build
         env:
           # These can be whatever since this is just a test build
-          BASE_PATH: ''
-          PUBLIC_BASE_URL: 'https://fake.url'
+          BASE_PATH: ""
+          PUBLIC_BASE_URL: "https://fake.url"
   verify-formatting:
     runs-on: ubuntu-latest
     steps:
@@ -32,7 +32,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version-file: 'package.json' # Uses the node version specified under "engines"
+          node-version-file: "package.json" # Uses the node version specified under "engines"
       - name: Install dependencies
         run: npm install
       - name: Lint

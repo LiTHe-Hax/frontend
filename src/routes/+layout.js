@@ -4,6 +4,6 @@ import { PUBLIC_BASE_URL } from "$env/static/public";
 export const prerender = true;
 
 export function load({ url }) {
-  const canonicalHref = `${PUBLIC_BASE_URL}${url.pathname}`;
-  return { canonicalHref };
+	const canonicalHref = `${PUBLIC_BASE_URL}${url.pathname}`;
+	return { canonicalHref };
 }
