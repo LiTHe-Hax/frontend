@@ -1,6 +1,6 @@
 <script lang="ts">
 	import logo from "$lib/images/header-logo.svg";
-	import { base } from "$app/paths";
+	import { resolve } from "$app/paths";
 
 	let navIsOpen = $state(false);
 
@@ -29,18 +29,18 @@
 		role="none"
 	></div>
 	<nav class={navIsOpen ? "open" : "closed"}>
-		<a href={`${base}/`} onclick={toggleNav}>Home</a>
-		<a href={`${base}/new-member`} onclick={toggleNav}>Member</a>
-		<a href={`${base}/events`} onclick={toggleNav}>Events</a>
+		<a href={resolve("/")} onclick={toggleNav}>Home</a>
+		<a href={resolve("/new-member")} onclick={toggleNav}>Member</a>
+		<a href={resolve("/events")} onclick={toggleNav}>Events</a>
 	</nav>
 </header>
 
 <header class="desktop">
 	<img src={logo} alt="logo" />
 	<nav>
-		<a href={`${base}/`}>Home</a>
-		<a href={`${base}/new-member`}>Member</a>
-		<a href={`${base}/events`}>Events</a>
+		<a href={resolve("/")}>Home</a>
+		<a href={resolve("/new-member")}>Member</a>
+		<a href={resolve("/events")}>Events</a>
 	</nav>
 </header>
 

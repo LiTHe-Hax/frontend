@@ -5,7 +5,7 @@
 	import sectraLogo from "$lib/images/ctf/sectra-logo.png";
 	import sylogLogo from "$lib/images/ctf/sylog-logo.png";
 	import DocumentLink from "$lib/components/DocumentLink.svelte";
-	import { base } from "$app/paths";
+	import { asset } from "$app/paths";
 	import studenthuset from "$lib/images/workshop/studenthuset.jpg";
 	import foobar from "$lib/images/foocafe/foobar.jpg";
 	import gototenLogo from "$lib/images/foocafe/goto10-logo.png";
@@ -49,7 +49,7 @@
 		</p>
 		<p>
 			<strong>Agenda:</strong>
-			<DocumentLink link={`${base}/documents/Kallelse_Årsmöte.pdf`} />
+			<DocumentLink link={asset("/documents/Kallelse_Årsmöte.pdf")} />
 		</p>
 
 		<h3>Candidacy</h3>
@@ -72,7 +72,7 @@
 		</ul>
 		<p>
 			<strong>Current nominees:</strong>
-			<DocumentLink link={`${base}/documents/2024-2025/events/annual_meeting/nominations.pdf`} />
+			<DocumentLink link={asset("/documents/2024-2025/events/annual_meeting/nominations.pdf")} />
 		</p>
 
 		<h3>Motions</h3>
@@ -85,7 +85,7 @@
 		<p>
 			<strong>Current motions and propositions:</strong>
 			<DocumentLink
-				link={`${base}/documents/2024-2025/events/annual_meeting/motions_and_propositions.pdf`}
+				link={asset("/documents/2024-2025/events/annual_meeting/motions_and_propositions.pdf")}
 			/>
 		</p>
 	</div>
@@ -110,7 +110,7 @@
 		</p>
 		<p>
 			<strong>Presentation:</strong>
-			<DocumentLink link={`${base}/documents/GOTO10 Presentation.pptx`} />
+			<DocumentLink link={asset("/documents/GOTO10 Presentation.pptx")} />
 		</p>
 
 		<hr />
@@ -150,7 +150,7 @@
 		</p>
 		<p>
 			<strong>CTF rules:</strong>
-			<DocumentLink link={`${base}/documents/rules.pdf`} />
+			<DocumentLink link={asset("/documents/rules.pdf")} />
 		</p>
 
 		<hr />
@@ -185,11 +185,11 @@
 		</p>
 		<p>
 			<strong>Workshop tasks:</strong>
-			<DocumentLink link={`${base}/documents/workshop.zip`} />
+			<DocumentLink link={asset("/documents/workshop.zip")} />
 		</p>
 		<p>
 			<strong>Workshop presentation:</strong>
-			<DocumentLink link={`${base}/documents/Workshop Presentation.pptx`} />
+			<DocumentLink link={asset("/documents/Workshop Presentation.pptx")} />
 		</p>
 
 		<hr />

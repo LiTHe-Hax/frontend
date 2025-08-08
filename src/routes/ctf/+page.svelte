@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { base } from "$app/paths";
+	import { resolve } from "$app/paths";
 	$effect(() => {
-		window.location.href = `${base}/events`;
+		window.location.href = resolve("/events");
 	});
 </script>

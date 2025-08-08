@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from "$app/paths";
+	import { asset } from "$app/paths";
 
 	import ContactCard from "$lib/components/ContactCard.svelte";
 	import DocumentLink from "$lib/components/DocumentLink.svelte";
@@ -140,9 +140,9 @@
 
 	<h3>Documents</h3>
 	<div class="document-list">
-		<DocumentLink link={`${base}/documents/Kallelse_Årsmöte.pdf`} />
-		<DocumentLink link={`${base}/documents/LiTHe_Hax_Stadgar_Uppdaterad.pdf`} />
-		<DocumentLink link={`${base}/documents/LiTHe_Hax_Konstituerande_Protokoll.pdf`} />
+		<DocumentLink link={asset("/documents/Kallelse_Årsmöte.pdf")} />
+		<DocumentLink link={asset("/documents/LiTHe_Hax_Stadgar_Uppdaterad.pdf")} />
+		<DocumentLink link={asset("/documents/LiTHe_Hax_Konstituerande_Protokoll.pdf")} />
 	</div>
 </Section>
 
