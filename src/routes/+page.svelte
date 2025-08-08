@@ -15,7 +15,7 @@
 	import relationsImg from "$lib/images/2025-2026/contacts/anton_o.jpg";
 	import cashierImg from "$lib/images/2025-2026/contacts/william_m.jpg";
 	import boardMemberImg from "$lib/images/2025-2026/contacts/tom_e.jpg";
-	import maskotImg from "$lib/images/contacts/torbjorn_h.png";
+	import mascotImg from "$lib/images/contacts/torbjorn_h.png";
 </script>
 
 <PageHead
@@ -128,9 +128,9 @@
 		<ContactCard
 			fullName="Torbjörn Hackström"
 			hackerTag="hacktor"
-			position="Maskot"
+			position="Mascot"
 			email="maskot@lithehax.se"
-			image={maskotImg}
+			image={mascotImg}
 		/>
 	</div>
 
