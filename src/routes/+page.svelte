@@ -6,15 +6,15 @@
 	import Section from "$lib/components/Section.svelte";
 	import PageHead from "$lib/components/PageHead.svelte";
 
-	import chairmanImg from "$lib/images/contacts/tyson_h.jpg";
-	import webmasterImg from "$lib/images/contacts/viktor_h.jpg";
-	import secretaryImg from "$lib/images/contacts/david_s.png";
-	import accountantImg from "$lib/images/contacts/adam_b.jpg";
-	import member1Img from "$lib/images/contacts/wilmer_s.jpg";
-	import member2Img from "$lib/images/contacts/tove_h.jpg";
-	import member3Img from "$lib/images/contacts/anton_o.jpg";
-	import member4Img from "$lib/images/contacts/william_m.jpg";
-	import member5Img from "$lib/images/contacts/tom_e.jpg";
+	import chairmanImg from "$lib/images/2025-2026/contacts/tyson_h.jpg";
+	import webmasterImg from "$lib/images/2025-2026/contacts/viktor_h.jpg";
+	import secretaryImg from "$lib/images/2025-2026/contacts/david_s.png";
+	import accountantImg from "$lib/images/2025-2026/contacts/adam_b.jpg";
+	import logisticsImg from "$lib/images/2025-2026/contacts/wilmer_s.jpg";
+	import eventManagerImg from "$lib/images/2025-2026/contacts/tove_h.jpg";
+	import relationsImg from "$lib/images/2025-2026/contacts/anton_o.jpg";
+	import cashierImg from "$lib/images/2025-2026/contacts/william_m.jpg";
+	import boardMemberImg from "$lib/images/2025-2026/contacts/tom_e.jpg";
 	import maskotImg from "$lib/images/contacts/torbjorn_h.png";
 </script>
 
@@ -81,7 +81,7 @@
 			hackerTag="naturell"
 			position="Board member"
 			email="tom.englund@lithehax.se"
-			image={member5Img}
+			image={boardMemberImg}
 		/>
 		<ContactCard
 			fullName="Viktor Holta"
@@ -102,28 +102,28 @@
 			hackerTag="airless"
 			position="Logistics"
 			email="wilmer.segerstedt@lithehax.se"
-			image={member1Img}
+			image={logisticsImg}
 		/>
 		<ContactCard
 			fullName="Tove Haernfelt"
 			hackerTag="thetov"
 			position="Event manager"
 			email="tove.haernfelt@lithehax.se"
-			image={member2Img}
+			image={eventManagerImg}
 		/>
 		<ContactCard
 			fullName="Anton Oom"
 			hackerTag="oomega"
 			position="Relations"
 			email="anton.oom@lithehax.se"
-			image={member3Img}
+			image={relationsImg}
 		/>
 		<ContactCard
 			fullName="William Minidis"
 			hackerTag="windis"
 			position="Cashier"
 			email="kassor@lithehax.se"
-			image={member4Img}
+			image={cashierImg}
 		/>
 		<ContactCard
 			fullName="Torbjörn Hackström"

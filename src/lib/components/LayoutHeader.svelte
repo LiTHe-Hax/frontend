@@ -1,5 +1,5 @@
 <script lang="ts">
-	import logo from "$lib/images/header-logo.svg";
+	import logo from "$lib/images/logos/header_logo.svg";
 	import { resolve } from "$app/paths";
 
 	let navIsOpen = $state(false);

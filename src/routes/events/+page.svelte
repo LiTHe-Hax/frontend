@@ -1,16 +1,16 @@
 <script lang="ts">
 	import Section from "$lib/components/Section.svelte";
-	import cyberRoom from "$lib/images/ctf/cyber-room.jpg";
-	import sickLogo from "$lib/images/ctf/sick-logo.png";
-	import sectraLogo from "$lib/images/ctf/sectra-logo.png";
-	import sylogLogo from "$lib/images/ctf/sylog-logo.png";
+	import cyberRoom from "$lib/images/2024-2025/events/liu_ctf/cyber_room.jpg";
+	import sickLogo from "$lib/images/sponsors/sick_logo.png";
+	import sectraLogo from "$lib/images/sponsors/sectra_logo.png";
+	import sylogLogo from "$lib/images/sponsors/sylog_logo.png";
 	import DocumentLink from "$lib/components/DocumentLink.svelte";
 	import { asset } from "$app/paths";
-	import studenthuset from "$lib/images/workshop/studenthuset.jpg";
-	import foobar from "$lib/images/foocafe/foobar.jpg";
-	import gototenLogo from "$lib/images/foocafe/goto10-logo.png";
-	import foocafeLogo from "$lib/images/foocafe/foocafe-logo.svg";
-	import acas from "$lib/images/annual-meeting/acas.png";
+	import studenthuset from "$lib/images/2024-2025/events/workshop/studenthuset.jpg";
+	import foobar from "$lib/images/2024-2025/events/foo_cafe/goto_10_foyer.jpg";
+	import goto10Logo from "$lib/images/sponsors/goto_10_logo.png";
+	import fooCafeLogo from "$lib/images/sponsors/foo_cafe_logo.svg";
+	import acas from "$lib/images/2024-2025/events/annual_meeting/acas.png";
 	import PageHead from "$lib/components/PageHead.svelte";
 </script>
 
@@ -119,8 +119,8 @@
 
 		<hr />
 		<div class="sponsor-logos">
-			<img src={gototenLogo} alt="Goto 10 logo" />
-			<img src={foocafeLogo} alt="Goto 10 logo" />
+			<img src={goto10Logo} alt="Goto 10 logo" />
+			<img src={fooCafeLogo} alt="Goto 10 logo" />
 		</div>
 	</div>
 </Section>
