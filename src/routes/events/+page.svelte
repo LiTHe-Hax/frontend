@@ -1,16 +1,16 @@
 <script lang="ts">
 	import Section from "$lib/components/Section.svelte";
-	import cyberRoom from "$lib/images/2024-2025/events/liu_ctf/cyber_room.jpg";
-	import sickLogo from "$lib/images/sponsors/sick_logo.png";
-	import sectraLogo from "$lib/images/sponsors/sectra_logo.png";
-	import sylogLogo from "$lib/images/sponsors/sylog_logo.png";
+	import cyberRoom from "$lib/images/2024-2025/events/liu_ctf/cyber_room.jpg?enhanced";
+	import sickLogo from "$lib/images/sponsors/sick_logo.png?enhanced";
+	import sectraLogo from "$lib/images/sponsors/sectra_logo.png?enhanced";
+	import sylogLogo from "$lib/images/sponsors/sylog_logo.png?enhanced";
 	import DocumentLink from "$lib/components/DocumentLink.svelte";
 	import { asset } from "$app/paths";
-	import studenthuset from "$lib/images/2024-2025/events/workshop/studenthuset.jpg";
-	import foobar from "$lib/images/2024-2025/events/foo_cafe/goto_10_foyer.jpg";
-	import goto10Logo from "$lib/images/sponsors/goto_10_logo.png";
+	import studenthuset from "$lib/images/2024-2025/events/workshop/studenthuset.jpg?enhanced";
+	import foobar from "$lib/images/2024-2025/events/foo_cafe/goto_10_foyer.jpg?enhanced";
+	import goto10Logo from "$lib/images/sponsors/goto_10_logo.png?enhanced";
 	import fooCafeLogo from "$lib/images/sponsors/foo_cafe_logo.svg";
-	import acas from "$lib/images/2024-2025/events/annual_meeting/acas.png";
+	import acas from "$lib/images/2024-2025/events/annual_meeting/acas.png?enhanced";
 	import PageHead from "$lib/components/PageHead.svelte";
 </script>
 
@@ -30,7 +30,7 @@
 <Section isThin>
 	<div class="past-event">
 		<h1>Annual Meeting</h1>
-		<img src={acas} alt="ACAS at Linköping University" />
+		<enhanced:img src={acas} alt="ACAS at Linköping University" />
 		<p>
 			We will be holding our annual meeting soon, which you're very welcome to attend! During the
 			meeting we'll talk about the last year of LiTHe Hax and we'll be voting on the next year of
@@ -97,7 +97,7 @@
 	<div class="past-event">
 		<h1>Foo Bar at Foo Café</h1>
 
-		<img src={foobar} alt="Foo Bar at Foo Café" />
+		<enhanced:img src={foobar} alt="Foo Bar at Foo Café" />
 		<p>
 			Foo Café and LiTHe Hax recently teamed up for a cybersecurity evening focused on Capture the
 			Flag challenges. The event featured a brief introduction, a problem-solving lecture, and a
@@ -119,7 +119,7 @@
 
 		<hr />
 		<div class="sponsor-logos">
-			<img src={goto10Logo} alt="Goto 10 logo" />
+			<enhanced:img src={goto10Logo} alt="Goto 10 logo" />
 			<img src={fooCafeLogo} alt="Foo Café logo" />
 		</div>
 	</div>
@@ -129,7 +129,7 @@
 	<div class="past-event">
 		<h1>LiU CTF</h1>
 
-		<img src={cyberRoom} alt="Cybersecurity Room" />
+		<enhanced:img src={cyberRoom} alt="Cybersecurity Room" />
 		<p>
 			The LiTHe Hax LiU CTF was an exciting Capture the Flag competition held on March 8. We hosted
 			this event to promote cybersecurity awareness within the student community, combining both
@@ -159,9 +159,9 @@
 
 		<hr />
 		<div class="sponsor-logos">
-			<img src={sickLogo} alt="sick logo" />
-			<img src={sectraLogo} alt="sectra logo" />
-			<img src={sylogLogo} alt="sylog logo" />
+			<enhanced:img src={sickLogo} alt="sick logo" />
+			<enhanced:img src={sectraLogo} alt="sectra logo" />
+			<enhanced:img src={sylogLogo} alt="sylog logo" />
 		</div>
 	</div>
 </Section>
@@ -169,7 +169,7 @@
 <Section isThin>
 	<div class="past-event">
 		<h1>Workshop</h1>
-		<img src={studenthuset} alt="Studenthuset" />
+		<enhanced:img src={studenthuset} alt="Studenthuset" />
 		<p>
 			We held a workshop in preparation for our CTF. During the workshop, we explained and showcased
 			example challenges that resembled the actual CTF challenges.
@@ -200,13 +200,14 @@
 
 		<hr />
 		<div class="sponsor-logos">
-			<img src={sickLogo} alt="sick logo" />
-			<img src={sectraLogo} alt="sectra logo" />
+			<enhanced:img src={sickLogo} alt="sick logo" />
+			<enhanced:img src={sectraLogo} alt="sectra logo" />
 		</div>
 	</div>
 </Section>
 
 <style>
+	enhanced\:img,
 	img {
 		max-width: 100%;
 		height: auto;
@@ -221,7 +222,9 @@
 		margin: 1rem 0;
 	}
 
+	.sponsor-logos enhanced\:img,
 	.sponsor-logos img {
+		width: auto;
 		height: 2rem;
 	}
 
