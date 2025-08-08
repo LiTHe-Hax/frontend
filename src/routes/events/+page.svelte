@@ -49,7 +49,9 @@
 		</p>
 		<p>
 			<strong>Agenda:</strong>
-			<DocumentLink link={asset("/documents/Kallelse_Årsmöte.pdf")} />
+			<DocumentLink
+				link={asset("/documents/2024-2025/events/annual_meeting/kallelse_arsmote.pdf")}
+			/>
 		</p>
 
 		<h3>Candidacy</h3>
@@ -110,7 +112,9 @@
 		</p>
 		<p>
 			<strong>Presentation:</strong>
-			<DocumentLink link={asset("/documents/GOTO10 Presentation.pptx")} />
+			<DocumentLink
+				link={asset("/documents/2024-2025/events/foo_cafe/goto_10_presentation.pptx")}
+			/>
 		</p>
 
 		<hr />
@@ -150,7 +154,7 @@
 		</p>
 		<p>
 			<strong>CTF rules:</strong>
-			<DocumentLink link={asset("/documents/rules.pdf")} />
+			<DocumentLink link={asset("/documents/2024-2025/events/liu_ctf/liu_ctf_rules.pdf")} />
 		</p>
 
 		<hr />
@@ -185,11 +189,13 @@
 		</p>
 		<p>
 			<strong>Workshop tasks:</strong>
-			<DocumentLink link={asset("/documents/workshop.zip")} />
+			<DocumentLink link={asset("/documents/2024-2025/events/workshop/workshop_challenges.zip")} />
 		</p>
 		<p>
 			<strong>Workshop presentation:</strong>
-			<DocumentLink link={asset("/documents/Workshop Presentation.pptx")} />
+			<DocumentLink
+				link={asset("/documents/2024-2025/events/workshop/workshop_presentation.pptx")}
+			/>
 		</p>
 
 		<hr />
