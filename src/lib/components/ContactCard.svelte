@@ -1,4 +1,7 @@
 <script lang="ts">
+	import type { Picture } from "vite-imagetools";
+	import placeholderImg from "$lib/images/contacts/placeholder.png?enhanced";
+
 	type Props = {
 		fullName: string;
 		hackerTag: string;
@@ -9,9 +12,6 @@
 	let { fullName, hackerTag, position, email, image }: Props = $props();
 
 	const effectiveImage = $derived(image ? image : placeholderImg);
-
-	import type { Picture } from "vite-imagetools";
-	import placeholderImg from "$lib/images/contacts/placeholder.png?enhanced";
 </script>
 
 <div class="contact-card">
