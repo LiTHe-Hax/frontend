@@ -120,7 +120,7 @@
 		<hr />
 		<div class="sponsor-logos">
 			<img src={goto10Logo} alt="Goto 10 logo" />
-			<img src={fooCafeLogo} alt="Goto 10 logo" />
+			<img src={fooCafeLogo} alt="Foo Café logo" />
 		</div>
 	</div>
 </Section>
