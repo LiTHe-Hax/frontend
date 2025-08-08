@@ -4,15 +4,18 @@
 		hackerTag: string;
 		position: string;
 		email?: string;
-		image?: string;
+		image?: Picture;
 	};
 	let { fullName, hackerTag, position, email, image }: Props = $props();
 
-	import placeholderImg from "$lib/images/contacts/placeholder.png";
+	const effectiveImage = $derived(image ? image : placeholderImg);
+
+	import type { Picture } from "vite-imagetools";
+	import placeholderImg from "$lib/images/contacts/placeholder.png?enhanced";
 </script>
 
 <div class="contact-card">
-	<img src={image !== undefined ? image : placeholderImg} alt={fullName} />
+	<enhanced:img src={effectiveImage} alt={fullName} />
 	<div class="info">
 		<span class="name">{fullName} @{hackerTag}</span>
 		<span class="position">{position}</span>
@@ -31,7 +34,7 @@
 		gap: 0.5rem;
 	}
 
-	img {
+	enhanced\:img {
 		width: 8rem;
 		height: 8rem;
 		border-radius: 50%;

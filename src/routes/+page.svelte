@@ -6,16 +6,16 @@
 	import Section from "$lib/components/Section.svelte";
 	import PageHead from "$lib/components/PageHead.svelte";
 
-	import chairmanImg from "$lib/images/2025-2026/contacts/tyson_h.jpg";
-	import webmasterImg from "$lib/images/2025-2026/contacts/viktor_h.jpg";
-	import secretaryImg from "$lib/images/2025-2026/contacts/david_s.png";
-	import accountantImg from "$lib/images/2025-2026/contacts/adam_b.jpg";
-	import logisticsImg from "$lib/images/2025-2026/contacts/wilmer_s.jpg";
-	import eventManagerImg from "$lib/images/2025-2026/contacts/tove_h.jpg";
-	import relationsImg from "$lib/images/2025-2026/contacts/anton_o.jpg";
-	import cashierImg from "$lib/images/2025-2026/contacts/william_m.jpg";
-	import boardMemberImg from "$lib/images/2025-2026/contacts/tom_e.jpg";
-	import mascotImg from "$lib/images/contacts/torbjorn_h.png";
+	import chairmanImg from "$lib/images/2025-2026/contacts/tyson_h.jpg?enhanced";
+	import webmasterImg from "$lib/images/2025-2026/contacts/viktor_h.jpg?enhanced";
+	import secretaryImg from "$lib/images/2025-2026/contacts/david_s.png?enhanced";
+	import accountantImg from "$lib/images/2025-2026/contacts/adam_b.jpg?enhanced";
+	import logisticsImg from "$lib/images/2025-2026/contacts/wilmer_s.jpg?enhanced";
+	import eventManagerImg from "$lib/images/2025-2026/contacts/tove_h.jpg?enhanced";
+	import relationsImg from "$lib/images/2025-2026/contacts/anton_o.jpg?enhanced";
+	import cashierImg from "$lib/images/2025-2026/contacts/william_m.jpg?enhanced";
+	import boardMemberImg from "$lib/images/2025-2026/contacts/tom_e.jpg?enhanced";
+	import mascotImg from "$lib/images/contacts/torbjorn_h.png?enhanced";
 </script>
 
 <PageHead
