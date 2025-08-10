@@ -236,7 +236,6 @@
 
 		h1 {
 			margin-top: 0;
-			color: color.$green-2;
 		}
 	}
 
