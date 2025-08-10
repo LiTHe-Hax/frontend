@@ -22,38 +22,3 @@ $red: #ff3333;
 // Specialized colors
 
 $shadow: #00000044;
-
-// Old colors
-// TODO: remove after all other CSS has been converted to SCSS
-
-:root {
-	--bg: #121212;
-	--fg: #ffffff;
-	--header-bg: #002200;
-	--header-fg: #33ff33;
-	--section-bg: #1a1a1a;
-	--section-fg: #ffffff;
-
-	--heading-fg: #33ff33;
-
-	--link-fg: #33ff33;
-	--link-hover-fg: #aaffbf;
-
-	--link-btn-bg: #333333;
-	--link-btn-fg: #ffffff;
-
-	--input-label-fg: #33ff33;
-	--input-bg: #333333;
-	--input-border: #444444;
-	--input-fg: #33ff33;
-	--input-shadow: #00000044;
-	--button-bg: #232323;
-	--button-fg: #33ff33;
-	--button-shadow: #00000044;
-	--button-hover-bg: var(--button-fg);
-	--button-hover-fg: var(--button-bg);
-	--success-color: #33ff33;
-	--error-color: #ff3333;
-
-	--separator-color: grey;
-}
