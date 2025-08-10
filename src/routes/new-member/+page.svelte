@@ -104,31 +104,33 @@
 	{/if}
 </Section>
 
-<style>
+<style lang="scss">
+	@use "$lib/styles/color";
+
 	form {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr 1fr 1fr;
 		gap: 0.8rem;
-	}
 
-	form > :global(:nth-child(3)),
-	form > :global(:nth-child(4)) {
-		grid-column: 1 / span 2;
-	}
+		> :global(:nth-child(3)),
+		> :global(:nth-child(4)) {
+			grid-column: 1 / span 2;
+		}
 
-	form > :global(:nth-child(5)) {
-		grid-column: 1 / span 2;
-		align-self: flex-end;
+		> :global(:nth-child(5)) {
+			grid-column: 1 / span 2;
+			align-self: flex-end;
+		}
 	}
 
 	.success-msg {
-		color: var(--success-color);
+		color: color.$green-2;
 		text-align: center;
 	}
 
 	.error-msg {
-		color: var(--error-color);
+		color: color.$red;
 		text-align: center;
 	}
 </style>

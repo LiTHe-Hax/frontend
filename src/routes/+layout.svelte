@@ -23,7 +23,7 @@
 
 <main>{@render children()}</main>
 
-<style>
+<style lang="scss">
 	main {
 		width: 100vw;
 	}

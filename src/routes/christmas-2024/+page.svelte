@@ -87,77 +87,82 @@
 	{/if}
 </Section>
 
-<style>
+<style lang="scss">
+	@use "$lib/styles/color";
+
 	table {
 		width: 100%;
 		border-spacing: 0;
-	}
 
-	thead,
-	tbody {
-		box-shadow: 0 2px 4px 0 #00000044;
-	}
+		thead,
+		tbody {
+			box-shadow: 0 2px 4px 0 #00000044;
 
-	td {
-		padding: 0.25rem;
-		text-align: center;
-	}
+			td {
+				padding: 0.25rem;
+				text-align: center;
 
-	thead td {
-		border: 1px solid #333333;
-		background-color: #232323;
-	}
+				&:not(:last-child) {
+					border-right: none;
+				}
+			}
 
-	thead td:first-child {
-		border-top-left-radius: 0.25rem;
-		border-bottom-left-radius: 0.25rem;
-	}
+			tr {
+				&:not(:first-child) td {
+					border-top: none;
+				}
 
-	thead td:last-child {
-		border-top-right-radius: 0.25rem;
-		border-bottom-right-radius: 0.25rem;
-	}
+				&:first-child td {
+					&:first-child {
+						border-top-left-radius: 0.25rem;
+					}
 
-	tbody:before {
-		content: "-";
-		display: block;
-		line-height: 0.25rem;
-		color: transparent;
-	}
+					&:last-child {
+						border-top-right-radius: 0.25rem;
+					}
+				}
 
-	tbody td {
-		border: 1px solid #444444;
-	}
+				&:last-child td {
+					&:first-child {
+						border-bottom-left-radius: 0.25rem;
+					}
 
-	tbody tr:not(:first-child) td {
-		border-top: none;
-	}
+					&:last-child {
+						border-bottom-right-radius: 0.25rem;
+					}
+				}
+			}
+		}
 
-	tbody tr:nth-child(odd) td {
-		background-color: #2a2a2a;
-	}
+		thead {
+			td {
+				border: 1px solid #333333;
+				background-color: #232323;
+			}
+		}
 
-	tbody tr:nth-child(even) td {
-		background-color: #333333;
-	}
+		tbody {
+			&:before {
+				// Adds space between <thead> and <tbody>
+				content: "-";
+				display: block;
+				color: transparent;
+				line-height: 0.25rem;
+			}
 
-	tbody tr:first-child td:first-child {
-		border-top-left-radius: 0.25rem;
-	}
+			td {
+				border: 1px solid #444444;
+			}
 
-	tbody tr:first-child td:last-child {
-		border-top-right-radius: 0.25rem;
-	}
+			tr {
+				&:nth-child(odd) td {
+					background-color: #2a2a2a;
+				}
 
-	tbody tr:last-child td:first-child {
-		border-bottom-left-radius: 0.25rem;
-	}
-
-	tbody tr:last-child td:last-child {
-		border-bottom-right-radius: 0.25rem;
-	}
-
-	td:not(:last-child) {
-		border-right: none;
+				&:nth-child(even) td {
+					background-color: #333333;
+				}
+			}
+		}
 	}
 </style>
