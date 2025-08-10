@@ -1,7 +1,21 @@
-/// Mixins for commonly used property sets
+/// Mixins for commonly used styles
+
+@use "size";
 
 @mixin unified-transition($duration, $timing-function, $properties...) {
 	transition-duration: $duration;
 	transition-timing-function: $timing-function;
 	transition-property: $properties;
+}
+
+@mixin on-desktop() {
+	@media screen and (min-width: size.$min-desktop-width) {
+		@content;
+	}
+}
+
+@mixin on-mobile() {
+	@media screen and (max-width: size.$max-mobile-width) {
+		@content;
+	}
 }
