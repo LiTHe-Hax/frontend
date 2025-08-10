@@ -210,10 +210,8 @@
 	@use "$lib/styles/color";
 	@use "$lib/styles/mixin";
 
-	// TODO: create global default for images
 	img {
 		max-width: 100%;
-		height: auto;
 	}
 
 	.sponsor-logos {
@@ -225,7 +223,6 @@
 		margin: 1rem 0;
 
 		img {
-			width: auto;
 			height: 2rem;
 		}
 	}

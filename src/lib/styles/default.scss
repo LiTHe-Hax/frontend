@@ -32,3 +32,9 @@ hr {
 	margin: 1rem 0;
 	border: 1px solid color.$gray-5;
 }
+
+img {
+	// Necessary for enhanced images to scale identically to normal images
+	width: auto;
+	height: auto;
+}
