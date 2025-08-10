@@ -27,47 +27,46 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
+	@use "$lib/styles/color";
+
 	.contact-card {
 		display: flex;
 		flex-direction: row;
 		gap: 0.5rem;
-	}
 
-	enhanced\:img {
-		width: 8rem;
-		height: 8rem;
-		border-radius: 50%;
-	}
+		img {
+			width: 8rem;
+			height: 8rem;
+			border-radius: 50%;
+		}
 
-	.info {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		min-width: 0; /* Makes info box take only remaining space when small */
-	}
+		.info {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			min-width: 0; // Makes info box take only remaining space when small
 
-	.name {
-		color: var(--heading-fg);
-		font-size: 1.175em;
-		font-weight: bold;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
+			.name {
+				color: color.$green-2;
+				font-size: 1.175em;
+				font-weight: bold;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
 
-	.position {
-		margin-bottom: 1em;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
+			.position {
+				margin-bottom: 1em;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
 
-	.email {
-		/* Clamps the boundaries of the link */
-		width: 100%;
-		align-self: flex-start;
-		overflow: hidden;
-		text-overflow: ellipsis;
+			.email {
+				width: 100%; // Clamps the boundaries of the link
+				align-self: flex-start;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
 	}
-
-	/* Email link is also styled by the global stylesheet */
 </style>
