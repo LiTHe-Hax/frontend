@@ -1,3 +1,31 @@
+/// Color-related variables
+
+// Base colors
+
+$white: #ffffff;
+
+$black-1: #121212;
+$black-2: #1a1a1a;
+
+$gray-1: #232323;
+$gray-2: #2a2a2a;
+$gray-3: #333333;
+$gray-4: #444444;
+$gray-5: #808080;
+
+$green-1: #002200;
+$green-2: #33ff33;
+$green-3: #aaffbf;
+
+$red: #ff3333;
+
+// Specialized colors
+
+$shadow: #00000044;
+
+// Old colors
+// TODO: remove after all other CSS has been converted to SCSS
+
 :root {
 	--bg: #121212;
 	--fg: #ffffff;
@@ -28,35 +56,4 @@
 	--error-color: #ff3333;
 
 	--separator-color: grey;
-}
-
-body {
-	margin: 0;
-	padding: 0;
-	background-color: var(--bg);
-	color: var(--fg);
-	font-family: sans-serif;
-}
-
-a {
-	color: var(--link-fg);
-	text-decoration: none;
-	transition: color 150ms ease-out;
-	fill: var(--link-fg);
-}
-
-a:hover {
-	color: var(--link-hover-fg);
-	fill: var(--link-hover-fg);
-}
-
-a > svg {
-	fill: inherit;
-	transition: fill 150ms ease-out;
-}
-
-hr {
-	border-color: var(--separator-color);
-	border-style: solid;
-	margin: 1rem 0;
 }

@@ -1,0 +1,7 @@
+/// Mixins for commonly used property sets
+
+@mixin unified-transition($duration, $timing-function, $properties...) {
+	transition-duration: $duration;
+	transition-timing-function: $timing-function;
+	transition-property: $properties;
+}

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
-	import "$lib/styles/global.css"; // This stylesheet affects the entire site.
+	import "$lib/styles/default.scss"; // This stylesheet affects the entire site.
 	import LayoutHeader from "$lib/components/LayoutHeader.svelte";
 
 	interface LayoutProps {
