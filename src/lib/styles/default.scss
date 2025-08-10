@@ -47,3 +47,17 @@ h5,
 h6 {
 	color: color.$green-2;
 }
+
+label {
+	color: color.$green-2;
+}
+
+input,
+select {
+	border: 1px solid color.$gray-4;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	background-color: color.$gray-3;
+	color: color.$green-2;
+	box-shadow: inset 0 1px 3px 1px color.$shadow;
+}
