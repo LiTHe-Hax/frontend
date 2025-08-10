@@ -19,3 +19,13 @@
 		@content;
 	}
 }
+
+@mixin remove-top-bottom-child-margins() {
+	> *:first-child {
+		margin-top: 0;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+}
