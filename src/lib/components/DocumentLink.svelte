@@ -18,19 +18,21 @@
 	</a>
 </span>
 
-<style>
+<style lang="scss">
+	@use "$lib/styles/color";
+
 	a {
 		display: inline-flex;
 		flex-direction: row;
 		gap: 0.2ch;
 		align-items: center;
-		color: var(--link-btn-fg);
+		color: color.$white;
 		text-decoration: none;
-	}
 
-	.label {
-		padding: 0.2em;
-		border-radius: 0.2rem;
-		background-color: var(--link-btn-bg);
+		.label {
+			padding: 0.2em;
+			border-radius: 0.2rem;
+			background-color: color.$gray-3;
+		}
 	}
 </style>

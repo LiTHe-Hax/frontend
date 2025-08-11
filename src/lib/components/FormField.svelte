@@ -39,81 +39,76 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
+	@use "$lib/styles/color";
+	@use "$lib/styles/mixin";
+
 	.field {
 		display: inline-flex;
 		flex-direction: column;
-	}
 
-	label {
-		align-self: flex-start;
-		color: var(--input-label-fg);
-	}
+		label {
+			align-self: flex-start;
+		}
 
-	input,
-	select {
-		box-sizing: border-box;
-		width: 100%;
-		padding: 0.5rem;
-		border: 1px solid var(--input-border);
-		border-radius: 0.25rem;
-		background-color: var(--input-bg);
-		color: var(--input-fg);
-		box-shadow: inset 0 1px 3px 1px var(--input-shadow);
-	}
+		.input-container {
+			position: relative;
 
-	.error input,
-	.error select {
-		border-color: var(--error-color);
-	}
+			input,
+			select {
+				width: 100%;
+				box-sizing: border-box;
+			}
 
-	.input-container {
-		position: relative;
-	}
+			.error-tooltip {
+				position: absolute;
+				bottom: calc(100% + 8px);
+				right: 0;
+				padding: 0.2rem 0.4rem;
+				border: 1px solid color.$red;
+				border-radius: 0.25rem;
+				background-color: color.$black-2;
+				color: color.$white;
+				opacity: 0;
+				visibility: hidden;
+				transition: all 100ms ease-out;
 
-	.error-tooltip {
-		position: absolute;
-		bottom: calc(100% + 8px);
-		right: 0;
-		padding: 0.2rem 0.4rem;
-		border: 1px solid var(--error-color);
-		border-radius: 0.25rem;
-		background-color: var(--section-bg);
-		color: var(--section-fg);
-		opacity: 0;
-		visibility: hidden;
-		transition: all 100ms ease-out;
-	}
+				&::after {
+					content: "";
+					position: absolute;
+					top: 100%;
+					left: 25%;
+					border: 8px solid color.$black-2;
+					border-right-color: transparent;
+					border-bottom-color: transparent;
+					border-left-color: transparent;
+				}
 
-	.input-container:hover .error-tooltip {
-		opacity: 1;
-		visibility: visible;
-	}
+				&::before {
+					content: "";
+					position: absolute;
+					top: calc(100% + 1px);
+					left: 25%;
+					border: 8px solid color.$red;
+					border-right-color: transparent;
+					border-bottom-color: transparent;
+					border-left-color: transparent;
+				}
+			}
 
-	input:focus ~ .error-tooltip {
-		opacity: 1;
-		visibility: visible;
-	}
+			&:hover .error-tooltip,
+			input:focus ~ .error-tooltip,
+			select:focus ~ .error-tooltip {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
 
-	.error-tooltip::after {
-		content: "";
-		position: absolute;
-		top: 100%;
-		left: 25%;
-		border: 8px solid var(--section-bg);
-		border-right-color: transparent;
-		border-bottom-color: transparent;
-		border-left-color: transparent;
-	}
-
-	.error-tooltip::before {
-		content: "";
-		position: absolute;
-		top: calc(100% + 1px);
-		left: 25%;
-		border: 8px solid var(--error-color);
-		border-right-color: transparent;
-		border-bottom-color: transparent;
-		border-left-color: transparent;
+		&.error {
+			input,
+			select {
+				border-color: color.$red;
+			}
+		}
 	}
 </style>

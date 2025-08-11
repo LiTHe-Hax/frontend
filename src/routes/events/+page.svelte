@@ -206,11 +206,12 @@
 	</div>
 </Section>
 
-<style>
-	enhanced\:img,
+<style lang="scss">
+	@use "$lib/styles/color";
+	@use "$lib/styles/mixin";
+
 	img {
 		max-width: 100%;
-		height: auto;
 	}
 
 	.sponsor-logos {
@@ -220,46 +221,37 @@
 		gap: 1rem;
 		justify-content: center;
 		margin: 1rem 0;
-	}
 
-	.sponsor-logos enhanced\:img,
-	.sponsor-logos img {
-		width: auto;
-		height: 2rem;
+		img {
+			height: 2rem;
+		}
 	}
 
 	.past-event {
 		opacity: 0.5;
-	}
 
-	.past-event img {
-		filter: saturate(50%);
-	}
+		img {
+			filter: saturate(50%);
+		}
 
-	.past-event h1 {
-		margin-top: 0;
-		color: var(--header-fg);
-	}
-
-	/* Mobile styling */
-	@media screen and (min-width: 0px) {
-		.section-header {
-			font-size: 1.75rem;
-			color: var(--heading-fg);
-			margin: 1rem 1.25rem;
-			max-width: min(36rem, calc(100% - 6rem));
+		h1 {
+			margin-top: 0;
 		}
 	}
 
-	/* Desktop styling */
-	@media screen and (min-width: 768px) {
-		.section-header {
-			font-size: 1.75rem;
-			color: var(--heading-fg);
+	.section-header {
+		font-size: 1.75rem;
+		color: color.$green-2;
+		max-width: min(36rem, calc(100% - 6rem));
+
+		@include mixin.on-mobile() {
+			margin: 1rem 1.25rem;
+		}
+
+		@include mixin.on-desktop() {
 			margin-top: 3rem;
 			margin-bottom: -2rem;
-			margin-left: calc(50% - min(18rem, 50% - 3rem) - 1.25rem); /* This feels very hacky */
-			max-width: min(36rem, calc(100% - 6rem));
+			margin-left: calc(50% - min(18rem, 50% - 3rem) - 1.25rem); // This feels very hacky
 		}
 	}
 </style>

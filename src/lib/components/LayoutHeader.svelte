@@ -44,150 +44,140 @@
 	</nav>
 </header>
 
-<style>
-	/* Mobile styling */
-	@media screen and (min-width: 0px) {
-		.mobile {
+<style lang="scss">
+	@use "$lib/styles/color";
+	@use "$lib/styles/mixin";
+
+	header {
+		background-color: color.$green-1;
+		color: color.$green-2;
+
+		&.mobile {
+			$header-height: 4rem;
+
 			display: grid;
+			grid-template-columns: max-content 1fr max-content;
+			position: sticky;
+			top: 0;
+			z-index: 1; // Needed since some elements in <main> mess with the stacking
+
+			@include mixin.on-desktop() {
+				display: none;
+			}
+
+			img {
+				padding: 0.5rem 0;
+				width: 100%;
+				height: $header-height;
+				box-sizing: border-box;
+			}
+
+			button {
+				border: 0;
+				padding: 1rem;
+				width: $header-height;
+				height: $header-height;
+				background-color: transparent;
+
+				svg {
+					width: 100%;
+					height: 100%;
+					fill: color.$green-2;
+				}
+			}
+
+			.nav-backdrop {
+				@include mixin.unified-transition(150ms, ease, opacity, visibility);
+
+				position: fixed;
+				top: $header-height;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				background-color: rgba(0, 0, 0, 0.5);
+
+				&.open {
+					opacity: 1;
+					visibility: visible;
+				}
+
+				&.closed {
+					opacity: 0;
+					visibility: hidden;
+				}
+			}
+
+			nav {
+				@include mixin.unified-transition(150ms, ease, transform);
+
+				display: flex;
+				flex-direction: column;
+				position: fixed;
+				top: $header-height;
+				bottom: 0;
+				min-width: 13rem; // To not look ridiculously small
+				background-color: color.$black-1;
+
+				&.open {
+					transform: translateX(0%);
+				}
+
+				&.closed {
+					transform: translateX(-100%);
+				}
+
+				a {
+					border-bottom: 3px solid rgba(0, 0, 0, 0.35);
+					padding: 1rem;
+					color: color.$green-2;
+					line-height: 1;
+					font-weight: bold;
+					text-decoration: none;
+				}
+			}
 		}
-		.desktop {
-			display: none;
-		}
-	}
 
-	.mobile {
-		/* Display included in media query */
-		grid-template-columns: max-content 1fr max-content;
-		grid-template-areas: "left" "logo" "right";
-		position: sticky;
-		top: 0;
-		/* z-index is needed since the transforms and relative positions
-		   of certain elements in <main> mess with the stacking */
-		z-index: 1;
-		width: 100vw;
-		background-color: var(--header-bg);
-		color: var(--header-fg);
-	}
-
-	.mobile img {
-		margin: 0.5rem 0;
-		width: 100%;
-		height: 3rem;
-		justify-self: center;
-		align-self: center;
-	}
-
-	.mobile button {
-		display: flex;
-		align-items: center;
-		border: 0;
-		padding: 1rem;
-		background-color: transparent;
-	}
-
-	.mobile button svg {
-		height: 2rem;
-		fill: var(--header-fg);
-	}
-
-	.mobile .nav-backdrop {
-		position: fixed;
-		top: 4rem;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		background-color: rgba(0, 0, 0, 0.5);
-		transition:
-			opacity 150ms,
-			visibility 150ms ease;
-	}
-
-	.mobile .nav-backdrop.open {
-		opacity: 1;
-		visibility: visible;
-	}
-
-	.mobile .nav-backdrop.closed {
-		opacity: 0;
-		visibility: hidden;
-	}
-
-	.mobile nav {
-		display: flex;
-		flex-direction: column;
-		position: fixed;
-		top: 4rem;
-		bottom: 0;
-		min-width: 13rem; /* To not look ridiculously small */
-		background-color: var(--bg);
-		transition: transform 150ms ease;
-	}
-
-	.mobile nav.open {
-		transform: translateX(0%);
-	}
-
-	.mobile nav.closed {
-		transform: translateX(-100%);
-	}
-
-	.mobile nav a {
-		border-bottom: 3px solid rgba(0, 0, 0, 0.35);
-		padding: 1rem;
-		color: var(--header-fg);
-		line-height: 1;
-		font-weight: bold;
-		text-decoration: none;
-	}
-
-	/* Desktop styling */
-	@media screen and (min-width: 768px) {
-		.mobile {
-			display: none;
-		}
-		.desktop {
+		&.desktop {
 			display: flex;
+			flex-direction: column;
+			box-sizing: border-box;
+			padding: 2rem;
+
+			@include mixin.on-mobile() {
+				display: none;
+			}
+
+			img {
+				margin-bottom: 1.5rem;
+				width: 100%;
+				height: 4rem;
+			}
+
+			nav {
+				display: flex;
+				flex-direction: row;
+				gap: 1rem;
+				justify-content: center;
+
+				a {
+					@include mixin.unified-transition(150ms, ease, background-color, color, transform);
+
+					padding: 0.5rem 1rem;
+					border: 0.15rem solid color.$green-2;
+					border-radius: 0.5rem;
+					background-color: color.$green-2;
+					color: color.$green-1;
+					line-height: 1;
+					font-weight: bold;
+					text-decoration: none;
+
+					&:hover {
+						background-color: color.$green-1;
+						color: color.$green-2;
+						transform: scale(1.1);
+					}
+				}
+			}
 		}
-	}
-
-	.desktop {
-		/* Display included in media query */
-		flex-direction: column;
-		box-sizing: border-box;
-		padding: 2rem;
-		width: 100vw;
-		background-color: var(--header-bg);
-		color: var(--header-fg);
-	}
-
-	.desktop img {
-		margin-bottom: 1.5rem;
-		max-width: 100%;
-		height: 4rem;
-	}
-
-	.desktop nav {
-		display: flex;
-		flex-direction: row;
-		gap: 1rem;
-		justify-content: center;
-	}
-
-	.desktop nav a {
-		padding: 0.5rem 1rem;
-		border: 0.15rem solid var(--header-fg);
-		border-radius: 0.5rem;
-		background-color: var(--header-fg);
-		color: var(--header-bg);
-		line-height: 1;
-		font-weight: bold;
-		text-decoration: none;
-		transition: all 150ms ease-out;
-	}
-
-	.desktop nav a:hover {
-		background-color: var(--header-bg);
-		color: var(--header-fg);
-		transform: scale(1.1);
 	}
 </style>

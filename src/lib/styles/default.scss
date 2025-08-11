@@ -1,0 +1,63 @@
+/// Default styles for HTML elements
+
+@use "color";
+@use "mixin";
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: color.$black-1;
+	color: color.$white;
+	font-family: sans-serif;
+}
+
+a {
+	@include mixin.unified-transition(150ms, ease-out, color, fill);
+
+	color: color.$green-2;
+	fill: color.$green-2;
+	text-decoration: none;
+
+	svg {
+		fill: inherit;
+	}
+
+	&:hover {
+		color: color.$green-3;
+		fill: color.$green-3;
+	}
+}
+
+hr {
+	margin: 1rem 0;
+	border: 1px solid color.$gray-5;
+}
+
+img {
+	// Necessary for enhanced images to scale identically to normal images
+	width: auto;
+	height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: color.$green-2;
+}
+
+label {
+	color: color.$green-2;
+}
+
+input,
+select {
+	border: 1px solid color.$gray-4;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	background-color: color.$gray-3;
+	color: color.$green-2;
+	box-shadow: inset 0 1px 3px 1px color.$shadow;
+}

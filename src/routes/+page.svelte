@@ -146,19 +146,17 @@
 	</div>
 </Section>
 
-<style>
-	/* Mobile styling */
-	@media screen and (min-width: 0px) {
-		.contact-grid {
+<style lang="scss">
+	@use "$lib/styles/mixin";
+
+	.contact-grid {
+		@include mixin.on-mobile() {
 			display: flex;
 			flex-direction: column;
 			gap: 1rem;
 		}
-	}
 
-	/* Desktop styling */
-	@media screen and (min-width: 768px) {
-		.contact-grid {
+		@include mixin.on-desktop() {
 			display: grid;
 			gap: 1rem;
 			grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
@@ -175,9 +173,9 @@
 		display: flex;
 		flex-direction: row;
 		gap: 0.5rem;
-	}
 
-	.social-medias svg {
-		height: 2rem;
+		svg {
+			height: 2rem;
+		}
 	}
 </style>

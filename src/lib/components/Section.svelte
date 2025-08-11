@@ -9,43 +9,32 @@
 	{@render children()}
 </section>
 
-<style>
-	/* Mobile styling */
-	@media screen and (min-width: 0px) {
-		section {
+<style lang="scss">
+	@use "$lib/styles/color";
+	@use "$lib/styles/mixin";
+
+	section {
+		border-radius: 0.5rem;
+		background-color: color.$black-2;
+		color: color.$white;
+
+		@include mixin.on-mobile() {
 			margin: 1rem;
 			padding: 1rem;
-			border-radius: 0.5rem;
-			background-color: var(--section-bg);
-			color: var(--section-fg);
 		}
-	}
 
-	/* Desktop styling */
-	@media screen and (min-width: 768px) {
-		section {
+		@include mixin.on-desktop() {
 			margin: 3rem;
 			padding: 1.5rem;
-			border-radius: 0.5rem;
-			background-color: var(--section-bg);
-			color: var(--section-fg);
+
+			&.thin {
+				margin: 3rem auto;
+				max-width: min(36rem, calc(100% - 6rem)); // Fakes a 3rem horizontal margin
+			}
 		}
 
-		section.thin {
-			margin: 3rem auto;
-			max-width: min(36rem, calc(100% - 6rem)); /* Fakes a 3rem horizontal margin */
+		:global {
+			@include mixin.remove-top-bottom-child-margins();
 		}
-	}
-
-	/* Ensures that there are no unnecessarily large gaps at top or bottom */
-	section > :global(:first-child) {
-		margin-top: 0;
-	}
-	section > :global(:last-child) {
-		margin-bottom: 0;
-	}
-
-	section > :global(:is(h1, h2, h3, h4, h5, h6)) {
-		color: var(--heading-fg);
 	}
 </style>
