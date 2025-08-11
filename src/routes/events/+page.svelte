@@ -28,7 +28,7 @@
 
 <ArticleGroup layout="thin" h1="Previous Events">
 	<Article translucent>
-		<h1>Annual Meeting</h1>
+		<h2>Annual Meeting</h2>
 		<enhanced:img src={acas} alt="ACAS at Linköping University" />
 		<p>
 			We will be holding our annual meeting soon, which you're very welcome to attend! During the
@@ -92,7 +92,7 @@
 	</Article>
 
 	<Article translucent>
-		<h1>Foo Bar at Foo Café</h1>
+		<h2>Foo Bar at Foo Café</h2>
 
 		<enhanced:img src={foobar} alt="Foo Bar at Foo Café" />
 		<p>
@@ -122,7 +122,7 @@
 	</Article>
 
 	<Article translucent>
-		<h1>LiU CTF</h1>
+		<h2>LiU CTF</h2>
 
 		<enhanced:img src={cyberRoom} alt="Cybersecurity Room" />
 		<p>
@@ -161,7 +161,7 @@
 	</Article>
 
 	<Article translucent>
-		<h1>Workshop</h1>
+		<h2>Workshop</h2>
 		<enhanced:img src={studenthuset} alt="Studenthuset" />
 		<p>
 			We held a workshop in preparation for our CTF. During the workshop, we explained and showcased
