@@ -3,10 +3,17 @@
 
 	type Layout = "normal" | "thin";
 
-	const { children, layout = "normal" }: { children: Snippet; layout?: Layout } = $props();
+	const {
+		children,
+		h1,
+		layout = "normal",
+	}: { children: Snippet; h1?: string; layout?: Layout } = $props();
 </script>
 
 <div class={layout}>
+	{#if h1}
+		<h1>{h1}</h1>
+	{/if}
 	{@render children()}
 </div>
 
@@ -51,5 +58,10 @@
 			max-width: 39rem;
 			box-sizing: content-box;
 		}
+	}
+
+	h1 {
+		margin: 0;
+		line-height: 1;
 	}
 </style>

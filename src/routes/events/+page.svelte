@@ -20,17 +20,13 @@
 	description="LiTHe Hax events including Annual Meeting, CTF competition, workshops, and networking opportunities at Linköping University, GOTO10, Foocafe and more"
 />
 
-<h2 class="section-header">Upcoming Events</h2>
-
-<ArticleGroup layout="thin">
+<ArticleGroup layout="thin" h1="Upcoming Events">
 	<Article>
 		<p>There are currently no upcoming events...</p>
 	</Article>
 </ArticleGroup>
 
-<h2 class="section-header">Previous Events</h2>
-
-<ArticleGroup layout="thin">
+<ArticleGroup layout="thin" h1="Previous Events">
 	<Article translucent>
 		<h1>Annual Meeting</h1>
 		<enhanced:img src={acas} alt="ACAS at Linköping University" />
@@ -221,22 +217,6 @@
 
 		img {
 			height: 2rem;
-		}
-	}
-
-	.section-header {
-		font-size: 1.75rem;
-		color: color.$green-2;
-		max-width: min(36rem, calc(100% - 6rem));
-
-		@include mixin.on-mobile() {
-			margin: 1rem 1.25rem;
-		}
-
-		@include mixin.on-desktop() {
-			margin-top: 3rem;
-			margin-bottom: -2rem;
-			margin-left: calc(50% - min(18rem, 50% - 3rem) - 1.25rem); // This feels very hacky
 		}
 	}
 </style>
