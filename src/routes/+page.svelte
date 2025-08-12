@@ -13,7 +13,6 @@
 	import logisticsImg from "$lib/images/2025-2026/contacts/wilmer_s.jpg?enhanced";
 	import eventManagerImg from "$lib/images/2025-2026/contacts/tove_h.jpg?enhanced";
 	import relationsImg from "$lib/images/2025-2026/contacts/anton_o.jpg?enhanced";
-	import cashierImg from "$lib/images/2025-2026/contacts/william_m.jpg?enhanced";
 	import boardMemberImg from "$lib/images/2025-2026/contacts/tom_e.jpg?enhanced";
 	import mascotImg from "$lib/images/contacts/torbjorn_h.png?enhanced";
 </script>
@@ -123,7 +122,6 @@
 			hackerTag="windis"
 			position="Cashier"
 			email="kassor@lithehax.se"
-			image={cashierImg}
 		/>
 		<ContactCard
 			fullName="Torbjörn Hackström"
