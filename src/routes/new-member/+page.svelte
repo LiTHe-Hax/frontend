@@ -1,7 +1,8 @@
 <script lang="ts">
+	import Article from "$lib/components/Article.svelte";
+	import ArticleGroup from "$lib/components/ArticleGroup.svelte";
 	import FormSubmit from "$lib/components/FormSubmit.svelte";
 	import FormField from "$lib/components/FormField.svelte";
-	import Section from "$lib/components/Section.svelte";
 	import PageHead from "$lib/components/PageHead.svelte";
 	import { createMember } from "$lib/api/member";
 	import type { AxiosError } from "axios";
@@ -71,38 +72,40 @@
 	description="Join LiTHe Hax and gain access to exclusive events, resources, and updates - become a member today!"
 />
 
-<Section isThin>
-	<h1>Become a member</h1>
-	<p>
-		Join LiTHe Hax and become a member! As a member, you'll gain access to exclusive events,
-		resources, and updates about our organization's activities. Once your membership is approved by
-		our board, we will contact you with further details.
-	</p>
+<ArticleGroup layout="thin">
+	<Article>
+		<h1>Become a member</h1>
+		<p>
+			Join LiTHe Hax and become a member! As a member, you'll gain access to exclusive events,
+			resources, and updates about our organization's activities. Once your membership is approved
+			by our board, we will contact you with further details.
+		</p>
 
-	<form onsubmit={requestMembership}>
-		<FormField name="firstName" label="First name" type="text" required error={firstNameError} />
-		<FormField name="lastName" label="Last name" type="text" required error={lastNameError} />
-		<FormField name="email" label="Email" type="email" required error={emailError} />
-		<FormField
-			name="membershipType"
-			label="Membership type"
-			type="select"
-			required
-			error={membershipTypeError}
-		>
-			<option value="">--Please select a membership type--</option>
-			<option value="student">Student</option>
-			<option value="non-student">Non-student</option>
-		</FormField>
-		<FormSubmit disabled={isSubmitting}>Apply for membership</FormSubmit>
-	</form>
+		<form onsubmit={requestMembership}>
+			<FormField name="firstName" label="First name" type="text" required error={firstNameError} />
+			<FormField name="lastName" label="Last name" type="text" required error={lastNameError} />
+			<FormField name="email" label="Email" type="email" required error={emailError} />
+			<FormField
+				name="membershipType"
+				label="Membership type"
+				type="select"
+				required
+				error={membershipTypeError}
+			>
+				<option value="">--Please select a membership type--</option>
+				<option value="student">Student</option>
+				<option value="non-student">Non-student</option>
+			</FormField>
+			<FormSubmit disabled={isSubmitting}>Apply for membership</FormSubmit>
+		</form>
 
-	{#if isSuccessful}
-		<p class="success-msg">Successfully applied for a membership!</p>
-	{:else if errorMessage !== ""}
-		<p class="error-msg">{errorMessage}</p>
-	{/if}
-</Section>
+		{#if isSuccessful}
+			<p class="success-msg">Successfully applied for a membership!</p>
+		{:else if errorMessage !== ""}
+			<p class="error-msg">{errorMessage}</p>
+		{/if}
+	</Article>
+</ArticleGroup>
 
 <style lang="scss">
 	@use "$lib/styles/color";

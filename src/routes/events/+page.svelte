@@ -1,5 +1,6 @@
 <script lang="ts">
-	import Section from "$lib/components/Section.svelte";
+	import Article from "$lib/components/Article.svelte";
+	import ArticleGroup from "$lib/components/ArticleGroup.svelte";
 	import cyberRoom from "$lib/images/2024-2025/events/liu_ctf/cyber_room.jpg?enhanced";
 	import sickLogo from "$lib/images/sponsors/sick_logo.png?enhanced";
 	import sectraLogo from "$lib/images/sponsors/sectra_logo.png?enhanced";
@@ -19,17 +20,15 @@
 	description="LiTHe Hax events including Annual Meeting, CTF competition, workshops, and networking opportunities at Linköping University, GOTO10, Foocafe and more"
 />
 
-<h2 class="section-header">Upcoming Events</h2>
+<ArticleGroup layout="thin" h1="Upcoming Events">
+	<Article>
+		<p>There are currently no upcoming events...</p>
+	</Article>
+</ArticleGroup>
 
-<Section isThin>
-	<p>There are currently no upcoming events...</p>
-</Section>
-
-<h2 class="section-header">Previous Events</h2>
-
-<Section isThin>
-	<div class="past-event">
-		<h1>Annual Meeting</h1>
+<ArticleGroup layout="thin" h1="Previous Events">
+	<Article translucent>
+		<h2>Annual Meeting</h2>
 		<enhanced:img src={acas} alt="ACAS at Linköping University" />
 		<p>
 			We will be holding our annual meeting soon, which you're very welcome to attend! During the
@@ -90,12 +89,10 @@
 				link={asset("/documents/2024-2025/events/annual_meeting/motions_and_propositions.pdf")}
 			/>
 		</p>
-	</div>
-</Section>
+	</Article>
 
-<Section isThin>
-	<div class="past-event">
-		<h1>Foo Bar at Foo Café</h1>
+	<Article translucent>
+		<h2>Foo Bar at Foo Café</h2>
 
 		<enhanced:img src={foobar} alt="Foo Bar at Foo Café" />
 		<p>
@@ -122,12 +119,10 @@
 			<enhanced:img src={goto10Logo} alt="Goto 10 logo" />
 			<img src={fooCafeLogo} alt="Foo Café logo" />
 		</div>
-	</div>
-</Section>
+	</Article>
 
-<Section isThin>
-	<div class="past-event">
-		<h1>LiU CTF</h1>
+	<Article translucent>
+		<h2>LiU CTF</h2>
 
 		<enhanced:img src={cyberRoom} alt="Cybersecurity Room" />
 		<p>
@@ -163,12 +158,10 @@
 			<enhanced:img src={sectraLogo} alt="sectra logo" />
 			<enhanced:img src={sylogLogo} alt="sylog logo" />
 		</div>
-	</div>
-</Section>
+	</Article>
 
-<Section isThin>
-	<div class="past-event">
-		<h1>Workshop</h1>
+	<Article translucent>
+		<h2>Workshop</h2>
 		<enhanced:img src={studenthuset} alt="Studenthuset" />
 		<p>
 			We held a workshop in preparation for our CTF. During the workshop, we explained and showcased
@@ -203,8 +196,8 @@
 			<enhanced:img src={sickLogo} alt="sick logo" />
 			<enhanced:img src={sectraLogo} alt="sectra logo" />
 		</div>
-	</div>
-</Section>
+	</Article>
+</ArticleGroup>
 
 <style lang="scss">
 	@use "$lib/styles/color";
@@ -224,34 +217,6 @@
 
 		img {
 			height: 2rem;
-		}
-	}
-
-	.past-event {
-		opacity: 0.5;
-
-		img {
-			filter: saturate(50%);
-		}
-
-		h1 {
-			margin-top: 0;
-		}
-	}
-
-	.section-header {
-		font-size: 1.75rem;
-		color: color.$green-2;
-		max-width: min(36rem, calc(100% - 6rem));
-
-		@include mixin.on-mobile() {
-			margin: 1rem 1.25rem;
-		}
-
-		@include mixin.on-desktop() {
-			margin-top: 3rem;
-			margin-bottom: -2rem;
-			margin-left: calc(50% - min(18rem, 50% - 3rem) - 1.25rem); // This feels very hacky
 		}
 	}
 </style>

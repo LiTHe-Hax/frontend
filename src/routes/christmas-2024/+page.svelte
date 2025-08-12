@@ -1,5 +1,6 @@
 <script lang="ts">
-	import Section from "$lib/components/Section.svelte";
+	import Article from "$lib/components/Article.svelte";
+	import ArticleGroup from "$lib/components/ArticleGroup.svelte";
 	import PageHead from "$lib/components/PageHead.svelte";
 
 	type LeaderboardRow = [string, string];
@@ -59,33 +60,35 @@
 	description="Leaderboard for the LiTHe Hax Christmas CTF 2024 competition."
 />
 
-<Section isThin>
-	<h1>Christmas CTF 2024 Leaderboard</h1>
-	{#if hasError}
-		<p>Could not load leaderboard, try again later.</p>
-	{:else if leaderboardRows === undefined}
-		<p>Loading leaderboard...</p>
-	{:else}
-		<table>
-			<thead>
-				<tr>
-					<td>#</td>
-					<td>Name</td>
-					<td>Time Cleared</td>
-				</tr>
-			</thead>
-			<tbody>
-				{#each leaderboardRows as row, i (i)}
+<ArticleGroup layout="thin">
+	<Article>
+		<h1>Christmas CTF 2024 Leaderboard</h1>
+		{#if hasError}
+			<p>Could not load leaderboard, try again later.</p>
+		{:else if leaderboardRows === undefined}
+			<p>Loading leaderboard...</p>
+		{:else}
+			<table>
+				<thead>
 					<tr>
-						<td>{i + 1}</td>
-						<td>{row[0]}</td>
-						<td>{row[1]}</td>
+						<td>#</td>
+						<td>Name</td>
+						<td>Time Cleared</td>
 					</tr>
-				{/each}
-			</tbody>
-		</table>
-	{/if}
-</Section>
+				</thead>
+				<tbody>
+					{#each leaderboardRows as row, i (i)}
+						<tr>
+							<td>{i + 1}</td>
+							<td>{row[0]}</td>
+							<td>{row[1]}</td>
+						</tr>
+					{/each}
+				</tbody>
+			</table>
+		{/if}
+	</Article>
+</ArticleGroup>
 
 <style lang="scss">
 	@use "$lib/styles/color";
