@@ -27,11 +27,11 @@
 </svelte:head>
 
 <header class="mobile">
-	<button onclick={toggleNav}>
+	<button onclick={toggleNav} aria-label="navigation">
 		<i class={["fa-solid", "fa-bars"]}></i>
 	</button>
 	<img src={logo} alt="logo" />
-	<button style="visibility: hidden;">
+	<button style="visibility: hidden;" aria-label="navigation">
 		<i class={["fa-solid", "fa-bars"]}></i>
 	</button>
 
