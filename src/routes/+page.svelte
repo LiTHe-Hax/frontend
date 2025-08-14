@@ -33,14 +33,20 @@
 			participate in LiTHe Hax's activities. The association was founded on March 29, 2024.
 		</p>
 		<div class={["social-medias", "fa-width-auto"]}>
-			<a class={["fa-brands", "fa-discord"]} href="https://discord.gg/UykWT8W899"></a>
+			<a
+				class={["fa-brands", "fa-discord"]}
+				href="https://discord.gg/UykWT8W899"
+				aria-label="discord"
+			></a>
 			<a
 				class={["fa-brands", "fa-facebook"]}
 				href="https://www.facebook.com/profile.php?id=61567434623373"
+				aria-label="facebook"
 			></a>
 			<a
 				class={["fa-brands", "fa-instagram"]}
 				href="https://www.instagram.com/lithehax?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+				aria-label="instagram"
 			></a>
 		</div>
 
