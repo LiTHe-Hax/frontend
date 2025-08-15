@@ -22,7 +22,81 @@
 
 <ArticleGroup layout="thin" h1="Upcoming Events">
 	<Article>
-		<p>There are currently no upcoming events...</p>
+		<h2>CTF Committee Recruitment</h2>
+		<!-- TODO: add image -->
+		<p>
+			We're looking for eight new members to join our CTF committee! As part of the team you'll help
+			design challenges, organize events and contribute to the local cybersecurity community.
+		</p>
+		<p>Keep an eye out for more information on our social media accounts.</p>
+		<p>
+			<strong>Date & time:</strong> August 25 - September 7
+		</p>
+	</Article>
+	<Article>
+		<h2>MiniCTF with Foo Café</h2>
+		<!-- TODO: add image -->
+		<p>
+			Join us for some laid back CTF hacking, networking and free food & drinks! Bring your laptop
+			and solve beginner-friendly challenges from PicoCTF with us, at your own pace. We'll also give
+			a short intro to LiTHe Hax and what's going on within the organization, currently.
+		</p>
+		<p>
+			<strong>Date & time:</strong> August 26
+			<br />
+			<strong>Location:</strong>
+			<a href="https://maps.app.goo.gl/LNrr7CWQWwaH3deJ9">
+				Goto 10 Linköping (Teknikringen 7, 583 30 Linköping)
+			</a>
+		</p>
+	</Article>
+	<Article>
+		<h2>Live Hack with Cyberly</h2>
+		<!-- TODO: add image -->
+		<p>
+			Together with Norrköping Municipality and EnlightSec, we're doing a live demonstration of real
+			world penetration testing, showing how hackers could break into Goto 10. Fika provided on
+			site.
+		</p>
+		<p>
+			<strong>Date & time:</strong> September 4
+			<br />
+			<strong>Location:</strong>
+			<a href="https://maps.app.goo.gl/LNrr7CWQWwaH3deJ9">
+				Goto 10 Linköping (Teknikringen 7, 583 30 Linköping)
+			</a>
+		</p>
+	</Article>
+	<Article>
+		<h2>IEEE CTF</h2>
+		<!-- TODO: add image -->
+		<p>
+			We're proud to present a brand new CTF event in collaboration with IEEE, especially designed
+			for newcomers! Whether it's your first time or you just want a more casual experience, this is
+			the perfect entry point. We're providing free food, snacks and drinks.
+		</p>
+		<p>
+			<strong>Date & time:</strong> November 1
+			<br />
+			<strong>Location:</strong>
+			<a
+				href="https://use.mazemap.com/?utm_medium=longurl#v=1&config=liu&campusid=742&zlevel=2&center=15.577523,58.398407&zoom=17.9&sharepoitype=identifier&sharepoi=E0007002%3A227A"
+			>
+				B-huset (Campus Valla, Linköping University)
+			</a>
+		</p>
+	</Article>
+	<Article>
+		<h2>LiU CTF</h2>
+		<!-- TODO: add image -->
+		<p>
+			Our flagship Capture the Flag competition returns! LiU CTF will take place in the university's
+			cybersecurity lab, featuring challenges across categories like reverse engineering, web,
+			crypto and forensics. Open to all skill levels. Free food and snacks throughout the day.
+		</p>
+		<p>
+			<strong>Date & time:</strong> March 7
+		</p>
 	</Article>
 </ArticleGroup>
 
