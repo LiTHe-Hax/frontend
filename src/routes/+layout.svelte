@@ -21,19 +21,24 @@
 	}
 </script>
 
+{#snippet hamburgerSvg()}
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+		<!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+		<path
+			d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+		/>
+	</svg>
+{/snippet}
+
 <svelte:head>
 	<link rel="canonical" href={data.canonicalHref} />
 	<meta property="og:url" content={data.canonicalHref} />
 </svelte:head>
 
 <header class="mobile">
-	<button onclick={toggleNav} aria-label="navigation">
-		<i class={["fa-solid", "fa-bars"]}></i>
-	</button>
+	<button onclick={toggleNav}>{@render hamburgerSvg()}</button>
 	<img src={logo} alt="logo" />
-	<button style="visibility: hidden;" aria-label="navigation">
-		<i class={["fa-solid", "fa-bars"]}></i>
-	</button>
+	<button style="visibility: hidden;">{@render hamburgerSvg()}</button>
 
 	<div
 		class={"nav-backdrop " + (navIsOpen ? "open" : "closed")}
@@ -44,6 +49,7 @@
 		<a href={resolve("/")} onclick={toggleNav}>Home</a>
 		<a href={resolve("/new-member")} onclick={toggleNav}>Member</a>
 		<a href={resolve("/events")} onclick={toggleNav}>Events</a>
+		<a href={resolve("/hacking-resources")} onclick={toggleNav}>Hacking resources</a>
 	</nav>
 </header>
 
@@ -53,6 +59,7 @@
 		<a href={resolve("/")}>Home</a>
 		<a href={resolve("/new-member")}>Member</a>
 		<a href={resolve("/events")}>Events</a>
+		<a href={resolve("/hacking-resources")}>Hacking resources</a>
 	</nav>
 </header>
 
@@ -87,15 +94,17 @@
 			}
 
 			button {
-				$padding: 1rem;
-
 				border: 0;
+				padding: 1rem;
 				width: $header-height;
 				height: $header-height;
 				background-color: transparent;
-				color: color.$green-2;
-				font-size: calc($header-height - 2 * $padding);
-				line-height: 1;
+
+				svg {
+					width: 100%;
+					height: 100%;
+					fill: color.$green-2;
+				}
 			}
 
 			.nav-backdrop {
