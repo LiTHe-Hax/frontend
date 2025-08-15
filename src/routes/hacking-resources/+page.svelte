@@ -13,10 +13,8 @@
 	<Article>
 		<h1>Hacking resources</h1>
 		<p>
-			Here are some resources to help you with ethical hacking. Whether you're a beginner or an
-			experienced hacker, these resources will provide you with valuable information and tools. The
-			resources are intended for educational purposes only. Always ensure you have permission before
-			testing or hacking any system.
+			Here are some hacking resources to get you started. The resources are intended for educational
+			purposes only. Always ensure you have permission before testing or hacking any system.
 		</p>
 		<div class="card">
 			<h3>Legal and policy information</h3>
