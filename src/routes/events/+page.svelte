@@ -13,6 +13,13 @@
 	import fooCafeLogo from "$lib/images/sponsors/foo_cafe_logo.svg";
 	import acas from "$lib/images/2024-2025/events/annual_meeting/acas.png?enhanced";
 	import PageHead from "$lib/components/PageHead.svelte";
+	import cyberlyLiveHack from "$lib/images/2025-2026/events/cyberly_live_hack/cyberly_live_hack.jpg?enhanced";
+	import fooCafeMiniCtf from "$lib/images/2025-2026/events/foo_cafe_minictf/foo_cafe_minictf.jpg?enhanced";
+	import ieeeCtf from "$lib/images/2025-2026/events/ieee_ctf/ieee_ctf.jpg?enhanced";
+	import liuCtf2026 from "$lib/images/2025-2026/events/liu_ctf/liu_ctf_2026.jpg?enhanced";
+	import ieeeLogo from "$lib/images/sponsors/ieee.svg";
+	import liuLogo from "$lib/images/sponsors/liu_primary.svg";
+	import lspLogo from "$lib/images/sponsors/linkoping_science_park.png";
 </script>
 
 <PageHead
@@ -35,7 +42,7 @@
 	</Article>
 	<Article>
 		<h2>MiniCTF with Foo Café</h2>
-		<!-- TODO: add image -->
+		<enhanced:img src={fooCafeMiniCtf} alt="Poster for MiniCTF with Foo Café" />
 		<p>
 			Join us for some laid back CTF hacking, networking and free food & drinks! Bring your laptop
 			and solve beginner-friendly challenges from PicoCTF with us, at your own pace. We'll also give
@@ -49,10 +56,15 @@
 				Goto 10 Linköping (Teknikringen 7, 583 30 Linköping)
 			</a>
 		</p>
+
+		<hr />
+		<div class="sponsor-logos">
+			<img src={fooCafeLogo} alt="Foo Café logo" />
+		</div>
 	</Article>
 	<Article>
 		<h2>Live Hack with Cyberly</h2>
-		<!-- TODO: add image -->
+		<enhanced:img src={cyberlyLiveHack} alt="Poster for Live Hack with Cyberly" />
 		<p>
 			Together with Norrköping Municipality and EnlightSec, we're doing a live demonstration of real
 			world penetration testing, showing how hackers could break into Goto 10. Fika provided on
@@ -66,10 +78,15 @@
 				Goto 10 Linköping (Teknikringen 7, 583 30 Linköping)
 			</a>
 		</p>
+
+		<hr />
+		<div class="sponsor-logos">
+			<img src={lspLogo} alt="Linköping Science Park logo" />
+		</div>
 	</Article>
 	<Article>
 		<h2>IEEE CTF</h2>
-		<!-- TODO: add image -->
+		<enhanced:img src={ieeeCtf} alt="Poster for IEEE CTF" />
 		<p>
 			We're proud to present a brand new CTF event in collaboration with IEEE, especially designed
 			for newcomers! Whether it's your first time or you just want a more casual experience, this is
@@ -85,10 +102,15 @@
 				B-huset (Campus Valla, Linköping University)
 			</a>
 		</p>
+
+		<hr />
+		<div class="sponsor-logos">
+			<img src={ieeeLogo} alt="IEEE logo" />
+		</div>
 	</Article>
 	<Article>
 		<h2>LiU CTF</h2>
-		<!-- TODO: add image -->
+		<enhanced:img src={liuCtf2026} alt="Poster for LiU CTF" />
 		<p>
 			Our flagship Capture the Flag competition returns! LiU CTF will take place in the university's
 			cybersecurity lab, featuring challenges across categories like reverse engineering, web,
@@ -97,6 +119,11 @@
 		<p>
 			<strong>Date & time:</strong> March 7
 		</p>
+
+		<hr />
+		<div class="sponsor-logos">
+			<img src={liuLogo} alt="Linköping University logo" />
+		</div>
 	</Article>
 </ArticleGroup>
 
