@@ -44,6 +44,7 @@
 		<a href={resolve("/")} onclick={toggleNav}>Home</a>
 		<a href={resolve("/new-member")} onclick={toggleNav}>Member</a>
 		<a href={resolve("/events")} onclick={toggleNav}>Events</a>
+		<a href={resolve("/hacking-resources")} onclick={toggleNav}>Hacking resources</a>
 	</nav>
 </header>
 
@@ -53,6 +54,7 @@
 		<a href={resolve("/")}>Home</a>
 		<a href={resolve("/new-member")}>Member</a>
 		<a href={resolve("/events")}>Events</a>
+		<a href={resolve("/hacking-resources")}>Hacking resources</a>
 	</nav>
 </header>
 
