@@ -17,6 +17,7 @@
 	import fooCafeMiniCtf from "$lib/images/2025-2026/events/foo_cafe_minictf/foo_cafe_minictf.jpg?enhanced";
 	import ieeeCtf from "$lib/images/2025-2026/events/ieee_ctf/ieee_ctf.jpg?enhanced";
 	import liuCtf2026 from "$lib/images/2025-2026/events/liu_ctf/liu_ctf_2026.jpg?enhanced";
+	import recruiting2025 from "$lib/images/2025-2026/events/recruiting/recruiting_2025.png?enhanced";
 	import ieeeLogo from "$lib/images/sponsors/ieee.svg";
 	import liuLogo from "$lib/images/sponsors/liu_primary.svg";
 	import lspLogo from "$lib/images/sponsors/linkoping_science_park.png";
@@ -30,7 +31,7 @@
 <ArticleGroup layout="thin" h1="Upcoming Events">
 	<Article>
 		<h2>CTF Committee Recruitment</h2>
-		<!-- TODO: add image -->
+		<enhanced:img src={recruiting2025} alt="Poster for CTF-committee recruitment" />
 		<p>
 			We're looking for eight new members to join our CTF committee! As part of the team you'll help
 			design challenges, organize events and contribute to the local cybersecurity community.
