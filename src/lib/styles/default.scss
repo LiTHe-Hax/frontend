@@ -8,7 +8,7 @@ body {
 	padding: 0;
 	background-color: color.$black-1;
 	color: color.$white;
-	font-family: sans-serif;
+	font-family: "Fira Sans", sans-serif;
 }
 
 a {
@@ -50,6 +50,12 @@ h6 {
 
 label {
 	color: color.$green-2;
+}
+
+input,
+select,
+button {
+	font-family: inherit;
 }
 
 input,
