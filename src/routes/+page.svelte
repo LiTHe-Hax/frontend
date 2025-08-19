@@ -111,7 +111,7 @@
 			<ContactCard
 				fullName="William Minidis"
 				hackerTag="windis"
-				position="Cashier"
+				position="Treasurer"
 				email="kassor@lithehax.se"
 			/>
 			<ContactCard
