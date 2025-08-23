@@ -23,7 +23,8 @@
 	import lspLogo from "$lib/images/sponsors/linkoping_science_park.png";
 	import FormSubmit from "$lib/components/FormSubmit.svelte";
 
-	const committeeLink = "https://fake.temporary.url";
+	const committeeLink =
+		"https://docs.google.com/forms/d/e/1FAIpQLSfmlLMOlfm_nPs5saphSt7MscJoG7brlTIJqtktCN99og6a9Q/viewform?usp=dialog";
 	const committeeEndDate = new Date(2025, 8, 7);
 </script>
 
