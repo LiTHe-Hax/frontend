@@ -21,6 +21,11 @@
 	import ieeeLogo from "$lib/images/sponsors/ieee.svg";
 	import liuLogo from "$lib/images/sponsors/liu_primary.svg";
 	import lspLogo from "$lib/images/sponsors/linkoping_science_park.png";
+	import FormSubmit from "$lib/components/FormSubmit.svelte";
+
+	const committeeLink =
+		"https://docs.google.com/forms/d/e/1FAIpQLSfmlLMOlfm_nPs5saphSt7MscJoG7brlTIJqtktCN99og6a9Q/viewform?usp=dialog";
+	const committeeEndDate = new Date(2025, 8, 7);
 </script>
 
 <PageHead
@@ -40,6 +45,12 @@
 		<p>
 			<strong>Date & time:</strong> August 25 - September 7
 		</p>
+
+		{#if new Date(Date.now()) <= committeeEndDate}
+			<!-- TODO: Using FormSubmit in this way is bad, since this is not a form. -->
+			<!--       Refactor this when refactoring forms and input elements. -->
+			<a class="committee-link" href={committeeLink}><FormSubmit>Apply to committee</FormSubmit></a>
+		{/if}
 	</Article>
 	<Article>
 		<h2>MiniCTF with Foo Café</h2>
@@ -320,5 +331,12 @@
 		img {
 			height: 2rem;
 		}
+	}
+
+	.committee-link {
+		// TODO: Necessary to make the FormSubmit fill up the width.
+		//       Refactor this when refactoring forms and input elements.
+		display: flex;
+		flex-direction: column;
 	}
 </style>
