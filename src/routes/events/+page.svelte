@@ -21,7 +21,6 @@
 	import ieeeLogo from "$lib/images/sponsors/ieee.svg";
 	import liuLogo from "$lib/images/sponsors/liu_primary.svg";
 	import lspLogo from "$lib/images/sponsors/linkoping_science_park.png";
-	import FormSubmit from "$lib/components/FormSubmit.svelte";
 
 	const committeeLink =
 		"https://docs.google.com/forms/d/e/1FAIpQLSfmlLMOlfm_nPs5saphSt7MscJoG7brlTIJqtktCN99og6a9Q/viewform?usp=dialog";
@@ -47,9 +46,7 @@
 		</p>
 
 		{#if new Date(Date.now()) <= committeeEndDate}
-			<!-- TODO: Using FormSubmit in this way is bad, since this is not a form. -->
-			<!--       Refactor this when refactoring forms and input elements. -->
-			<a class="committee-link" href={committeeLink}><FormSubmit>Apply to committee</FormSubmit></a>
+			<a class="committee-link" href={committeeLink}>Apply to committee</a>
 		{/if}
 	</Article>
 	<Article>
@@ -340,9 +337,24 @@
 	}
 
 	.committee-link {
-		// TODO: Necessary to make the FormSubmit fill up the width.
-		//       Refactor this when refactoring forms and input elements.
-		display: flex;
-		flex-direction: column;
+		@include mixin.unified-transition(150ms, ease-out, background-color, color, transform);
+
+		display: block;
+		border: 0;
+		padding: 0.5rem;
+		border-radius: 0.25rem;
+		background-color: color.$gray-1;
+		color: color.$green-2;
+		box-shadow: 0 2px 4px 0 color.$shadow;
+		font-size: 1em;
+		font-weight: bold;
+		text-align: center;
+		transform: scaley(1);
+
+		&:hover {
+			background-color: color.$green-2;
+			color: color.$gray-1;
+			transform: scaley(1.1);
+		}
 	}
 </style>

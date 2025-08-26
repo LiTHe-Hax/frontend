@@ -1,5 +1,4 @@
 <script lang="ts">
-	import FormSubmit from "$lib/components/FormSubmit.svelte";
 	import FormField from "$lib/components/FormField.svelte";
 	import { createMember } from "$lib/api/member";
 	import type { AxiosError } from "axios";
@@ -79,7 +78,7 @@
 		<option value="student">Student</option>
 		<option value="non-student">Non-student</option>
 	</FormField>
-	<FormSubmit disabled={isSubmitting}>Apply for membership</FormSubmit>
+	<button type="submit" disabled={isSubmitting}>Apply for membership</button>
 </form>
 
 {#if isSuccessful}
