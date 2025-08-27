@@ -9,8 +9,8 @@
 		email?: string;
 		image?: Picture;
 	};
-	let { fullName, hackerTag, position, email, image }: Props = $props();
 
+	const { fullName, hackerTag, position, email, image }: Props = $props();
 	const effectiveImage = $derived(image ? image : placeholderImg);
 </script>
 
