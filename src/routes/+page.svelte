@@ -89,7 +89,7 @@
 			/>
 			<ContactCard
 				fullName="Wilmer Segerstedt"
-				hackerTag="airless"
+				hackerTag="wlmr"
 				position="Logistics"
 				email="wilmer.segerstedt@lithehax.se"
 				image={logisticsImg}
