@@ -1,18 +1,16 @@
 <script lang="ts">
+	import { asset } from "$app/paths";
+
 	import Article from "$lib/components/Article.svelte";
 	import ArticleGroup from "$lib/components/ArticleGroup.svelte";
-	import cyberRoom from "$lib/images/2024-2025/events/liu_ctf/cyber_room.jpg?enhanced";
-	import sickLogo from "$lib/images/sponsors/sick_logo.png?enhanced";
-	import sectraLogo from "$lib/images/sponsors/sectra_logo.png?enhanced";
-	import sylogLogo from "$lib/images/sponsors/sylog_logo.png?enhanced";
 	import DocumentLink from "$lib/components/DocumentLink.svelte";
-	import { asset } from "$app/paths";
+	import PageHead from "$lib/components/PageHead.svelte";
+
 	import studenthuset from "$lib/images/2024-2025/events/workshop/studenthuset.jpg?enhanced";
-	import foobar from "$lib/images/2024-2025/events/foo_cafe/goto_10_foyer.jpg?enhanced";
+	import goto10Foyer from "$lib/images/2024-2025/events/foo_cafe/goto_10_foyer.jpg?enhanced";
 	import goto10Logo from "$lib/images/sponsors/goto_10_logo.png?enhanced";
 	import fooCafeLogo from "$lib/images/sponsors/foo_cafe_logo.svg";
 	import acas from "$lib/images/2024-2025/events/annual_meeting/acas.png?enhanced";
-	import PageHead from "$lib/components/PageHead.svelte";
 	import cyberlyLiveHack from "$lib/images/2025-2026/events/cyberly_live_hack/cyberly_live_hack.jpg?enhanced";
 	import fooCafeMiniCtf from "$lib/images/2025-2026/events/foo_cafe_minictf/foo_cafe_minictf.jpg?enhanced";
 	import ieeeCtf from "$lib/images/2025-2026/events/ieee_ctf/ieee_ctf.jpg?enhanced";
@@ -21,6 +19,10 @@
 	import ieeeLogo from "$lib/images/sponsors/ieee.svg";
 	import liuLogo from "$lib/images/sponsors/liu_primary.svg";
 	import lspLogo from "$lib/images/sponsors/linkoping_science_park.png";
+	import cyberRoom from "$lib/images/2024-2025/events/liu_ctf/cyber_room.jpg?enhanced";
+	import sickLogo from "$lib/images/sponsors/sick_logo.png?enhanced";
+	import sectraLogo from "$lib/images/sponsors/sectra_logo.png?enhanced";
+	import sylogLogo from "$lib/images/sponsors/sylog_logo.png?enhanced";
 
 	const committeeLink =
 		"https://docs.google.com/forms/d/e/1FAIpQLSfmlLMOlfm_nPs5saphSt7MscJoG7brlTIJqtktCN99og6a9Q/viewform?usp=dialog";
@@ -210,7 +212,7 @@
 	<Article translucent>
 		<h2>Foo Bar at Foo Café</h2>
 
-		<enhanced:img src={foobar} alt="Foo Bar at Foo Café" />
+		<enhanced:img src={goto10Foyer} alt="Goto 10 foyer" />
 		<p>
 			Foo Café and LiTHe Hax recently teamed up for a cybersecurity evening focused on Capture the
 			Flag challenges. The event featured a brief introduction, a problem-solving lecture, and a
@@ -270,9 +272,9 @@
 
 		<hr />
 		<div class="sponsor-logos">
-			<enhanced:img src={sickLogo} alt="sick logo" />
-			<enhanced:img src={sectraLogo} alt="sectra logo" />
-			<enhanced:img src={sylogLogo} alt="sylog logo" />
+			<enhanced:img src={sickLogo} alt="Sick logo" />
+			<enhanced:img src={sectraLogo} alt="Sectra logo" />
+			<enhanced:img src={sylogLogo} alt="Sylog logo" />
 		</div>
 	</Article>
 
@@ -309,8 +311,8 @@
 
 		<hr />
 		<div class="sponsor-logos">
-			<enhanced:img src={sickLogo} alt="sick logo" />
-			<enhanced:img src={sectraLogo} alt="sectra logo" />
+			<enhanced:img src={sickLogo} alt="Sick logo" />
+			<enhanced:img src={sectraLogo} alt="Sectra logo" />
 		</div>
 	</Article>
 </ArticleGroup>
@@ -320,7 +322,7 @@
 	@use "$lib/styles/mixin";
 
 	img {
-		max-width: 100%;
+		width: 100%;
 	}
 
 	.sponsor-logos {
@@ -332,6 +334,7 @@
 		margin: 1rem 0;
 
 		img {
+			width: auto;
 			height: 2rem;
 		}
 	}

@@ -7,15 +7,15 @@
 	import DocumentLink from "$lib/components/DocumentLink.svelte";
 	import PageHead from "$lib/components/PageHead.svelte";
 
-	import chairmanImg from "$lib/images/2025-2026/contacts/tyson_h.jpg?enhanced";
-	import webmasterImg from "$lib/images/2025-2026/contacts/viktor_h.jpg?enhanced";
-	import secretaryImg from "$lib/images/2025-2026/contacts/david_s.png?enhanced";
 	import accountantImg from "$lib/images/2025-2026/contacts/adam_b.jpg?enhanced";
-	import logisticsImg from "$lib/images/2025-2026/contacts/wilmer_s.jpg?enhanced";
-	import eventManagerImg from "$lib/images/2025-2026/contacts/tove_h.jpg?enhanced";
-	import relationsImg from "$lib/images/2025-2026/contacts/anton_o.jpg?enhanced";
 	import boardMemberImg from "$lib/images/2025-2026/contacts/tom_e.jpg?enhanced";
+	import chairmanImg from "$lib/images/2025-2026/contacts/tyson_h.jpg?enhanced";
+	import eventManagerImg from "$lib/images/2025-2026/contacts/tove_h.jpg?enhanced";
+	import logisticsImg from "$lib/images/2025-2026/contacts/wilmer_s.jpg?enhanced";
 	import mascotImg from "$lib/images/contacts/torbjorn_h.png?enhanced";
+	import relationsImg from "$lib/images/2025-2026/contacts/anton_o.jpg?enhanced";
+	import secretaryImg from "$lib/images/2025-2026/contacts/david_s.png?enhanced";
+	import webmasterImg from "$lib/images/2025-2026/contacts/viktor_h.jpg?enhanced";
 </script>
 
 <PageHead
@@ -124,8 +124,11 @@
 		</div>
 
 		<h2>Organization details</h2>
-		<p><b>Organization Number:</b> 802547-1767</p>
-		<p><b>Adress:</b> LiTHe Hax, Kårallen, Universitetet, 581 83 Linköping</p>
+		<p>
+			<b>Organization Number:</b> 802547-1767
+			<br />
+			<b>Adress:</b> LiTHe Hax, Kårallen, Universitetet, 581 83 Linköping
+		</p>
 
 		<h3>Documents</h3>
 		<div class="document-list">
@@ -150,8 +153,8 @@
 
 		@include mixin.on-desktop() {
 			display: grid;
-			gap: 1rem;
 			grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
+			gap: 1rem;
 		}
 	}
 
@@ -165,7 +168,7 @@
 		display: flex;
 		flex-direction: row;
 		gap: 0.6rem;
-		font-size: 2rem;
 		line-height: 1;
+		font-size: 2rem;
 	}
 </style>
