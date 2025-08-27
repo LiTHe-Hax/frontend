@@ -1,24 +1,23 @@
 <script lang="ts">
 	import { resolve } from "$app/paths";
-	import type { Snippet } from "svelte";
-	import "$lib/styles/default.scss"; // This stylesheet affects the entire site.
-	import logo from "$lib/images/logos/header_logo.svg";
+	import type { Pathname } from "$app/types";
+	import type { LayoutProps } from "./$types";
 
-	interface LayoutProps {
-		children: Snippet;
-		data: {
-			canonicalHref: string;
-		};
-	}
+	import "$lib/styles/default.scss";
+	import headerLogo from "$lib/images/logos/header_logo.svg";
 
-	// In Runes mode, we extract our data using $props()
-	let { children, data } = $props() as LayoutProps;
+	const { children, data }: LayoutProps = $props();
 
-	let navIsOpen = $state(false);
+	let shouldShowNav = $state(false);
+	const toggleNav = () => (shouldShowNav = !shouldShowNav);
+	const closeNav = () => (shouldShowNav = !shouldShowNav);
 
-	function toggleNav() {
-		navIsOpen = !navIsOpen;
-	}
+	type NavEntry = { href: Pathname; label: string };
+	const navEntries: NavEntry[] = [
+		{ href: "/", label: "Home" },
+		{ href: "/new-member", label: "Member" },
+		{ href: "/events", label: "Events" },
+	];
 </script>
 
 <svelte:head>
@@ -30,33 +29,31 @@
 	<button onclick={toggleNav} aria-label="navigation">
 		<i class={["fa-solid", "fa-bars"]}></i>
 	</button>
-	<img src={logo} alt="logo" />
-	<button style="visibility: hidden;" aria-label="navigation">
+	<img src={headerLogo} alt="LiTHe Hax logo" />
+	<button style:visibility="hidden" aria-label="navigation">
 		<i class={["fa-solid", "fa-bars"]}></i>
 	</button>
 
-	<div
-		class={"nav-backdrop " + (navIsOpen ? "open" : "closed")}
-		onclick={toggleNav}
-		role="none"
-	></div>
-	<nav class={navIsOpen ? "open" : "closed"}>
-		<a href={resolve("/")} onclick={toggleNav}>Home</a>
-		<a href={resolve("/new-member")} onclick={toggleNav}>Member</a>
-		<a href={resolve("/events")} onclick={toggleNav}>Events</a>
+	<div class={["nav-backdrop", shouldShowNav && "open"]} onclick={closeNav} role="none"></div>
+	<nav class={[shouldShowNav && "open"]}>
+		{#each navEntries as navEntry (navEntry.href)}
+			<a href={resolve(navEntry.href)} onclick={closeNav}>{navEntry.label}</a>
+		{/each}
 	</nav>
 </header>
 
 <header class="desktop">
-	<img src={logo} alt="logo" />
+	<img src={headerLogo} alt="LiTHe Hax logo" />
 	<nav>
-		<a href={resolve("/")}>Home</a>
-		<a href={resolve("/new-member")}>Member</a>
-		<a href={resolve("/events")}>Events</a>
+		{#each navEntries as navEntry (navEntry.href)}
+			<a href={resolve(navEntry.href)}>{navEntry.label}</a>
+		{/each}
 	</nav>
 </header>
 
-<main>{@render children()}</main>
+<main>
+	{@render children()}
+</main>
 
 <style lang="scss">
 	@use "$lib/styles/color";
@@ -94,8 +91,11 @@
 				height: $header-height;
 				background-color: transparent;
 				color: color.$green-2;
+				box-shadow: unset;
 				font-size: calc($header-height - 2 * $padding);
 				line-height: 1;
+				transform: unset;
+				transition: unset;
 			}
 
 			.nav-backdrop {
@@ -107,15 +107,12 @@
 				bottom: 0;
 				right: 0;
 				background-color: rgba(0, 0, 0, 0.5);
+				opacity: 0;
+				visibility: hidden;
 
 				&.open {
 					opacity: 1;
 					visibility: visible;
-				}
-
-				&.closed {
-					opacity: 0;
-					visibility: hidden;
 				}
 			}
 
@@ -129,13 +126,10 @@
 				bottom: 0;
 				min-width: 13rem; // To not look ridiculously small
 				background-color: color.$black-1;
+				transform: translateX(-100%);
 
 				&.open {
 					transform: translateX(0%);
-				}
-
-				&.closed {
-					transform: translateX(-100%);
 				}
 
 				a {
@@ -168,14 +162,14 @@
 			nav {
 				display: flex;
 				flex-direction: row;
-				gap: 1rem;
 				justify-content: center;
+				gap: 1rem;
 
 				a {
 					@include mixin.unified-transition(150ms, ease, background-color, color, transform);
 
-					padding: 0.5rem 1rem;
 					border: 0.15rem solid color.$green-2;
+					padding: 0.5rem 1rem;
 					border-radius: 0.5rem;
 					background-color: color.$green-2;
 					color: color.$green-1;
@@ -191,9 +185,5 @@
 				}
 			}
 		}
-	}
-
-	main {
-		width: 100vw;
 	}
 </style>
