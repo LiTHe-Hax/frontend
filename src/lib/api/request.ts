@@ -1,4 +1,5 @@
 import axios from "axios";
+import type { Method } from "axios";
 import { dev } from "$app/environment";
 
 const DEVELOPMENT_URL = "http://localhost:8000/";
@@ -10,7 +11,6 @@ const instance = axios.create({
 	headers: { "Content-Type": "application/json" },
 });
 
-type Method = "get" | "post" | "put" | "patch" | "delete" | "head" | "options";
 type Json = unknown[] | { [key: string]: unknown };
 
 function request(url: string, method: Method, data?: Json) {
