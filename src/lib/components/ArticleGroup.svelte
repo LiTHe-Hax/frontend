@@ -2,12 +2,9 @@
 	import type { Snippet } from "svelte";
 
 	type Layout = "normal" | "thin";
+	type Props = { children: Snippet; h1?: string; layout?: Layout };
 
-	const {
-		children,
-		h1,
-		layout = "normal",
-	}: { children: Snippet; h1?: string; layout?: Layout } = $props();
+	const { children, h1, layout = "normal" }: Props = $props();
 </script>
 
 <div class={layout}>

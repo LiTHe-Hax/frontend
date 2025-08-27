@@ -1,14 +1,13 @@
 <script lang="ts">
 	type Props = { link: string };
-	let { link }: Props = $props();
 
-	function deriveLabel() {
-		let splitLink = link.split("/");
+	const { link }: Props = $props();
+
+	const label = $derived.by(() => {
+		const splitLink = link.split("/");
 		return splitLink[splitLink.length - 1];
-	}
-
-	const label = $derived(deriveLabel());
-	const icon = "📄"; // TODO: switch to SVG?
+	});
+	const icon = "📄"; // TODO(72): switch to SVG?
 </script>
 
 <span>
@@ -24,8 +23,8 @@
 	a {
 		display: inline-flex;
 		flex-direction: row;
-		gap: 0.2ch;
 		align-items: center;
+		gap: 0.2ch;
 		color: color.$white;
 		text-decoration: none;
 

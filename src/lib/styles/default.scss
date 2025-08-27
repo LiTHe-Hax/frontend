@@ -74,8 +74,8 @@ input[type="reset"],
 button {
 	@include mixin.unified-transition(150ms, ease-out, background-color, color, transform);
 
-	padding: 0.5rem;
 	border: 0;
+	padding: 0.5rem;
 	border-radius: 0.25rem;
 	background-color: color.$gray-1;
 	color: color.$green-2;

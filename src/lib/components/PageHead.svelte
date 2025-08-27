@@ -3,7 +3,7 @@
 	import type { Snippet } from "svelte";
 
 	type Props = {
-		children?: Snippet<[]>;
+		children?: Snippet;
 		title: string;
 		description: string;
 	};
@@ -21,7 +21,5 @@
 	<meta property="og:image:alt" content="LiTHe Hax" />
 	<meta property="og:site_name" content="LiTHe Hax" />
 	<meta property="og:type" content="website" />
-	{#if children}
-		{@render children()}
-	{/if}
+	{@render children?.()}
 </svelte:head>

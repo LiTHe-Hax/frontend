@@ -1,7 +1,9 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
 
-	const { children, translucent }: { children: Snippet; translucent?: boolean } = $props();
+	type Props = { children: Snippet; translucent?: boolean };
+
+	const { children, translucent }: Props = $props();
 </script>
 
 <article class={[translucent && "translucent"]}>
