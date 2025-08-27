@@ -1,33 +1,36 @@
 <script lang="ts">
-	import FormField from "$lib/components/FormField.svelte";
-	import { createMember } from "$lib/api/member";
 	import type { AxiosError } from "axios";
+
+	import { createMember } from "$lib/api/member";
+
+	import TextInput from "../inputs/TextInput.svelte";
+	import DropdownInput from "../inputs/DropdownInput.svelte";
+
+	let firstName = $state("");
+	let lastName = $state("");
+	let email = $state("");
+	let membershipType = $state("");
+
+	let firstNameError = $state("");
+	let lastNameError = $state("");
+	let emailError = $state("");
+	let membershipTypeError = $state("");
 
 	let isSubmitting = $state(false);
 	let isSuccessful = $state(false);
 	let errorMessage = $state("");
 
-	let firstNameError = $state<string | undefined>(undefined);
-	let lastNameError = $state<string | undefined>(undefined);
-	let emailError = $state<string | undefined>(undefined);
-	let membershipTypeError = $state<string | undefined>(undefined);
-
 	function requestMembership(e: SubmitEvent) {
 		e.preventDefault();
-		const formData = new FormData(e.target as HTMLFormElement);
-		const firstName = formData.get("firstName")!.toString();
-		const lastName = formData.get("lastName")!.toString();
-		const email = formData.get("email")!.toString();
-		const membershipType = formData.get("membershipType")!.toString();
 		const isStudent = membershipType === "student";
 
 		isSubmitting = true;
 		isSuccessful = false;
 		errorMessage = "";
-		firstNameError = undefined;
-		lastNameError = undefined;
-		emailError = undefined;
-		membershipTypeError = undefined;
+		firstNameError = "";
+		lastNameError = "";
+		emailError = "";
+		membershipTypeError = "";
 
 		createMember(firstName, lastName, email, isStudent)
 			.then(() => {
@@ -64,20 +67,26 @@
 </script>
 
 <form onsubmit={requestMembership}>
-	<FormField name="firstName" label="First name" type="text" required error={firstNameError} />
-	<FormField name="lastName" label="Last name" type="text" required error={lastNameError} />
-	<FormField name="email" label="Email" type="email" required error={emailError} />
-	<FormField
-		name="membershipType"
-		label="Membership type"
-		type="select"
+	<TextInput
+		type="text"
 		required
+		bind:value={firstName}
+		label="First name"
+		error={firstNameError}
+	/>
+	<TextInput type="text" required bind:value={lastName} label="Last name" error={lastNameError} />
+	<TextInput type="email" required bind:value={email} label="Email" error={emailError} />
+	<DropdownInput
+		options={[
+			{ value: "", label: "--Please select a membership type--" },
+			{ value: "student", label: "Student" },
+			{ value: "non-student", label: "Non-student" },
+		]}
+		required
+		bind:value={membershipType}
+		label="Membership Type"
 		error={membershipTypeError}
-	>
-		<option value="">--Please select a membership type--</option>
-		<option value="student">Student</option>
-		<option value="non-student">Non-student</option>
-	</FormField>
+	/>
 	<button type="submit" disabled={isSubmitting}>Apply for membership</button>
 </form>
 
