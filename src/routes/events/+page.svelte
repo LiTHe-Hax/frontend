@@ -272,7 +272,7 @@
 
 		<hr />
 		<div class="sponsor-logos">
-			<enhanced:img src={sickLogo} alt="Sick logo" />
+			<enhanced:img src={sickLogo} alt="SICK logo" />
 			<enhanced:img src={sectraLogo} alt="Sectra logo" />
 			<enhanced:img src={sylogLogo} alt="Sylog logo" />
 		</div>
@@ -311,7 +311,7 @@
 
 		<hr />
 		<div class="sponsor-logos">
-			<enhanced:img src={sickLogo} alt="Sick logo" />
+			<enhanced:img src={sickLogo} alt="SICK logo" />
 			<enhanced:img src={sectraLogo} alt="Sectra logo" />
 		</div>
 	</Article>
