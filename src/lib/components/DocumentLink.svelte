@@ -7,7 +7,7 @@
 		const splitLink = link.split("/");
 		return splitLink[splitLink.length - 1];
 	});
-	const icon = "📄"; // TODO: switch to SVG?
+	const icon = "📄"; // TODO(72): switch to SVG?
 </script>
 
 <span>
