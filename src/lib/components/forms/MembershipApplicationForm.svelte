@@ -5,6 +5,7 @@
 
 	import TextInput from "../inputs/TextInput.svelte";
 	import DropdownInput from "../inputs/DropdownInput.svelte";
+	import FormStatusOverlay from "./FormStatusOverlay.svelte";
 
 	let firstName = $state("");
 	let lastName = $state("");
@@ -17,7 +18,6 @@
 	let membershipTypeError = $state("");
 
 	let isSubmitting = $state(false);
-	let isSuccessful = $state(false);
 	let errorMessage = $state("");
 
 	function requestMembership(e: SubmitEvent) {
@@ -25,7 +25,6 @@
 		const isStudent = membershipType === "student";
 
 		isSubmitting = true;
-		isSuccessful = false;
 		errorMessage = "";
 		firstNameError = "";
 		lastNameError = "";
@@ -33,9 +32,6 @@
 		membershipTypeError = "";
 
 		createMember(firstName, lastName, email, isStudent)
-			.then(() => {
-				isSuccessful = true;
-			})
 			.catch((err: AxiosError) => {
 				if (err.response !== undefined) {
 					errorMessage = err.response.status.toString() + " " + err.response.statusText;
@@ -88,13 +84,8 @@
 		error={membershipTypeError}
 	/>
 	<button type="submit" disabled={isSubmitting}>Apply for membership</button>
+	<FormStatusOverlay {isSubmitting} {errorMessage} successMessage="Applied for a membership" />
 </form>
-
-{#if isSuccessful}
-	<p class="success-msg">Successfully applied for a membership!</p>
-{:else if errorMessage !== ""}
-	<p class="error-msg">{errorMessage}</p>
-{/if}
 
 <style lang="scss">
 	@use "$lib/styles/color";
@@ -104,6 +95,7 @@
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr 1fr 1fr;
 		gap: 0.8rem;
+		position: relative;
 
 		> :global(:nth-child(3)),
 		> :global(:nth-child(4)) {
@@ -114,15 +106,5 @@
 			grid-column: 1 / span 2;
 			align-self: flex-end;
 		}
-	}
-
-	.success-msg {
-		color: color.$green-2;
-		text-align: center;
-	}
-
-	.error-msg {
-		color: color.$red;
-		text-align: center;
 	}
 </style>
