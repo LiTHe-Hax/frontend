@@ -52,34 +52,6 @@
 		{/if}
 	</Article>
 	<Article>
-		<h2>MiniCTF with Foo Café</h2>
-		<enhanced:img src={fooCafeMiniCtf} alt="Poster for MiniCTF with Foo Café" />
-		<p>
-			Join us for some laid back CTF hacking, networking and free food & drinks! Bring your laptop
-			and solve beginner-friendly challenges from PicoCTF with us, at your own pace. We'll also give
-			a short intro to LiTHe Hax and what's going on within the organization, currently.
-		</p>
-		<p>
-			For more info about the event, go to the
-			<a href="https://www.goto10.se/event/foo-cafe-lithe-hax-save-the-date/">
-				Goto 10 event page
-			</a>.
-		</p>
-		<p>
-			<strong>Date & time:</strong> August 26, 17:00
-			<br />
-			<strong>Location:</strong>
-			<a href="https://maps.app.goo.gl/LNrr7CWQWwaH3deJ9">
-				Goto 10 Linköping (Teknikringen 7, 583 30 Linköping)
-			</a>
-		</p>
-
-		<hr />
-		<div class="sponsor-logos">
-			<img src={fooCafeLogo} alt="Foo Café logo" />
-		</div>
-	</Article>
-	<Article>
 		<h2>Live Hack with Cyberly</h2>
 		<enhanced:img src={cyberlyLiveHack} alt="Poster for Live Hack with Cyberly" />
 		<p>
@@ -145,6 +117,34 @@
 </ArticleGroup>
 
 <ArticleGroup layout="thin" h1="Previous Events">
+	<Article translucent>
+		<h2>MiniCTF with Foo Café</h2>
+		<enhanced:img src={fooCafeMiniCtf} alt="Poster for MiniCTF with Foo Café" />
+		<p>
+			Join us for some laid back CTF hacking, networking and free food & drinks! Bring your laptop
+			and solve beginner-friendly challenges from PicoCTF with us, at your own pace. We'll also give
+			a short intro to LiTHe Hax and what's going on within the organization, currently.
+		</p>
+		<p>
+			For more info about the event, go to the
+			<a href="https://www.goto10.se/event/foo-cafe-lithe-hax-save-the-date/">
+				Goto 10 event page
+			</a>.
+		</p>
+		<p>
+			<strong>Date & time:</strong> August 26, 17:00
+			<br />
+			<strong>Location:</strong>
+			<a href="https://maps.app.goo.gl/LNrr7CWQWwaH3deJ9">
+				Goto 10 Linköping (Teknikringen 7, 583 30 Linköping)
+			</a>
+		</p>
+
+		<hr />
+		<div class="sponsor-logos">
+			<img src={fooCafeLogo} alt="Foo Café logo" />
+		</div>
+	</Article>
 	<Article translucent>
 		<h2>Annual Meeting</h2>
 		<enhanced:img src={acas} alt="ACAS at Linköping University" />
