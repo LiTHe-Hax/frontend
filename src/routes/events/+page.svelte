@@ -60,7 +60,15 @@
 			site.
 		</p>
 		<p>
-			<strong>Date & time:</strong> September 4
+			For more info about the other speakers and the program, go to the
+			<a
+				href="https://linkopingsciencepark.se/event/fran-krav-till-handling-cybersakerhet-i-verkligheten/"
+			>
+				Linköping Science Park event page
+			</a>.
+		</p>
+		<p>
+			<strong>Date & time:</strong> September 4, 10:00-12:00
 			<br />
 			<strong>Location:</strong>
 			<a href="https://maps.app.goo.gl/LNrr7CWQWwaH3deJ9">
