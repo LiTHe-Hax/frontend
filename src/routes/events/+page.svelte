@@ -23,10 +23,6 @@
 	import sickLogo from "$lib/images/sponsors/sick_logo.png?enhanced";
 	import sectraLogo from "$lib/images/sponsors/sectra_logo.png?enhanced";
 	import sylogLogo from "$lib/images/sponsors/sylog_logo.png?enhanced";
-
-	const committeeLink =
-		"https://docs.google.com/forms/d/e/1FAIpQLSfmlLMOlfm_nPs5saphSt7MscJoG7brlTIJqtktCN99og6a9Q/viewform?usp=dialog";
-	const committeeEndDate = new Date(2025, 8, 7);
 </script>
 
 <PageHead
@@ -35,52 +31,6 @@
 />
 
 <ArticleGroup layout="thin" h1="Upcoming Events">
-	<Article>
-		<h2>CTF Committee Recruitment</h2>
-		<enhanced:img src={recruiting2025} alt="Poster for CTF-committee recruitment" />
-		<p>
-			We're looking for eight new members to join our CTF committee! As part of the team you'll help
-			design challenges, organize events and contribute to the local cybersecurity community.
-		</p>
-		<p>Keep an eye out for more information on our social media accounts.</p>
-		<p>
-			<strong>Date & time:</strong> August 25 - September 7
-		</p>
-
-		{#if new Date(Date.now()) <= committeeEndDate}
-			<a class="committee-link" href={committeeLink}>Apply to committee</a>
-		{/if}
-	</Article>
-	<Article>
-		<h2>Live Hack with Cyberly</h2>
-		<enhanced:img src={cyberlyLiveHack} alt="Poster for Live Hack with Cyberly" />
-		<p>
-			Together with Norrköping Municipality and EnlightSec, we're doing a live demonstration of real
-			world penetration testing, showing how hackers could break into Goto 10. Fika provided on
-			site.
-		</p>
-		<p>
-			For more info about the other speakers and the program, go to the
-			<a
-				href="https://linkopingsciencepark.se/event/fran-krav-till-handling-cybersakerhet-i-verkligheten/"
-			>
-				Linköping Science Park event page
-			</a>.
-		</p>
-		<p>
-			<strong>Date & time:</strong> September 4, 10:00-12:00
-			<br />
-			<strong>Location:</strong>
-			<a href="https://maps.app.goo.gl/LNrr7CWQWwaH3deJ9">
-				Goto 10 Linköping (Teknikringen 7, 583 30 Linköping)
-			</a>
-		</p>
-
-		<hr />
-		<div class="sponsor-logos">
-			<img src={lspLogo} alt="Linköping Science Park logo" />
-		</div>
-	</Article>
 	<Article>
 		<h2>IEEE CTF</h2>
 		<enhanced:img src={ieeeCtf} alt="Poster for IEEE CTF" />
@@ -125,6 +75,48 @@
 </ArticleGroup>
 
 <ArticleGroup layout="thin" h1="Previous Events">
+	<Article translucent>
+		<h2>CTF Committee Recruitment</h2>
+		<enhanced:img src={recruiting2025} alt="Poster for CTF-committee recruitment" />
+		<p>
+			We're looking for eight new members to join our CTF committee! As part of the team you'll help
+			design challenges, organize events and contribute to the local cybersecurity community.
+		</p>
+		<p>Keep an eye out for more information on our social media accounts.</p>
+		<p>
+			<strong>Date & time:</strong> August 25 - September 7
+		</p>
+	</Article>
+	<Article translucent>
+		<h2>Live Hack with Cyberly</h2>
+		<enhanced:img src={cyberlyLiveHack} alt="Poster for Live Hack with Cyberly" />
+		<p>
+			Together with Norrköping Municipality and EnlightSec, we're doing a live demonstration of real
+			world penetration testing, showing how hackers could break into Goto 10. Fika provided on
+			site.
+		</p>
+		<p>
+			For more info about the other speakers and the program, go to the
+			<a
+				href="https://linkopingsciencepark.se/event/fran-krav-till-handling-cybersakerhet-i-verkligheten/"
+			>
+				Linköping Science Park event page
+			</a>.
+		</p>
+		<p>
+			<strong>Date & time:</strong> September 4, 10:00-12:00
+			<br />
+			<strong>Location:</strong>
+			<a href="https://maps.app.goo.gl/LNrr7CWQWwaH3deJ9">
+				Goto 10 Linköping (Teknikringen 7, 583 30 Linköping)
+			</a>
+		</p>
+
+		<hr />
+		<div class="sponsor-logos">
+			<img src={lspLogo} alt="Linköping Science Park logo" />
+		</div>
+	</Article>
 	<Article translucent>
 		<h2>MiniCTF with Foo Café</h2>
 		<enhanced:img src={fooCafeMiniCtf} alt="Poster for MiniCTF with Foo Café" />
