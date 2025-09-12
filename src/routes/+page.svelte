@@ -60,7 +60,7 @@
 				image={chairmanImg}
 			/>
 			<ContactCard
-				fullName="David Smith"
+				fullName="David Rindsjö Smith"
 				hackerTag="smittydata"
 				position="Secretary"
 				email="sekreterare@lithehax.se"
