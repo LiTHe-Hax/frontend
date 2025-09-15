@@ -52,6 +52,10 @@
 		</div>
 
 		<h2>The Board</h2>
+		<p>
+			The board is responsible for communicating with partners and sponsors, arranging and marketing
+			events, as well as handling other administrative tasks.
+		</p>
 		<div class="contact-grid">
 			<ContactCard
 				fullName="Tyson Horvath"
@@ -126,6 +130,10 @@
 		</div>
 
 		<h2>The CTF Committee</h2>
+		<p>
+			The CTF committee is responsible for helping the board with arranging CTF events, as well as
+			designing exciting and challenging exercises for participants.
+		</p>
 		<div class="contact-grid">
 			<ContactCard
 				fullName="Tyson Horvath"
