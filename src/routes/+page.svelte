@@ -141,20 +141,10 @@
 </ArticleGroup>
 
 <style lang="scss">
-	@use "$lib/styles/mixin";
-
 	.contact-grid {
-		@include mixin.on-mobile() {
-			display: flex;
-			flex-direction: column;
-			gap: 1rem;
-		}
-
-		@include mixin.on-desktop() {
-			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
-			gap: 1rem;
-		}
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(min(26rem, 100%), 1fr));
+		gap: 1rem;
 	}
 
 	.document-list {
