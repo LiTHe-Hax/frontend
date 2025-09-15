@@ -51,7 +51,7 @@
 			></a>
 		</div>
 
-		<h2>Contact</h2>
+		<h2>The Board</h2>
 		<div class="contact-grid">
 			<ContactCard
 				fullName="Tyson Horvath"
@@ -122,6 +122,52 @@
 				position="Mascot"
 				email="maskot@lithehax.se"
 				image={mascotImg}
+			/>
+		</div>
+
+		<h2>The CTF Committee</h2>
+		<div class="contact-grid">
+			<ContactCard
+				fullName="Tyson Horvath"
+				hackerTag="tavro"
+				position="Chairman"
+				email="ordforande.ctf@lithehax.se"
+				image={chairmanImg}
+			/>
+			<ContactCard
+				fullName="Alve Källberg"
+				position="Committee member"
+				email="alve.kallberg@lithehax.se"
+			/>
+			<ContactCard
+				fullName="Harald Thorsson"
+				position="Committee member"
+				email="harald.thorsson@lithehax.se"
+			/>
+			<ContactCard
+				fullName="Julia Pavlenko"
+				position="Committee member"
+				email="julia.pavlenko@lithehax.se"
+			/>
+			<ContactCard
+				fullName="Koushik Pilla"
+				position="Committee member"
+				email="koushik.pilla@lithehax.se"
+			/>
+			<ContactCard
+				fullName="Rasmus Dahlström"
+				position="Committee member"
+				email="rasmus.dahlstrom@lithehax.se"
+			/>
+			<ContactCard
+				fullName="Saman Mahmoodi"
+				position="Committee member"
+				email="saman.mahmoodi@lithehax.se"
+			/>
+			<ContactCard
+				fullName="Tobias Dahlmark"
+				position="Committee member"
+				email="tobias.dahlmark@lithehax.se"
 			/>
 		</div>
 
