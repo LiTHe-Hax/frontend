@@ -65,6 +65,20 @@
 				image={chairmanImg}
 			/>
 			<ContactCard
+				fullName="Adam Bohman"
+				hackerTag="Whiibie"
+				position="Accountant"
+				email="revisor@lithehax.se"
+				image={accountantImg}
+			/>
+			<ContactCard
+				fullName="Anton Oom"
+				hackerTag="oomega"
+				position="Relations"
+				email="anton.oom@lithehax.se"
+				image={relationsImg}
+			/>
+			<ContactCard
 				fullName="David Rindsjö Smith"
 				hackerTag="smittydata"
 				position="Secretary"
@@ -79,27 +93,6 @@
 				image={boardMemberImg}
 			/>
 			<ContactCard
-				fullName="Viktor Holta"
-				hackerTag="Parslie"
-				position="Webmaster"
-				email="webmaster@lithehax.se"
-				image={webmasterImg}
-			/>
-			<ContactCard
-				fullName="Adam Bohman"
-				hackerTag="Whiibie"
-				position="Accountant"
-				email="revisor@lithehax.se"
-				image={accountantImg}
-			/>
-			<ContactCard
-				fullName="Wilmer Segerstedt"
-				hackerTag="wlmr"
-				position="Logistics"
-				email="wilmer.segerstedt@lithehax.se"
-				image={logisticsImg}
-			/>
-			<ContactCard
 				fullName="Tove Haernfelt"
 				hackerTag="thetov"
 				position="Event manager"
@@ -107,11 +100,11 @@
 				image={eventManagerImg}
 			/>
 			<ContactCard
-				fullName="Anton Oom"
-				hackerTag="oomega"
-				position="Relations"
-				email="anton.oom@lithehax.se"
-				image={relationsImg}
+				fullName="Viktor Holta"
+				hackerTag="Parslie"
+				position="Webmaster"
+				email="webmaster@lithehax.se"
+				image={webmasterImg}
 			/>
 			<ContactCard
 				fullName="William Minidis"
@@ -119,6 +112,13 @@
 				position="Treasurer"
 				email="kassor@lithehax.se"
 				image={treasurerImg}
+			/>
+			<ContactCard
+				fullName="Wilmer Segerstedt"
+				hackerTag="wlmr"
+				position="Logistics"
+				email="wilmer.segerstedt@lithehax.se"
+				image={logisticsImg}
 			/>
 			<ContactCard
 				fullName="Torbjörn Hackström"
