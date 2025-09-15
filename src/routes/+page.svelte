@@ -26,7 +26,7 @@
 
 <ArticleGroup>
 	<Article>
-		<h1>About us</h1>
+		<h1>About Us</h1>
 		<p>
 			LiTHe Hax is an independent student association at Linköping University whose purpose is to
 			promote and strengthen knowledge in ethical hacking and cybersecurity. The association is
@@ -125,7 +125,7 @@
 			/>
 		</div>
 
-		<h2>Organization details</h2>
+		<h2>Organization Details</h2>
 		<p>
 			<b>Organization Number:</b> 802547-1767
 			<br />
