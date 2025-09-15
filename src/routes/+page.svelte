@@ -134,9 +134,6 @@
 
 		<h3>Documents</h3>
 		<div class="document-list">
-			<DocumentLink
-				link={asset("/documents/2024-2025/events/annual_meeting/kallelse_arsmote.pdf")}
-			/>
 			<DocumentLink link={asset("/documents/lithe_hax_stadgar_uppdaterad.pdf")} />
 			<DocumentLink link={asset("/documents/lithe_hax_konstituerande_protokoll.pdf")} />
 		</div>
