@@ -15,6 +15,7 @@
 	import mascotImg from "$lib/images/contacts/torbjorn_h.png?enhanced";
 	import relationsImg from "$lib/images/2025-2026/contacts/anton_o.jpg?enhanced";
 	import secretaryImg from "$lib/images/2025-2026/contacts/david_s.png?enhanced";
+	import treasurerImg from "$lib/images/2025-2026/contacts/william_m.jpg?enhanced";
 	import webmasterImg from "$lib/images/2025-2026/contacts/viktor_h.jpg?enhanced";
 </script>
 
@@ -113,6 +114,7 @@
 				hackerTag="windis"
 				position="Treasurer"
 				email="kassor@lithehax.se"
+				image={treasurerImg}
 			/>
 			<ContactCard
 				fullName="Torbjörn Hackström"
