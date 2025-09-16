@@ -7,15 +7,19 @@
 	import DocumentLink from "$lib/components/DocumentLink.svelte";
 	import PageHead from "$lib/components/PageHead.svelte";
 
-	import accountantImg from "$lib/images/2025-2026/contacts/adam_b.jpg?enhanced";
-	import boardMemberImg from "$lib/images/2025-2026/contacts/tom_e.jpg?enhanced";
-	import chairmanImg from "$lib/images/2025-2026/contacts/tyson_h.jpg?enhanced";
-	import eventManagerImg from "$lib/images/2025-2026/contacts/tove_h.jpg?enhanced";
-	import logisticsImg from "$lib/images/2025-2026/contacts/wilmer_s.jpg?enhanced";
+	import accountantImg from "$lib/images/2025-2026/contacts/board/adam_b.jpg?enhanced";
+	import boardMemberImg from "$lib/images/2025-2026/contacts/board/tom_e.jpg?enhanced";
+	import chairmanImg from "$lib/images/2025-2026/contacts/board/tyson_h.jpg?enhanced";
+	import eventManagerImg from "$lib/images/2025-2026/contacts/board/tove_h.jpg?enhanced";
+	import logisticsImg from "$lib/images/2025-2026/contacts/board/wilmer_s.jpg?enhanced";
 	import mascotImg from "$lib/images/contacts/torbjorn_h.png?enhanced";
-	import relationsImg from "$lib/images/2025-2026/contacts/anton_o.jpg?enhanced";
-	import secretaryImg from "$lib/images/2025-2026/contacts/david_s.png?enhanced";
-	import webmasterImg from "$lib/images/2025-2026/contacts/viktor_h.jpg?enhanced";
+	import relationsImg from "$lib/images/2025-2026/contacts/board/anton_o.jpg?enhanced";
+	import secretaryImg from "$lib/images/2025-2026/contacts/board/david_s.png?enhanced";
+	import treasurerImg from "$lib/images/2025-2026/contacts/board/william_m.jpg?enhanced";
+	import webmasterImg from "$lib/images/2025-2026/contacts/board/viktor_h.jpg?enhanced";
+
+	import juliaImg from "$lib/images/2025-2026/contacts/committee/julia_p.webp?enhanced";
+	import rasmusImg from "$lib/images/2025-2026/contacts/committee/rasmus_d.png?enhanced";
 </script>
 
 <PageHead
@@ -25,7 +29,7 @@
 
 <ArticleGroup>
 	<Article>
-		<h1>About us</h1>
+		<h1>About Us</h1>
 		<p>
 			LiTHe Hax is an independent student association at Linköping University whose purpose is to
 			promote and strengthen knowledge in ethical hacking and cybersecurity. The association is
@@ -50,7 +54,11 @@
 			></a>
 		</div>
 
-		<h2>Contact</h2>
+		<h2>The Board</h2>
+		<p>
+			The board is responsible for communicating with partners and sponsors, arranging and marketing
+			events, as well as handling other administrative tasks.
+		</p>
 		<div class="contact-grid">
 			<ContactCard
 				fullName="Tyson Horvath"
@@ -58,6 +66,20 @@
 				position="Chairman"
 				email="ordforande@lithehax.se"
 				image={chairmanImg}
+			/>
+			<ContactCard
+				fullName="Adam Bohman"
+				hackerTag="Whiibie"
+				position="Accountant"
+				email="revisor@lithehax.se"
+				image={accountantImg}
+			/>
+			<ContactCard
+				fullName="Anton Oom"
+				hackerTag="oomega"
+				position="Relations"
+				email="anton.oom@lithehax.se"
+				image={relationsImg}
 			/>
 			<ContactCard
 				fullName="David Rindsjö Smith"
@@ -74,27 +96,6 @@
 				image={boardMemberImg}
 			/>
 			<ContactCard
-				fullName="Viktor Holta"
-				hackerTag="Parslie"
-				position="Webmaster"
-				email="webmaster@lithehax.se"
-				image={webmasterImg}
-			/>
-			<ContactCard
-				fullName="Adam Bohman"
-				hackerTag="Whiibie"
-				position="Accountant"
-				email="revisor@lithehax.se"
-				image={accountantImg}
-			/>
-			<ContactCard
-				fullName="Wilmer Segerstedt"
-				hackerTag="wlmr"
-				position="Logistics"
-				email="wilmer.segerstedt@lithehax.se"
-				image={logisticsImg}
-			/>
-			<ContactCard
 				fullName="Tove Haernfelt"
 				hackerTag="thetov"
 				position="Event manager"
@@ -102,17 +103,25 @@
 				image={eventManagerImg}
 			/>
 			<ContactCard
-				fullName="Anton Oom"
-				hackerTag="oomega"
-				position="Relations"
-				email="anton.oom@lithehax.se"
-				image={relationsImg}
+				fullName="Viktor Holta"
+				hackerTag="Parslie"
+				position="Webmaster"
+				email="webmaster@lithehax.se"
+				image={webmasterImg}
 			/>
 			<ContactCard
 				fullName="William Minidis"
 				hackerTag="windis"
 				position="Treasurer"
 				email="kassor@lithehax.se"
+				image={treasurerImg}
+			/>
+			<ContactCard
+				fullName="Wilmer Segerstedt"
+				hackerTag="wlmr"
+				position="Logistics"
+				email="wilmer.segerstedt@lithehax.se"
+				image={logisticsImg}
 			/>
 			<ContactCard
 				fullName="Torbjörn Hackström"
@@ -123,7 +132,63 @@
 			/>
 		</div>
 
-		<h2>Organization details</h2>
+		<h2>The CTF Committee</h2>
+		<p>
+			The CTF committee is responsible for helping the board with arranging CTF events, as well as
+			designing exciting and challenging exercises for participants.
+		</p>
+		<div class="contact-grid">
+			<ContactCard
+				fullName="Tyson Horvath"
+				hackerTag="tavro"
+				position="Chairman"
+				email="ordforande.ctf@lithehax.se"
+				image={chairmanImg}
+			/>
+			<ContactCard
+				fullName="Alve Källberg"
+				hackerTag="seftie"
+				position="Committee member"
+				email="alve.kallberg@lithehax.se"
+			/>
+			<ContactCard
+				fullName="Harald Thorsson"
+				position="Committee member"
+				email="harald.thorsson@lithehax.se"
+			/>
+			<ContactCard
+				fullName="Julia Pavlenko"
+				hackerTag="Mini"
+				position="Committee member"
+				email="julia.pavlenko@lithehax.se"
+				image={juliaImg}
+			/>
+			<ContactCard
+				fullName="Koushik Pilla"
+				position="Committee member"
+				email="koushik.pilla@lithehax.se"
+			/>
+			<ContactCard
+				fullName="Rasmus Dahlström"
+				hackerTag="dars-png"
+				position="Committee member"
+				email="rasmus.dahlstrom@lithehax.se"
+				image={rasmusImg}
+			/>
+			<ContactCard
+				fullName="Saman Mahmoodi"
+				hackerTag="SabKhawrazmi"
+				position="Committee member"
+				email="saman.mahmoodi@lithehax.se"
+			/>
+			<ContactCard
+				fullName="Tobias Dahlmark"
+				position="Committee member"
+				email="tobias.dahlmark@lithehax.se"
+			/>
+		</div>
+
+		<h2>Organization Details</h2>
 		<p>
 			<b>Organization Number:</b> 802547-1767
 			<br />
@@ -132,9 +197,6 @@
 
 		<h3>Documents</h3>
 		<div class="document-list">
-			<DocumentLink
-				link={asset("/documents/2024-2025/events/annual_meeting/kallelse_arsmote.pdf")}
-			/>
 			<DocumentLink link={asset("/documents/lithe_hax_stadgar_uppdaterad.pdf")} />
 			<DocumentLink link={asset("/documents/lithe_hax_konstituerande_protokoll.pdf")} />
 		</div>
@@ -142,20 +204,10 @@
 </ArticleGroup>
 
 <style lang="scss">
-	@use "$lib/styles/mixin";
-
 	.contact-grid {
-		@include mixin.on-mobile() {
-			display: flex;
-			flex-direction: column;
-			gap: 1rem;
-		}
-
-		@include mixin.on-desktop() {
-			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
-			gap: 1rem;
-		}
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(min(26rem, 100%), 1fr));
+		gap: 1rem;
 	}
 
 	.document-list {

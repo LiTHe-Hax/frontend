@@ -4,7 +4,7 @@
 
 	type Props = {
 		fullName: string;
-		hackerTag: string;
+		hackerTag?: string;
 		position: string;
 		email?: string;
 		image?: Picture;
@@ -17,7 +17,10 @@
 <div class="contact-card">
 	<enhanced:img src={effectiveImage} alt={fullName} />
 	<div class="info">
-		<span class="name">{fullName} @{hackerTag}</span>
+		<span class="name">
+			{fullName}
+			{#if hackerTag}@{hackerTag}{/if}
+		</span>
 		<span class="position">{position}</span>
 		{#if email !== undefined}
 			<a class="email" href={`mailto:${email}`}>{email}</a>
