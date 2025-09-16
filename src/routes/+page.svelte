@@ -7,16 +7,19 @@
 	import DocumentLink from "$lib/components/DocumentLink.svelte";
 	import PageHead from "$lib/components/PageHead.svelte";
 
-	import accountantImg from "$lib/images/2025-2026/contacts/adam_b.jpg?enhanced";
-	import boardMemberImg from "$lib/images/2025-2026/contacts/tom_e.jpg?enhanced";
-	import chairmanImg from "$lib/images/2025-2026/contacts/tyson_h.jpg?enhanced";
-	import eventManagerImg from "$lib/images/2025-2026/contacts/tove_h.jpg?enhanced";
-	import logisticsImg from "$lib/images/2025-2026/contacts/wilmer_s.jpg?enhanced";
+	import accountantImg from "$lib/images/2025-2026/contacts/board/adam_b.jpg?enhanced";
+	import boardMemberImg from "$lib/images/2025-2026/contacts/board/tom_e.jpg?enhanced";
+	import chairmanImg from "$lib/images/2025-2026/contacts/board/tyson_h.jpg?enhanced";
+	import eventManagerImg from "$lib/images/2025-2026/contacts/board/tove_h.jpg?enhanced";
+	import logisticsImg from "$lib/images/2025-2026/contacts/board/wilmer_s.jpg?enhanced";
 	import mascotImg from "$lib/images/contacts/torbjorn_h.png?enhanced";
-	import relationsImg from "$lib/images/2025-2026/contacts/anton_o.jpg?enhanced";
-	import secretaryImg from "$lib/images/2025-2026/contacts/david_s.png?enhanced";
-	import treasurerImg from "$lib/images/2025-2026/contacts/william_m.jpg?enhanced";
-	import webmasterImg from "$lib/images/2025-2026/contacts/viktor_h.jpg?enhanced";
+	import relationsImg from "$lib/images/2025-2026/contacts/board/anton_o.jpg?enhanced";
+	import secretaryImg from "$lib/images/2025-2026/contacts/board/david_s.png?enhanced";
+	import treasurerImg from "$lib/images/2025-2026/contacts/board/william_m.jpg?enhanced";
+	import webmasterImg from "$lib/images/2025-2026/contacts/board/viktor_h.jpg?enhanced";
+
+	import juliaImg from "$lib/images/2025-2026/contacts/committee/julia_p.webp?enhanced";
+	import rasmusImg from "$lib/images/2025-2026/contacts/committee/rasmus_d.png?enhanced";
 </script>
 
 <PageHead
@@ -144,6 +147,7 @@
 			/>
 			<ContactCard
 				fullName="Alve Källberg"
+				hackerTag="seftie"
 				position="Committee member"
 				email="alve.kallberg@lithehax.se"
 			/>
@@ -154,8 +158,10 @@
 			/>
 			<ContactCard
 				fullName="Julia Pavlenko"
+				hackerTag="Mini"
 				position="Committee member"
 				email="julia.pavlenko@lithehax.se"
+				image={juliaImg}
 			/>
 			<ContactCard
 				fullName="Koushik Pilla"
@@ -164,11 +170,14 @@
 			/>
 			<ContactCard
 				fullName="Rasmus Dahlström"
+				hackerTag="dars-png"
 				position="Committee member"
 				email="rasmus.dahlstrom@lithehax.se"
+				image={rasmusImg}
 			/>
 			<ContactCard
 				fullName="Saman Mahmoodi"
+				hackerTag="SabKhawrazmi"
 				position="Committee member"
 				email="saman.mahmoodi@lithehax.se"
 			/>
