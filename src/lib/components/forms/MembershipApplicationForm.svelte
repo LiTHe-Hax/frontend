@@ -1,7 +1,6 @@
 <script lang="ts">
-	import type { AxiosError } from "axios";
-
 	import { createMember } from "$lib/api/member";
+	import type { JsonObject } from "$lib/api/request";
 
 	import TextInput from "../inputs/TextInput.svelte";
 	import DropdownInput from "../inputs/DropdownInput.svelte";
@@ -32,10 +31,11 @@
 		membershipTypeError = "";
 
 		createMember(firstName, lastName, email, isStudent)
-			.catch((err: AxiosError) => {
-				if (err.response !== undefined) {
-					errorMessage = err.response.status.toString() + " " + err.response.statusText;
-					let data = err.response.data as object;
+			.then((response) => {
+				if (!response.isSuccessful) {
+					errorMessage = `${response.status} ${response.statusText}`;
+
+					const data = response.data as JsonObject;
 					if ("first_name" in data) {
 						let mainError = (data.first_name as string[])[0];
 						firstNameError = mainError;
@@ -52,9 +52,10 @@
 						let mainError = (data.is_student as string[])[0];
 						membershipTypeError = mainError;
 					}
-				} else {
-					errorMessage = "The server didn't respond...";
 				}
+			})
+			.catch(() => {
+				errorMessage = "Couldn't connect to the server...";
 			})
 			.finally(() => {
 				isSubmitting = false;
