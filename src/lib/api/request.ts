@@ -1,25 +1,57 @@
-import axios from "axios";
-import type { Method } from "axios";
 import { dev } from "$app/environment";
 
 const DEVELOPMENT_URL = "http://localhost:8000/";
 const PRODUCTION_URL = "https://lithehax-medlem-9abc9f434ec7.herokuapp.com/";
+const BASE_URL = dev ? DEVELOPMENT_URL : PRODUCTION_URL;
 
-const instance = axios.create({
-	baseURL: dev ? DEVELOPMENT_URL : PRODUCTION_URL,
-	timeout: 10000,
-	headers: { "Content-Type": "application/json" },
-});
+type Method =
+	| "GET"
+	| "HEAD"
+	| "POST"
+	| "PUT"
+	| "DELETE"
+	| "CONNECT"
+	| "OPTIONS"
+	| "TRACE"
+	| "PATCH";
 
-type Json = unknown[] | { [key: string]: unknown };
+type JsonArray = unknown[];
+type JsonObject = { [key: string]: unknown };
+type Json = JsonArray | JsonObject;
 
-function request(url: string, method: Method, data?: Json) {
-	return instance.request({
-		url: url,
+type ApiResponse = {
+	fetchResponse: Response;
+	data?: Json;
+	status: number;
+	statusText: string;
+	isSuccessful: boolean;
+};
+
+async function requestApi(path: string, method: Method, data?: Json) {
+	const url = `${BASE_URL}${path}`;
+	const response = await fetch(url, {
 		method: method,
-		data: data,
-		responseType: "json",
+		body: data ? JSON.stringify(data) : undefined,
+		headers: {
+			"Content-Type": "application/json",
+		},
 	});
+
+	let responseData;
+	try {
+		responseData = await response.json();
+	} catch {
+		responseData = undefined;
+	}
+
+	return {
+		fetchResponse: response,
+		data: responseData,
+		status: response.status,
+		statusText: response.statusText,
+		isSuccessful: response.ok,
+	} as ApiResponse;
 }
 
-export default request;
+export default requestApi;
+export type { Method, Json, JsonArray, JsonObject };
