@@ -18,6 +18,7 @@
 	import treasurerImg from "$lib/images/2025-2026/contacts/board/william_m.jpg?enhanced";
 	import webmasterImg from "$lib/images/2025-2026/contacts/board/viktor_h.jpg?enhanced";
 
+	import haraldImg from "$lib/images/2025-2026/contacts/committee/harald_t.png?enhanced";
 	import juliaImg from "$lib/images/2025-2026/contacts/committee/julia_p.webp?enhanced";
 	import rasmusImg from "$lib/images/2025-2026/contacts/committee/rasmus_d.png?enhanced";
 </script>
@@ -153,8 +154,10 @@
 			/>
 			<ContactCard
 				fullName="Harald Thorsson"
+				hackerTag="Anguis"
 				position="Committee member"
 				email="harald.thorsson@lithehax.se"
+				image={haraldImg}
 			/>
 			<ContactCard
 				fullName="Julia Pavlenko"
