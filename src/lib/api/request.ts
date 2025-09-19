@@ -19,9 +19,9 @@ type JsonArray = unknown[];
 type JsonObject = { [key: string]: unknown };
 type Json = JsonArray | JsonObject;
 
-type ApiResponse = {
+type ApiResponse<Data = Json> = {
 	fetchResponse: Response;
-	data?: Json;
+	data?: Data;
 	status: number;
 	statusText: string;
 	isSuccessful: boolean;
@@ -54,4 +54,4 @@ async function requestApi(path: string, method: Method, data?: Json) {
 }
 
 export default requestApi;
-export type { Method, Json, JsonArray, JsonObject };
+export type { ApiResponse, Method, Json, JsonArray, JsonObject };
