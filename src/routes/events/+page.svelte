@@ -23,6 +23,9 @@
 	import sickLogo from "$lib/images/sponsors/sick_logo.png?enhanced";
 	import sectraLogo from "$lib/images/sponsors/sectra_logo.png?enhanced";
 	import sylogLogo from "$lib/images/sponsors/sylog_logo.png?enhanced";
+	import foiLogo from "$lib/images/sponsors/foi_logo.svg";
+	import women4CyberLogo from "$lib/images/sponsors/women_4_cyber_logo.jpeg?enhanced";
+	import beingWiseLogo from "$lib/images/sponsors/being_wise_logo.png?enhanced";
 </script>
 
 <PageHead
@@ -33,7 +36,6 @@
 <ArticleGroup layout="thin" h1="Upcoming Events">
 	<Article>
 		<h2>LiU CTF</h2>
-		<!-- TODO: Update image -->
 		<enhanced:img src={liuCtf} alt="Poster for LiU CTF" />
 		<p>
 			Our flagship Capture the Flag competition returns! LiU CTF will take place in the university's
@@ -54,11 +56,14 @@
 		<hr />
 		<div class="sponsor-logos">
 			<img src={ieeeLogo} alt="IEEE logo" />
+			<img src={liuLogo} alt="Linköping University logo" />
+			<img src={foiLogo} alt="FOI logo" />
+			<enhanced:img src={women4CyberLogo} alt="Women4Cyber logo" />
+			<enhanced:img src={beingWiseLogo} alt="BEiNG WISE logo" />
 		</div>
 	</Article>
 	<Article>
 		<h2>LiTHe Hax CTF Save The Date</h2>
-		<!-- TODO: Update image -->
 		<enhanced:img src={ctfSaveTheDate} alt="Poster for LiTHe Hax CTF Save The Date" />
 		<p>
 			<strong>Date & time:</strong> March 7
