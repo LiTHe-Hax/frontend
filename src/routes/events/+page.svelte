@@ -13,8 +13,8 @@
 	import acas from "$lib/images/2024-2025/events/annual_meeting/acas.png?enhanced";
 	import cyberlyLiveHack from "$lib/images/2025-2026/events/cyberly_live_hack/cyberly_live_hack.jpg?enhanced";
 	import fooCafeMiniCtf from "$lib/images/2025-2026/events/foo_cafe_minictf/foo_cafe_minictf.jpg?enhanced";
-	import ieeeCtf from "$lib/images/2025-2026/events/ieee_ctf/ieee_ctf.jpg?enhanced";
-	import liuCtf2026 from "$lib/images/2025-2026/events/liu_ctf/liu_ctf_2026.jpg?enhanced";
+	import ctfSaveTheDate from "$lib/images/2025-2026/events/ctf_save_the_date/ctf_save_the_date.jpg?enhanced";
+	import liuCtf from "$lib/images/2025-2026/events/liu_ctf/liu_ctf.jpg?enhanced";
 	import recruiting2025 from "$lib/images/2025-2026/events/recruiting/recruiting_2025.png?enhanced";
 	import ieeeLogo from "$lib/images/sponsors/ieee.svg";
 	import liuLogo from "$lib/images/sponsors/liu_primary.svg";
@@ -34,7 +34,7 @@
 	<Article>
 		<h2>LiU CTF</h2>
 		<!-- TODO: Update image -->
-		<enhanced:img src={ieeeCtf} alt="Poster for LiU CTF" />
+		<enhanced:img src={liuCtf} alt="Poster for LiU CTF" />
 		<p>
 			We're proud to present a brand new CTF event in collaboration with IEEE, especially designed
 			for newcomers! Whether it's your first time or you just want a more casual experience, this is
@@ -59,7 +59,7 @@
 	<Article>
 		<h2>LiTHe Hax CTF Save The Date</h2>
 		<!-- TODO: Update image -->
-		<enhanced:img src={liuCtf2026} alt="Poster for LiTHe Hax CTF Save The Date" />
+		<enhanced:img src={ctfSaveTheDate} alt="Poster for LiTHe Hax CTF Save The Date" />
 		<p>
 			Our flagship Capture the Flag competition returns! LiU CTF will take place in the university's
 			cybersecurity lab, featuring challenges across categories like reverse engineering, web,
