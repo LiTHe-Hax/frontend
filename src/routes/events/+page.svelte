@@ -320,9 +320,6 @@
 </ArticleGroup>
 
 <style lang="scss">
-	@use "$lib/styles/color";
-	@use "$lib/styles/mixin";
-
 	img {
 		width: 100%;
 	}
@@ -338,28 +335,6 @@
 		img {
 			width: auto;
 			height: 2rem;
-		}
-	}
-
-	.committee-link {
-		@include mixin.unified-transition(150ms, ease-out, background-color, color, transform);
-
-		display: block;
-		border: 0;
-		padding: 0.5rem;
-		border-radius: 0.25rem;
-		background-color: color.$gray-1;
-		color: color.$green-2;
-		box-shadow: 0 2px 4px 0 color.$shadow;
-		font-size: 1em;
-		font-weight: bold;
-		text-align: center;
-		transform: scaley(1);
-
-		&:hover {
-			background-color: color.$green-2;
-			color: color.$gray-1;
-			transform: scaley(1.1);
 		}
 	}
 </style>
