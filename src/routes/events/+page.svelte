@@ -13,8 +13,8 @@
 	import acas from "$lib/images/2024-2025/events/annual_meeting/acas.png?enhanced";
 	import cyberlyLiveHack from "$lib/images/2025-2026/events/cyberly_live_hack/cyberly_live_hack.jpg?enhanced";
 	import fooCafeMiniCtf from "$lib/images/2025-2026/events/foo_cafe_minictf/foo_cafe_minictf.jpg?enhanced";
-	import ieeeCtf from "$lib/images/2025-2026/events/ieee_ctf/ieee_ctf.jpg?enhanced";
-	import liuCtf2026 from "$lib/images/2025-2026/events/liu_ctf/liu_ctf_2026.jpg?enhanced";
+	import ctfSaveTheDate from "$lib/images/2025-2026/events/ctf_save_the_date/ctf_save_the_date.jpg?enhanced";
+	import liuCtf from "$lib/images/2025-2026/events/liu_ctf/liu_ctf.jpg?enhanced";
 	import recruiting2025 from "$lib/images/2025-2026/events/recruiting/recruiting_2025.png?enhanced";
 	import ieeeLogo from "$lib/images/sponsors/ieee.svg";
 	import liuLogo from "$lib/images/sponsors/liu_primary.svg";
@@ -23,6 +23,9 @@
 	import sickLogo from "$lib/images/sponsors/sick_logo.png?enhanced";
 	import sectraLogo from "$lib/images/sponsors/sectra_logo.png?enhanced";
 	import sylogLogo from "$lib/images/sponsors/sylog_logo.png?enhanced";
+	import foiLogo from "$lib/images/sponsors/foi_logo.svg";
+	import women4CyberLogo from "$lib/images/sponsors/women_4_cyber_logo.jpeg?enhanced";
+	import beingWiseLogo from "$lib/images/sponsors/being_wise_logo.png?enhanced";
 </script>
 
 <PageHead
@@ -32,12 +35,12 @@
 
 <ArticleGroup layout="thin" h1="Upcoming Events">
 	<Article>
-		<h2>IEEE CTF</h2>
-		<enhanced:img src={ieeeCtf} alt="Poster for IEEE CTF" />
+		<h2>LiU CTF</h2>
+		<enhanced:img src={liuCtf} alt="Poster for LiU CTF" />
 		<p>
-			We're proud to present a brand new CTF event in collaboration with IEEE, especially designed
-			for newcomers! Whether it's your first time or you just want a more casual experience, this is
-			the perfect entry point. We're providing free food, snacks and drinks.
+			Our flagship Capture the Flag competition returns! LiU CTF will take place in the university's
+			cybersecurity lab, featuring challenges across categories like reverse engineering, web,
+			crypto and forensics. Open to all skill levels. Free food and snacks throughout the day.
 		</p>
 		<p>
 			<strong>Date & time:</strong> November 1
@@ -53,16 +56,15 @@
 		<hr />
 		<div class="sponsor-logos">
 			<img src={ieeeLogo} alt="IEEE logo" />
+			<img src={liuLogo} alt="Linköping University logo" />
+			<img src={foiLogo} alt="FOI logo" />
+			<enhanced:img src={women4CyberLogo} alt="Women4Cyber logo" />
+			<enhanced:img src={beingWiseLogo} alt="BEiNG WISE logo" />
 		</div>
 	</Article>
 	<Article>
-		<h2>LiU CTF</h2>
-		<enhanced:img src={liuCtf2026} alt="Poster for LiU CTF" />
-		<p>
-			Our flagship Capture the Flag competition returns! LiU CTF will take place in the university's
-			cybersecurity lab, featuring challenges across categories like reverse engineering, web,
-			crypto and forensics. Open to all skill levels. Free food and snacks throughout the day.
-		</p>
+		<h2>LiTHe Hax CTF Save The Date</h2>
+		<enhanced:img src={ctfSaveTheDate} alt="Poster for LiTHe Hax CTF Save The Date" />
 		<p>
 			<strong>Date & time:</strong> March 7
 		</p>
@@ -318,9 +320,6 @@
 </ArticleGroup>
 
 <style lang="scss">
-	@use "$lib/styles/color";
-	@use "$lib/styles/mixin";
-
 	img {
 		width: 100%;
 	}
@@ -336,28 +335,6 @@
 		img {
 			width: auto;
 			height: 2rem;
-		}
-	}
-
-	.committee-link {
-		@include mixin.unified-transition(150ms, ease-out, background-color, color, transform);
-
-		display: block;
-		border: 0;
-		padding: 0.5rem;
-		border-radius: 0.25rem;
-		background-color: color.$gray-1;
-		color: color.$green-2;
-		box-shadow: 0 2px 4px 0 color.$shadow;
-		font-size: 1em;
-		font-weight: bold;
-		text-align: center;
-		transform: scaley(1);
-
-		&:hover {
-			background-color: color.$green-2;
-			color: color.$gray-1;
-			transform: scaley(1.1);
 		}
 	}
 </style>
