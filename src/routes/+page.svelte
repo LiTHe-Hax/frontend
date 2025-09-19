@@ -65,42 +65,42 @@
 				fullName="Tyson Horvath"
 				hackerTag="tavro"
 				position="Chairman"
-				email="ordforande@lithehax.se"
+				email="chairman@lithehax.se"
 				image={chairmanImg}
 			/>
 			<ContactCard
 				fullName="Adam Bohman"
 				hackerTag="Whiibie"
 				position="Accountant"
-				email="revisor@lithehax.se"
+				email="accountant@lithehax.se"
 				image={accountantImg}
 			/>
 			<ContactCard
 				fullName="Anton Oom"
 				hackerTag="oomega"
 				position="Relations"
-				email="anton.oom@lithehax.se"
+				email="relations@lithehax.se"
 				image={relationsImg}
 			/>
 			<ContactCard
 				fullName="David Rindsjö Smith"
 				hackerTag="smittydata"
 				position="Secretary"
-				email="sekreterare@lithehax.se"
+				email="secretary@lithehax.se"
 				image={secretaryImg}
 			/>
 			<ContactCard
 				fullName="Tom Englund"
 				hackerTag="naturell"
 				position="Board member"
-				email="tom.englund@lithehax.se"
+				email="info@lithehax.se"
 				image={boardMemberImg}
 			/>
 			<ContactCard
 				fullName="Tove Haernfelt"
 				hackerTag="thetov"
 				position="Event manager"
-				email="tove.haernfelt@lithehax.se"
+				email="event@lithehax.se"
 				image={eventManagerImg}
 			/>
 			<ContactCard
@@ -114,21 +114,21 @@
 				fullName="William Minidis"
 				hackerTag="windis"
 				position="Treasurer"
-				email="kassor@lithehax.se"
+				email="treasurer@lithehax.se"
 				image={treasurerImg}
 			/>
 			<ContactCard
 				fullName="Wilmer Segerstedt"
 				hackerTag="wlmr"
 				position="Logistics"
-				email="wilmer.segerstedt@lithehax.se"
+				email="logistics@lithehax.se"
 				image={logisticsImg}
 			/>
 			<ContactCard
 				fullName="Torbjörn Hackström"
 				hackerTag="hacktor"
 				position="Mascot"
-				email="maskot@lithehax.se"
+				email="mascot@lithehax.se"
 				image={mascotImg}
 			/>
 		</div>
@@ -143,7 +143,7 @@
 				fullName="Tyson Horvath"
 				hackerTag="tavro"
 				position="Chairman"
-				email="ordforande.ctf@lithehax.se"
+				email="chairman.ctf@lithehax.se"
 				image={chairmanImg}
 			/>
 			<ContactCard
