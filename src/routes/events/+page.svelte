@@ -32,8 +32,9 @@
 
 <ArticleGroup layout="thin" h1="Upcoming Events">
 	<Article>
-		<h2>IEEE CTF</h2>
-		<enhanced:img src={ieeeCtf} alt="Poster for IEEE CTF" />
+		<h2>LiU CTF</h2>
+		<!-- TODO: Update image -->
+		<enhanced:img src={ieeeCtf} alt="Poster for LiU CTF" />
 		<p>
 			We're proud to present a brand new CTF event in collaboration with IEEE, especially designed
 			for newcomers! Whether it's your first time or you just want a more casual experience, this is
@@ -56,8 +57,9 @@
 		</div>
 	</Article>
 	<Article>
-		<h2>LiU CTF</h2>
-		<enhanced:img src={liuCtf2026} alt="Poster for LiU CTF" />
+		<h2>LiTHe Hax CTF Save The Date</h2>
+		<!-- TODO: Update image -->
+		<enhanced:img src={liuCtf2026} alt="Poster for LiTHe Hax CTF Save The Date" />
 		<p>
 			Our flagship Capture the Flag competition returns! LiU CTF will take place in the university's
 			cybersecurity lab, featuring challenges across categories like reverse engineering, web,
