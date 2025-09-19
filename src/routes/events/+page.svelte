@@ -36,9 +36,9 @@
 		<!-- TODO: Update image -->
 		<enhanced:img src={liuCtf} alt="Poster for LiU CTF" />
 		<p>
-			We're proud to present a brand new CTF event in collaboration with IEEE, especially designed
-			for newcomers! Whether it's your first time or you just want a more casual experience, this is
-			the perfect entry point. We're providing free food, snacks and drinks.
+			Our flagship Capture the Flag competition returns! LiU CTF will take place in the university's
+			cybersecurity lab, featuring challenges across categories like reverse engineering, web,
+			crypto and forensics. Open to all skill levels. Free food and snacks throughout the day.
 		</p>
 		<p>
 			<strong>Date & time:</strong> November 1
@@ -60,11 +60,6 @@
 		<h2>LiTHe Hax CTF Save The Date</h2>
 		<!-- TODO: Update image -->
 		<enhanced:img src={ctfSaveTheDate} alt="Poster for LiTHe Hax CTF Save The Date" />
-		<p>
-			Our flagship Capture the Flag competition returns! LiU CTF will take place in the university's
-			cybersecurity lab, featuring challenges across categories like reverse engineering, web,
-			crypto and forensics. Open to all skill levels. Free food and snacks throughout the day.
-		</p>
 		<p>
 			<strong>Date & time:</strong> March 7
 		</p>
