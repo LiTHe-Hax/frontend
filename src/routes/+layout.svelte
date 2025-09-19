@@ -16,7 +16,7 @@
 	const navEntries: NavEntry[] = [
 		{ href: "/", label: "Home" },
 		{ href: "/new-member", label: "Member" },
-		{ href: "/events", label: "Events" },
+		{ href: "/events", label: "Upcoming Events" },
 	];
 </script>
 
