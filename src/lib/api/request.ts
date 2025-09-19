@@ -27,8 +27,12 @@ type ApiResponse<Data = Json> = {
 	isSuccessful: boolean;
 };
 
+function getApiUrl(path: string) {
+	return `${BASE_URL}${path}`;
+}
+
 async function requestApi(path: string, method: Method, data?: Json) {
-	const url = `${BASE_URL}${path}`;
+	const url = getApiUrl(path);
 	const response = await fetch(url, {
 		method: method,
 		body: data ? JSON.stringify(data) : undefined,
@@ -54,4 +58,5 @@ async function requestApi(path: string, method: Method, data?: Json) {
 }
 
 export default requestApi;
+export { getApiUrl };
 export type { ApiResponse, Method, Json, JsonArray, JsonObject };
