@@ -4,8 +4,8 @@
 </script>
 
 <PageHead
-	title="Upcoming Events"
+	title="Previous Events"
 	description="LiTHe Hax events including Annual Meeting, CTF competition, workshops, and networking opportunities at Linköping University, Goto 10, Foo Café and more"
 />
 
-<EventPage />
+<EventPage showPrevious />
