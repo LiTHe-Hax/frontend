@@ -4,7 +4,7 @@
 	import type { LayoutProps } from "./$types";
 
 	import "$lib/styles/default.scss";
-	import headerLogo from "$lib/images/logos/header_logo.svg";
+	import getAssetUrl from "$lib/api/asset";
 
 	const { children, data }: LayoutProps = $props();
 
@@ -31,7 +31,7 @@
 	<button onclick={toggleNav} aria-label="navigation">
 		<i class={["fa-solid", "fa-bars"]}></i>
 	</button>
-	<img src={headerLogo} alt="LiTHe Hax logo" />
+	<img src={getAssetUrl("images/logos/header_logo.svg")} alt="LiTHe Hax logo" />
 	<button style:visibility="hidden" aria-label="navigation">
 		<i class={["fa-solid", "fa-bars"]}></i>
 	</button>
@@ -45,7 +45,7 @@
 </header>
 
 <header class="desktop">
-	<img src={headerLogo} alt="LiTHe Hax logo" />
+	<img src={getAssetUrl("images/logos/header_logo.svg")} alt="LiTHe Hax logo" />
 	<nav>
 		{#each navEntries as navEntry (navEntry.href)}
 			<a href={resolve(navEntry.href)}>{navEntry.label}</a>

@@ -1,21 +1,20 @@
 <script lang="ts">
-	import type { Picture } from "vite-imagetools";
-	import placeholderImg from "$lib/images/contacts/placeholder.png?enhanced";
+	import getAssetUrl from "$lib/api/asset";
 
 	type Props = {
 		fullName: string;
 		hackerTag?: string;
 		position: string;
 		email?: string;
-		image?: Picture;
+		image?: string;
 	};
 
 	const { fullName, hackerTag, position, email, image }: Props = $props();
-	const effectiveImage = $derived(image ? image : placeholderImg);
+	const effectiveImage = $derived(image ? image : getAssetUrl("images/contacts/placeholder.png"));
 </script>
 
 <div class="contact-card">
-	<enhanced:img src={effectiveImage} alt={fullName} />
+	<img src={effectiveImage} alt={fullName} />
 	<div class="info">
 		<span class="name">
 			{fullName}
