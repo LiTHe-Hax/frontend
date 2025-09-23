@@ -14,16 +14,35 @@
 	const startDate = $derived(new Date(event.start_date));
 	const endDate = $derived(event.end_date ? new Date(event.end_date) : null);
 
-	const dateFormatter = new Intl.DateTimeFormat("en", {
-		month: "short",
-		day: "numeric",
-	});
+	function formatDate(date: Date) {
+		const today = new Date(Date.now());
 
-	const timeFormatter = new Intl.DateTimeFormat("en", {
-		hour: "numeric",
-		minute: "2-digit",
-		hour12: false,
-	});
+		let formatter;
+		if (date.getFullYear() !== today.getFullYear()) {
+			formatter = new Intl.DateTimeFormat("en", {
+				year: "numeric",
+				month: "short",
+				day: "numeric",
+			});
+		} else {
+			formatter = new Intl.DateTimeFormat("en", {
+				month: "short",
+				day: "numeric",
+			});
+		}
+
+		return formatter.format(date);
+	}
+
+	function formatTime(date: Date) {
+		const formatter = new Intl.DateTimeFormat("en", {
+			hour: "numeric",
+			minute: "2-digit",
+			hour12: false,
+		});
+
+		return formatter.format(date);
+	}
 </script>
 
 <Article>
@@ -33,20 +52,20 @@
 			<i class="fa-solid fa-calendar fa-width-auto"></i>
 			{#if endDate && event.show_time}
 				{#if isSameDay(startDate, endDate)}
-					{dateFormatter.format(startDate)}, {timeFormatter.format(startDate)}
+					{formatDate(startDate)}, {formatTime(startDate)}
 					-
-					{timeFormatter.format(endDate)}
+					{formatTime(endDate)}
 				{:else}
-					{dateFormatter.format(startDate)}, {timeFormatter.format(startDate)}
+					{formatDate(startDate)}, {formatTime(startDate)}
 					-
-					{dateFormatter.format(startDate)}, {timeFormatter.format(startDate)}
+					{formatDate(startDate)}, {formatTime(startDate)}
 				{/if}
 			{:else if endDate && !isSameDay(startDate, endDate)}
-				{dateFormatter.format(startDate)} - {dateFormatter.format(endDate)}
+				{formatDate(startDate)} - {formatDate(endDate)}
 			{:else if event.show_time}
-				{dateFormatter.format(startDate)}, {timeFormatter.format(startDate)}
+				{formatDate(startDate)}, {formatTime(startDate)}
 			{:else}
-				{dateFormatter.format(startDate)}
+				{formatDate(startDate)}
 			{/if}
 		</span>
 
