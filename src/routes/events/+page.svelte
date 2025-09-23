@@ -66,7 +66,7 @@
 		<h2>LiTHe Hax CTF Save The Date</h2>
 		<enhanced:img src={ctfSaveTheDate} alt="Poster for LiTHe Hax CTF Save The Date" />
 		<p>
-			<strong>Date & time:</strong> March 7
+			<strong>Date & time:</strong> March 7 2026
 		</p>
 
 		<hr />
