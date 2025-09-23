@@ -51,70 +51,70 @@
 				hackerTag="tavro"
 				position="Chairman"
 				email="chairman@lithehax.se"
-				image={getAssetUrl("images/2025-2026/contacts/board/tyson_h.jpg")}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/tyson_h.jpg")}
 			/>
 			<ContactCard
 				fullName="Adam Bohman"
 				hackerTag="Whiibie"
 				position="Accountant"
 				email="accountant@lithehax.se"
-				image={getAssetUrl("images/2025-2026/contacts/board/adam_b.jpg")}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/adam_b.jpg")}
 			/>
 			<ContactCard
 				fullName="Anton Oom"
 				hackerTag="oomega"
 				position="Relations"
 				email="relations@lithehax.se"
-				image={getAssetUrl("images/2025-2026/contacts/board/anton_o.jpg")}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/anton_o.jpg")}
 			/>
 			<ContactCard
 				fullName="David Rindsjö Smith"
 				hackerTag="smittydata"
 				position="Secretary"
 				email="secretary@lithehax.se"
-				image={getAssetUrl("images/2025-2026/contacts/board/david_s.png")}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/david_s.png")}
 			/>
 			<ContactCard
 				fullName="Tom Englund"
 				hackerTag="naturell"
 				position="Board member"
 				email="info@lithehax.se"
-				image={getAssetUrl("images/2025-2026/contacts/board/tom_e.jpg")}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/tom_e.jpg")}
 			/>
 			<ContactCard
 				fullName="Tove Haernfelt"
 				hackerTag="thetov"
 				position="Event manager"
 				email="event@lithehax.se"
-				image={getAssetUrl("images/2025-2026/contacts/board/tove_h.jpg")}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/tove_h.jpg")}
 			/>
 			<ContactCard
 				fullName="Viktor Holta"
 				hackerTag="Parslie"
 				position="Webmaster"
 				email="webmaster@lithehax.se"
-				image={getAssetUrl("images/2025-2026/contacts/board/viktor_h.jpg")}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/viktor_h.jpg")}
 			/>
 			<ContactCard
 				fullName="William Minidis"
 				hackerTag="windis"
 				position="Treasurer"
 				email="treasurer@lithehax.se"
-				image={getAssetUrl("images/2025-2026/contacts/board/william_m.jpg")}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/william_m.jpg")}
 			/>
 			<ContactCard
 				fullName="Wilmer Segerstedt"
 				hackerTag="wlmr"
 				position="Logistics"
 				email="logistics@lithehax.se"
-				image={getAssetUrl("images/2025-2026/contacts/board/wilmer_s.jpg")}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/wilmer_s.jpg")}
 			/>
 			<ContactCard
 				fullName="Torbjörn Hackström"
 				hackerTag="hacktor"
 				position="Mascot"
 				email="mascot@lithehax.se"
-				image={getAssetUrl("images/contacts/torbjorn_h.png")}
+				imageUrl={getAssetUrl("images/contacts/torbjorn_h.png")}
 			/>
 		</div>
 
@@ -129,7 +129,7 @@
 				hackerTag="tavro"
 				position="Chairman"
 				email="chairman.ctf@lithehax.se"
-				image={getAssetUrl("images/2025-2026/contacts/board/tyson_h.jpg")}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/tyson_h.jpg")}
 			/>
 			<ContactCard
 				fullName="Alve Källberg"
@@ -142,14 +142,14 @@
 				hackerTag="Anguis"
 				position="Committee member"
 				email="harald.thorsson@lithehax.se"
-				image={getAssetUrl("images/2025-2026/contacts/committee/harald_t.png")}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/committee/harald_t.png")}
 			/>
 			<ContactCard
 				fullName="Julia Pavlenko"
 				hackerTag="Mini"
 				position="Committee member"
 				email="julia.pavlenko@lithehax.se"
-				image={getAssetUrl("images/2025-2026/contacts/committee/julia_p.webp")}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/committee/julia_p.webp")}
 			/>
 			<ContactCard
 				fullName="Koushik Pilla"
@@ -161,7 +161,7 @@
 				hackerTag="dars-png"
 				position="Committee member"
 				email="rasmus.dahlstrom@lithehax.se"
-				image={getAssetUrl("images/2025-2026/contacts/committee/rasmus_d.png")}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/committee/rasmus_d.png")}
 			/>
 			<ContactCard
 				fullName="Saman Mahmoodi"

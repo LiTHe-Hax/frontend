@@ -6,15 +6,17 @@
 		hackerTag?: string;
 		position: string;
 		email?: string;
-		image?: string;
+		imageUrl?: string;
 	};
 
-	const { fullName, hackerTag, position, email, image }: Props = $props();
-	const effectiveImage = $derived(image ? image : getAssetUrl("images/contacts/placeholder.png"));
+	const { fullName, hackerTag, position, email, imageUrl }: Props = $props();
+	const effectiveImageUrl = $derived(
+		imageUrl ? imageUrl : getAssetUrl("images/contacts/placeholder.png"),
+	);
 </script>
 
 <div class="contact-card">
-	<img src={effectiveImage} alt={fullName} />
+	<img src={effectiveImageUrl} alt={fullName} />
 	<div class="info">
 		<span class="name">
 			{fullName}
