@@ -43,6 +43,10 @@
 			crypto and forensics. Open to all skill levels. Free food and snacks throughout the day.
 		</p>
 		<p>
+			<strong>Registration form:</strong>
+			<a href="https://forms.gle/XTeAmgG4SHHpbdtz8">https://forms.gle/XTeAmgG4SHHpbdtz8</a>
+		</p>
+		<p>
 			<strong>Date & time:</strong> November 1
 			<br />
 			<strong>Location:</strong>
