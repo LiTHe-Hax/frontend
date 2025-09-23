@@ -19,16 +19,20 @@ type JsonArray = unknown[];
 type JsonObject = { [key: string]: unknown };
 type Json = JsonArray | JsonObject;
 
-type ApiResponse = {
+type ApiResponse<Data = Json> = {
 	fetchResponse: Response;
-	data?: Json;
+	data?: Data;
 	status: number;
 	statusText: string;
 	isSuccessful: boolean;
 };
 
+function getApiUrl(path: string) {
+	return `${BASE_URL}${path}`;
+}
+
 async function requestApi(path: string, method: Method, data?: Json) {
-	const url = `${BASE_URL}${path}`;
+	const url = getApiUrl(path);
 	const response = await fetch(url, {
 		method: method,
 		body: data ? JSON.stringify(data) : undefined,
@@ -54,4 +58,5 @@ async function requestApi(path: string, method: Method, data?: Json) {
 }
 
 export default requestApi;
-export type { Method, Json, JsonArray, JsonObject };
+export { getApiUrl };
+export type { ApiResponse, Method, Json, JsonArray, JsonObject };

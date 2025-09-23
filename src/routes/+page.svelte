@@ -1,26 +1,11 @@
 <script lang="ts">
-	import { asset } from "$app/paths";
+	import getAssetUrl from "$lib/api/asset";
 
 	import Article from "$lib/components/Article.svelte";
 	import ArticleGroup from "$lib/components/ArticleGroup.svelte";
 	import ContactCard from "$lib/components/ContactCard.svelte";
 	import DocumentLink from "$lib/components/DocumentLink.svelte";
 	import PageHead from "$lib/components/PageHead.svelte";
-
-	import accountantImg from "$lib/images/2025-2026/contacts/board/adam_b.jpg?enhanced";
-	import boardMemberImg from "$lib/images/2025-2026/contacts/board/tom_e.jpg?enhanced";
-	import chairmanImg from "$lib/images/2025-2026/contacts/board/tyson_h.jpg?enhanced";
-	import eventManagerImg from "$lib/images/2025-2026/contacts/board/tove_h.jpg?enhanced";
-	import logisticsImg from "$lib/images/2025-2026/contacts/board/wilmer_s.jpg?enhanced";
-	import mascotImg from "$lib/images/contacts/torbjorn_h.png?enhanced";
-	import relationsImg from "$lib/images/2025-2026/contacts/board/anton_o.jpg?enhanced";
-	import secretaryImg from "$lib/images/2025-2026/contacts/board/david_s.png?enhanced";
-	import treasurerImg from "$lib/images/2025-2026/contacts/board/william_m.jpg?enhanced";
-	import webmasterImg from "$lib/images/2025-2026/contacts/board/viktor_h.jpg?enhanced";
-
-	import haraldImg from "$lib/images/2025-2026/contacts/committee/harald_t.png?enhanced";
-	import juliaImg from "$lib/images/2025-2026/contacts/committee/julia_p.webp?enhanced";
-	import rasmusImg from "$lib/images/2025-2026/contacts/committee/rasmus_d.png?enhanced";
 </script>
 
 <PageHead
@@ -66,70 +51,70 @@
 				hackerTag="tavro"
 				position="Chairman"
 				email="chairman@lithehax.se"
-				image={chairmanImg}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/tyson_h.jpg")}
 			/>
 			<ContactCard
 				fullName="Adam Bohman"
 				hackerTag="Whiibie"
 				position="Accountant"
 				email="accountant@lithehax.se"
-				image={accountantImg}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/adam_b.jpg")}
 			/>
 			<ContactCard
 				fullName="Anton Oom"
 				hackerTag="oomega"
 				position="Relations"
 				email="relations@lithehax.se"
-				image={relationsImg}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/anton_o.jpg")}
 			/>
 			<ContactCard
 				fullName="David Rindsjö Smith"
 				hackerTag="smittydata"
 				position="Secretary"
 				email="secretary@lithehax.se"
-				image={secretaryImg}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/david_s.png")}
 			/>
 			<ContactCard
 				fullName="Tom Englund"
 				hackerTag="naturell"
 				position="Board member"
 				email="info@lithehax.se"
-				image={boardMemberImg}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/tom_e.jpg")}
 			/>
 			<ContactCard
 				fullName="Tove Haernfelt"
 				hackerTag="thetov"
 				position="Event manager"
 				email="event@lithehax.se"
-				image={eventManagerImg}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/tove_h.jpg")}
 			/>
 			<ContactCard
 				fullName="Viktor Holta"
 				hackerTag="Parslie"
 				position="Webmaster"
 				email="webmaster@lithehax.se"
-				image={webmasterImg}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/viktor_h.jpg")}
 			/>
 			<ContactCard
 				fullName="William Minidis"
 				hackerTag="windis"
 				position="Treasurer"
 				email="treasurer@lithehax.se"
-				image={treasurerImg}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/william_m.jpg")}
 			/>
 			<ContactCard
 				fullName="Wilmer Segerstedt"
 				hackerTag="wlmr"
 				position="Logistics"
 				email="logistics@lithehax.se"
-				image={logisticsImg}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/wilmer_s.jpg")}
 			/>
 			<ContactCard
 				fullName="Torbjörn Hackström"
 				hackerTag="hacktor"
 				position="Mascot"
 				email="mascot@lithehax.se"
-				image={mascotImg}
+				imageUrl={getAssetUrl("images/contacts/torbjorn_h.png")}
 			/>
 		</div>
 
@@ -144,7 +129,7 @@
 				hackerTag="tavro"
 				position="Chairman"
 				email="chairman.ctf@lithehax.se"
-				image={chairmanImg}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/tyson_h.jpg")}
 			/>
 			<ContactCard
 				fullName="Alve Källberg"
@@ -157,14 +142,14 @@
 				hackerTag="Anguis"
 				position="Committee member"
 				email="harald.thorsson@lithehax.se"
-				image={haraldImg}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/committee/harald_t.png")}
 			/>
 			<ContactCard
 				fullName="Julia Pavlenko"
 				hackerTag="Mini"
 				position="Committee member"
 				email="julia.pavlenko@lithehax.se"
-				image={juliaImg}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/committee/julia_p.webp")}
 			/>
 			<ContactCard
 				fullName="Koushik Pilla"
@@ -176,7 +161,7 @@
 				hackerTag="dars-png"
 				position="Committee member"
 				email="rasmus.dahlstrom@lithehax.se"
-				image={rasmusImg}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/committee/rasmus_d.png")}
 			/>
 			<ContactCard
 				fullName="Saman Mahmoodi"
@@ -200,8 +185,8 @@
 
 		<h3>Documents</h3>
 		<div class="document-list">
-			<DocumentLink link={asset("/documents/lithe_hax_stadgar_uppdaterad.pdf")} />
-			<DocumentLink link={asset("/documents/lithe_hax_konstituerande_protokoll.pdf")} />
+			<DocumentLink link={getAssetUrl("documents/lithe_hax_stadgar_uppdaterad.pdf")} />
+			<DocumentLink link={getAssetUrl("documents/lithe_hax_konstituerande_protokoll.pdf")} />
 		</div>
 	</Article>
 </ArticleGroup>
