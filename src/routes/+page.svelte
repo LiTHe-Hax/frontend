@@ -187,6 +187,7 @@
 		<div class="document-list">
 			<DocumentLink link={getAssetUrl("documents/lithe_hax_stadgar_uppdaterad.pdf")} />
 			<DocumentLink link={getAssetUrl("documents/lithe_hax_konstituerande_protokoll.pdf")} />
+			<DocumentLink link={getAssetUrl("documents/lithe_hax_arsmote_2025.pdf")} />
 		</div>
 	</Article>
 </ArticleGroup>
