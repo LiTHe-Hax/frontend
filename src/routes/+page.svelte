@@ -6,6 +6,7 @@
 	import ContactCard from "$lib/components/ContactCard.svelte";
 	import DocumentLink from "$lib/components/DocumentLink.svelte";
 	import Heading from "$lib/components/Heading.svelte";
+	import Link from "$lib/components/Link.svelte";
 	import PageHead from "$lib/components/PageHead.svelte";
 </script>
 
@@ -24,21 +25,15 @@
 			participate in LiTHe Hax's activities. The association was founded on March 29, 2024.
 		</p>
 		<div class={["social-medias", "fa-width-auto"]}>
-			<a
-				class={["fa-brands", "fa-discord"]}
-				href="https://discord.gg/UykWT8W899"
-				aria-label="discord"
-			></a>
-			<a
-				class={["fa-brands", "fa-facebook"]}
-				href="https://www.facebook.com/profile.php?id=61567434623373"
-				aria-label="facebook"
-			></a>
-			<a
-				class={["fa-brands", "fa-instagram"]}
-				href="https://www.instagram.com/lithehax?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-				aria-label="instagram"
-			></a>
+			<Link href="https://discord.gg/UykWT8W899" aria-label="Discord">
+				<i class={["fa-brands", "fa-discord"]}></i>
+			</Link>
+			<Link href="https://www.facebook.com/profile.php?id=61567434623373" aria-label="Facebook">
+				<i class={["fa-brands", "fa-facebook"]}></i>
+			</Link>
+			<Link href="https://www.instagram.com/lithehax" aria-label="Instagram">
+				<i class={["fa-brands", "fa-instagram"]}></i>
+			</Link>
 		</div>
 
 		<Heading level={2} content="The Board" />
