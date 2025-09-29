@@ -1,5 +1,6 @@
 /// Mixins for commonly used styles
 
+@use "color";
 @use "size";
 
 @mixin unified-transition($duration, $timing-function, $properties...) {
@@ -28,4 +29,14 @@
 	> *:last-child {
 		margin-bottom: 0;
 	}
+}
+
+@mixin text-input() {
+	border: 1px solid color.$gray-4;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	background-color: color.$gray-3;
+	color: color.$green-2;
+	box-shadow: inset 0 1px 3px 1px color.$shadow;
+	font-family: inherit;
 }
