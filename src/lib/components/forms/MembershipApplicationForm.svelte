@@ -5,6 +5,7 @@
 	import TextInput from "../inputs/TextInput.svelte";
 	import DropdownInput from "../inputs/DropdownInput.svelte";
 	import FormStatusOverlay from "./FormStatusOverlay.svelte";
+	import Button from "../inputs/Button.svelte";
 
 	let firstName = $state("");
 	let lastName = $state("");
@@ -86,7 +87,7 @@
 		label="Membership Type"
 		error={membershipTypeError}
 	/>
-	<button type="submit" disabled={isSubmitting}>Apply for membership</button>
+	<Button type="submit" disabled={isSubmitting}>Apply for membership</Button>
 	<FormStatusOverlay {isSubmitting} {errorMessage} successMessage="Applied for a membership" />
 </form>
 
