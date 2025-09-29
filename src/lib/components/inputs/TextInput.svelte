@@ -27,6 +27,7 @@
 
 <style lang="scss">
 	@use "$lib/styles/color";
+	@use "$lib/styles/mixin";
 
 	.text-input {
 		display: inline-flex;
@@ -40,6 +41,8 @@
 			position: relative;
 
 			input {
+				@include mixin.text-input();
+
 				width: 100%;
 				box-sizing: border-box;
 			}

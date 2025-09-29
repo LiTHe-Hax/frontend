@@ -31,6 +31,7 @@
 
 <style lang="scss">
 	@use "$lib/styles/color";
+	@use "$lib/styles/mixin";
 
 	.dropdown-input {
 		display: inline-flex;
@@ -44,6 +45,8 @@
 			}
 
 			select {
+				@include mixin.text-input();
+
 				width: 100%;
 				box-sizing: border-box;
 			}

@@ -10,8 +10,3 @@ body {
 	color: color.$white;
 	font-family: "Fira Sans", sans-serif;
 }
-
-input,
-select {
-	@include mixin.text-input();
-}
