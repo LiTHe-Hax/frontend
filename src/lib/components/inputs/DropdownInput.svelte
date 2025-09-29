@@ -2,6 +2,7 @@
 	import type { HTMLSelectAttributes } from "svelte/elements";
 	import type { InputProps } from "$lib/types";
 	import ErrorTooltip from "$lib/components/inputs/ErrorTooltip.svelte";
+	import Label from "./Label.svelte";
 
 	type Option = { label: string; value: string };
 	type Props = HTMLSelectAttributes & InputProps & { options: Option[] };
@@ -12,7 +13,7 @@
 
 <div class={["dropdown-input", error && "error"]}>
 	{#if label}
-		<label for={uid}>{label}</label>
+		<Label for={uid}>{label}</Label>
 	{/if}
 
 	<div class="tooltip-container">

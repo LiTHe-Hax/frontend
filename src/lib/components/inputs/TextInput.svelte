@@ -2,6 +2,7 @@
 	import type { HTMLInputAttributes } from "svelte/elements";
 	import type { InputProps } from "$lib/types";
 	import ErrorTooltip from "$lib/components/inputs/ErrorTooltip.svelte";
+	import Label from "./Label.svelte";
 
 	type AllowedType = "text" | "email" | "number";
 	type Props = HTMLInputAttributes & InputProps & { type: AllowedType };
@@ -12,7 +13,7 @@
 
 <div class={["text-input", error && "error"]}>
 	{#if label}
-		<label for={uid}>{label}</label>
+		<Label for={uid}>{label}</Label>
 	{/if}
 
 	<div class="tooltip-container">
