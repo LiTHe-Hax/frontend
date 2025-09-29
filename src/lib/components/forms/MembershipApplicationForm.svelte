@@ -47,6 +47,8 @@
 					if ("email" in data) {
 						let mainError = (data.email as string[])[0];
 						emailError = mainError;
+						// The only server-side error that occurs for emails is that it's already used
+						errorMessage = "A member has already applied with that email!";
 					}
 					if ("is_student" in data) {
 						let mainError = (data.is_student as string[])[0];
