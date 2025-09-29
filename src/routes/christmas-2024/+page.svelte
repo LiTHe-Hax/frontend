@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Article from "$lib/components/Article.svelte";
 	import ArticleGroup from "$lib/components/ArticleGroup.svelte";
+	import Heading from "$lib/components/Heading.svelte";
 	import PageHead from "$lib/components/PageHead.svelte";
 
 	type LeaderboardRow = [string, string];
@@ -62,7 +63,7 @@
 
 <ArticleGroup layout="thin">
 	<Article>
-		<h1>Christmas CTF 2024 Leaderboard</h1>
+		<Heading level={1} content="Christmas CTF 2024 Leaderboard" />
 		{#if hasError}
 			<p>Could not load leaderboard, try again later.</p>
 		{:else if leaderboardRows === undefined}

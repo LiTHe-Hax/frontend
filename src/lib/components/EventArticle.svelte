@@ -6,6 +6,7 @@
 
 	import Article from "./Article.svelte";
 	import DocumentLink from "./DocumentLink.svelte";
+	import Heading from "./Heading.svelte";
 
 	type Props = { event: Event };
 
@@ -46,8 +47,8 @@
 </script>
 
 <Article>
-	<h1 class="title">{event.title}</h1>
-	<div class="info-row">
+	<Heading level={1} content={event.title} />
+	<div class="info-row" style:margin-top="-1.15rem">
 		<span>
 			<i class="fa-solid fa-calendar fa-width-auto"></i>
 			{#if endDate && event.show_time}
@@ -107,10 +108,6 @@
 
 <style lang="scss">
 	@use "$lib/styles/color";
-
-	.title {
-		margin-bottom: 0.2rem;
-	}
 
 	.info-row {
 		display: flex;

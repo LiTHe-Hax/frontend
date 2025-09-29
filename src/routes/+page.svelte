@@ -5,6 +5,7 @@
 	import ArticleGroup from "$lib/components/ArticleGroup.svelte";
 	import ContactCard from "$lib/components/ContactCard.svelte";
 	import DocumentLink from "$lib/components/DocumentLink.svelte";
+	import Heading from "$lib/components/Heading.svelte";
 	import PageHead from "$lib/components/PageHead.svelte";
 </script>
 
@@ -15,7 +16,7 @@
 
 <ArticleGroup>
 	<Article>
-		<h1>About Us</h1>
+		<Heading level={1} content="About Us" />
 		<p>
 			LiTHe Hax is an independent student association at Linköping University whose purpose is to
 			promote and strengthen knowledge in ethical hacking and cybersecurity. The association is
@@ -40,7 +41,7 @@
 			></a>
 		</div>
 
-		<h2>The Board</h2>
+		<Heading level={2} content="The Board" />
 		<p>
 			The board is responsible for communicating with partners and sponsors, arranging and marketing
 			events, as well as handling other administrative tasks.
@@ -118,7 +119,7 @@
 			/>
 		</div>
 
-		<h2>The CTF Committee</h2>
+		<Heading level={2} content="The CTF Committee" />
 		<p>
 			The CTF committee is responsible for helping the board with arranging CTF events, as well as
 			designing exciting and challenging exercises for participants.
@@ -176,14 +177,14 @@
 			/>
 		</div>
 
-		<h2>Organization Details</h2>
+		<Heading level={2} content="Organization Details" />
 		<p>
 			<b>Organization Number:</b> 802547-1767
 			<br />
 			<b>Adress:</b> LiTHe Hax, Kårallen, Universitetet, 581 83 Linköping
 		</p>
 
-		<h3>Documents</h3>
+		<Heading level={3} content="Documents" />
 		<div class="document-list">
 			<DocumentLink link={getAssetUrl("documents/lithe_hax_stadgar_uppdaterad.pdf")} />
 			<DocumentLink link={getAssetUrl("documents/lithe_hax_konstituerande_protokoll.pdf")} />
