@@ -7,6 +7,7 @@
 	import Article from "./Article.svelte";
 	import DocumentLink from "./DocumentLink.svelte";
 	import Heading from "./Heading.svelte";
+	import Separator from "./Separator.svelte";
 
 	type Props = { event: Event };
 
@@ -97,7 +98,7 @@
 	</Markdown>
 
 	{#if event.sponsors.length != 0}
-		<hr />
+		<Separator />
 		<div class="sponsor-logos">
 			{#each event.sponsors as sponsor (sponsor.name)}
 				<img src={sponsor.logo_url} alt={`logo of ${sponsor.name}`} />
