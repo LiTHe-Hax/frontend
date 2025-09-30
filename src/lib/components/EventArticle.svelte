@@ -6,6 +6,9 @@
 
 	import Article from "./Article.svelte";
 	import DocumentLink from "./DocumentLink.svelte";
+	import Heading from "./Heading.svelte";
+	import Link from "./Link.svelte";
+	import Separator from "./Separator.svelte";
 
 	type Props = { event: Event };
 
@@ -46,8 +49,8 @@
 </script>
 
 <Article>
-	<h1 class="title">{event.title}</h1>
-	<div class="info-row">
+	<Heading level={1} content={event.title} />
+	<div class="info-row" style:margin-top="-1.15rem">
 		<span>
 			<i class="fa-solid fa-calendar fa-width-auto"></i>
 			{#if endDate && event.show_time}
@@ -72,7 +75,7 @@
 		{#if event.location}
 			<span>
 				<i class="fa-solid fa-location-dot fa-width-auto"></i>
-				<a href={event.location.maps_url}>{event.location.name}</a>
+				<Link href={event.location.maps_url}>{event.location.name}</Link>
 			</span>
 		{/if}
 	</div>
@@ -87,7 +90,7 @@
 				<!-- Matches HTTP(S) URLs with paths that ends with a dot and some alphanumerics -->
 				<DocumentLink link={href} />
 			{:else if children}
-				<a {href} {...restProps}>{@render children()}</a>
+				<Link {href} {...restProps}>{@render children()}</Link>
 			{/if}
 		{/snippet}
 		{#snippet img(props)}
@@ -96,7 +99,7 @@
 	</Markdown>
 
 	{#if event.sponsors.length != 0}
-		<hr />
+		<Separator />
 		<div class="sponsor-logos">
 			{#each event.sponsors as sponsor (sponsor.name)}
 				<img src={sponsor.logo_url} alt={`logo of ${sponsor.name}`} />
@@ -107,10 +110,6 @@
 
 <style lang="scss">
 	@use "$lib/styles/color";
-
-	.title {
-		margin-bottom: 0.2rem;
-	}
 
 	.info-row {
 		display: flex;

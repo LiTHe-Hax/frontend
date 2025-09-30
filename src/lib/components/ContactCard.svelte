@@ -1,5 +1,6 @@
 <script lang="ts">
 	import getAssetUrl from "$lib/api/asset";
+	import Link from "$lib/components/Link.svelte";
 
 	type Props = {
 		fullName: string;
@@ -23,11 +24,13 @@
 			{#if hackerTag}@{hackerTag}{/if}
 		</span>
 		<span class="position">{position}</span>
-		{#if email !== undefined}
-			<a class="email" href={`mailto:${email}`}>{email}</a>
-		{:else}
-			<span class="email">(mail coming soon)</span>
-		{/if}
+		<span class="email">
+			{#if email !== undefined}
+				<Link href={`mailto:${email}`}>{email}</Link>
+			{:else}
+				(mail coming soon)
+			{/if}
+		</span>
 	</div>
 </div>
 

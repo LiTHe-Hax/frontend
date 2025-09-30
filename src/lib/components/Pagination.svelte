@@ -74,6 +74,7 @@
 			color: color.$green-2;
 			font-weight: bold;
 			line-height: 1;
+			text-decoration: none;
 
 			&.selected {
 				background-color: color.$green-2;
