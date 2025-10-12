@@ -18,6 +18,7 @@
 		{ href: "/new-member", label: "Member" },
 		{ href: "/events", label: "Upcoming Events" },
 		{ href: "/events/previous", label: "Previous Events" },
+		{ href: "/resources", label: "Hacking Resources" },
 		// TODO(72): Redesign nav links to include dropdowns
 	];
 </script>
