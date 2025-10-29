@@ -148,11 +148,6 @@
 				imageUrl={getAssetUrl("images/2025-2026/contacts/committee/julia_p.webp")}
 			/>
 			<ContactCard
-				fullName="Koushik Pilla"
-				position="Committee member"
-				email="koushik.pilla@lithehax.se"
-			/>
-			<ContactCard
 				fullName="Rasmus Dahlström"
 				hackerTag="dars-png"
 				position="Committee member"
