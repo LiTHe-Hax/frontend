@@ -68,7 +68,7 @@
 				hackerTag="smittydata"
 				position="Secretary"
 				email="secretary@lithehax.se"
-				imageUrl={getAssetUrl("images/2025-2026/contacts/board/david_s.png")}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/board/david_s.jpg")}
 			/>
 			<ContactCard
 				fullName="Tom Englund"
@@ -125,20 +125,21 @@
 				hackerTag="tavro"
 				position="Chairman"
 				email="chairman.ctf@lithehax.se"
-				imageUrl={getAssetUrl("images/2025-2026/contacts/board/tyson_h.jpg")}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/committee/tyson_h.jpg")}
 			/>
 			<ContactCard
 				fullName="Alve Källberg"
 				hackerTag="seftie"
 				position="Committee member"
 				email="alve.kallberg@lithehax.se"
+				imageUrl={getAssetUrl("images/2025-2026/contacts/committee/alve_k.jpg")}
 			/>
 			<ContactCard
 				fullName="Harald Thorsson"
 				hackerTag="Anguis"
 				position="Committee member"
 				email="harald.thorsson@lithehax.se"
-				imageUrl={getAssetUrl("images/2025-2026/contacts/committee/harald_t.png")}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/committee/harald_t.jpg")}
 			/>
 			<ContactCard
 				fullName="Julia Pavlenko"
@@ -152,18 +153,20 @@
 				hackerTag="dars-png"
 				position="Committee member"
 				email="rasmus.dahlstrom@lithehax.se"
-				imageUrl={getAssetUrl("images/2025-2026/contacts/committee/rasmus_d.png")}
+				imageUrl={getAssetUrl("images/2025-2026/contacts/committee/rasmus_d.jpg")}
 			/>
 			<ContactCard
 				fullName="Saman Mahmoodi"
 				hackerTag="SabKhawrazmi"
 				position="Committee member"
 				email="saman.mahmoodi@lithehax.se"
+				imageUrl={getAssetUrl("images/2025-2026/contacts/committee/saman_m.jpg")}
 			/>
 			<ContactCard
 				fullName="Tobias Dahlmark"
 				position="Committee member"
 				email="tobias.dahlmark@lithehax.se"
+				imageUrl={getAssetUrl("images/2025-2026/contacts/committee/tobias_d.jpg")}
 			/>
 		</div>
 
