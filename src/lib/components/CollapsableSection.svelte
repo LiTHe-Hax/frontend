@@ -1,9 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
-	import Heading from "./Heading.svelte";
-	import Button from "./inputs/Button.svelte";
 
-	type Layout = "normal" | "thin";
 	type Props = { children: Snippet; title: string };
 
 	const { children, title }: Props = $props();
@@ -25,38 +22,45 @@
 
 <style lang="scss">
 	@use "$lib/styles/color";
+
 	button {
-		color: color.$green-2;
-		background-color: color.$gray-2;
+		display: block;
 		border: 0;
+		padding: 0.5rem 1rem;
+		width: 100%;
+		border-radius: 0.5rem;
+		background-color: color.$gray-2;
+		color: color.$green-2;
 		font-family: "Fira Sans";
 		font-size: 1em;
-		display: block;
-		width: 100%;
 		text-align: left;
-		border-radius: 0.5rem;
-		padding: 0.5rem 1rem;
 		cursor: pointer;
+		transition: background-color ease 100ms;
+
 		&:hover {
 			background-color: color.$gray-3;
 		}
-		i.expanded {
-			transform: rotate(90deg);
-		}
+
 		i {
 			transition: transform ease 100ms;
+
+			&.expanded {
+				transform: rotate(90deg);
+			}
 		}
-		transition: background-color ease 100ms;
 	}
+
 	div.content {
 		padding-left: 0.5rem;
 		height: 0;
+		overflow: hidden;
+		transition: height ease 100ms;
+
 		&.expanded {
 			height: auto;
 		}
-		transition: height ease 100ms;
-		overflow: hidden;
 	}
+
 	div.collapsable-section {
 		margin: 1rem 0;
 	}
