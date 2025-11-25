@@ -2,6 +2,9 @@
 
 @use "color";
 @use "mixin";
+html {
+	interpolate-size: allow-keywords;
+}
 
 body {
 	margin: 0;
