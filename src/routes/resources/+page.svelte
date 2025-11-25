@@ -15,6 +15,13 @@
 <ArticleGroup layout="thin">
 	<Article>
 		<Heading level={1} content="Hacking Resources" />
+		<p>
+			Here is a list of resources to help you with hacking. It is a shorter version of the list on
+			the <Link href="https://www.ida.liu.se/~TDDE61/resources/index.en.shtml">
+				TDDE61 course page
+			</Link> with added descriptions.
+		</p>
+
 		<CollapsableSection title="Legal and policy information">
 			<p>
 				Swedish criminal code, Chapter 4, paragraphs
