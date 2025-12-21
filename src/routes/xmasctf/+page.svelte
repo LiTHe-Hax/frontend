@@ -182,7 +182,7 @@
 		border-color: #ef4444;
 	}
 
-	.message button {
+	.message :global(button) {
 		background: #32cd32;
 		color: #0a0f0a;
 		border: none;
@@ -195,7 +195,7 @@
 		margin-top: 15px;
 	}
 
-	.message button:hover {
+	.message :global(button):hover {
 		background: #45e045;
 		transform: scale(1.05);
 	}
