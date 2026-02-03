@@ -142,13 +142,6 @@
 				imageUrl={getAssetUrl("images/2025-2026/contacts/committee/harald_t.jpg")}
 			/>
 			<ContactCard
-				fullName="Julia Pavlenko"
-				hackerTag="Mini"
-				position="Committee member"
-				email="julia.pavlenko@lithehax.se"
-				imageUrl={getAssetUrl("images/2025-2026/contacts/committee/julia_p.webp")}
-			/>
-			<ContactCard
 				fullName="Rasmus Dahlström"
 				hackerTag="dars-png"
 				position="Committee member"
