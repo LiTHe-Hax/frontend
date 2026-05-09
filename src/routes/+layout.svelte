@@ -63,7 +63,7 @@
 	@use "$lib/styles/mixin";
 
 	header {
-		background-color: color.$green-1;
+		background-color: color.$black-1;
 		color: color.$green-2;
 
 		&.mobile {
@@ -150,7 +150,7 @@
 			display: flex;
 			flex-direction: column;
 			box-sizing: border-box;
-			padding: 2rem;
+			padding: 3rem;
 
 			@include mixin.on-mobile() {
 				display: none;
@@ -175,13 +175,13 @@
 					padding: 0.5rem 1rem;
 					border-radius: 0.5rem;
 					background-color: color.$green-2;
-					color: color.$green-1;
+					color: color.$black-1;
 					line-height: 1;
 					font-weight: bold;
 					text-decoration: none;
 
 					&:hover {
-						background-color: color.$green-1;
+						background-color: color.$black-1;
 						color: color.$green-2;
 						transform: scale(1.1);
 					}
@@ -192,11 +192,11 @@
 
 	main {
 		@include mixin.on-mobile() {
-			padding: 1rem;
+			padding: 0 1rem 1rem;
 		}
 
 		@include mixin.on-desktop() {
-			padding: 3rem;
+			padding: 0 3rem 3rem;
 		}
 	}
 </style>
