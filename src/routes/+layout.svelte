@@ -189,4 +189,14 @@
 			}
 		}
 	}
+
+	main {
+		@include mixin.on-mobile() {
+			padding: 1rem;
+		}
+
+		@include mixin.on-desktop() {
+			padding: 3rem;
+		}
+	}
 </style>
