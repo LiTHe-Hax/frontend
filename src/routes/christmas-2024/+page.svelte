@@ -111,5 +111,15 @@
 			background-color: color.$widget;
 			font-weight: bold;
 		}
+
+		tr {
+			td {
+				border-top: size.$widget-border solid color.$widget;
+			}
+
+			&:first-of-type td {
+				border-top: 0;
+			}
+		}
 	}
 </style>
