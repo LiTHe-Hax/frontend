@@ -26,6 +26,7 @@
 </InputContainer>
 
 <style lang="scss">
+	@use "$lib/styles/color";
 	@use "$lib/styles/size";
 
 	select {
@@ -36,5 +37,9 @@
 
 		appearance: auto;
 		-moz-appearance: menulist; /* Firefox */
+
+		// Necessary for the dropdown to be dark on Chromium
+		border-radius: size.$radius-l;
+		background-color: color.$article;
 	}
 </style>
