@@ -81,6 +81,8 @@
 	@use "$lib/styles/size";
 
 	header {
+		position: relative;
+		z-index: 1; // Needed since some elements in <main> mess with the stacking
 		background-color: color.$background;
 		color: color.$primary;
 
@@ -91,7 +93,6 @@
 			flex-flow: row nowrap;
 			position: sticky;
 			top: 0;
-			z-index: 1; // Needed since some elements in <main> mess with the stacking
 
 			@include mixin.on-desktop {
 				display: none;
