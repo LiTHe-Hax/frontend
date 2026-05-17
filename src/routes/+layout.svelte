@@ -142,7 +142,7 @@
 					@include mixin.unified-transition(100ms, ease, color);
 
 					display: block;
-					border-bottom: 1px solid color.$background-border;
+					border-bottom: size.$widget-border solid color.$background-border;
 					padding: size.$spacing-s;
 					color: color.$primary;
 					font-weight: bold;
@@ -150,7 +150,7 @@
 					cursor: pointer;
 
 					&:first-child {
-						border-top: 1px solid color.$background-border;
+						border-top: size.$widget-border solid color.$background-border;
 					}
 
 					&:hover {
