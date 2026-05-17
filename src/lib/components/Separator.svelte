@@ -2,9 +2,12 @@
 
 <style lang="scss">
 	@use "$lib/styles/color";
+	@use "$lib/styles/size";
 
 	hr {
-		margin: 1rem 0;
-		border: 1px solid color.$gray-5;
+		margin: size.$spacing-s 0;
+		height: size.$widget-border;
+		border-radius: calc(0.5 * size.$widget-border);
+		background-color: color.$widget;
 	}
 </style>

@@ -1,24 +1,46 @@
 /// Color-related variables
 
+$primary: #33ff33;
+$primary-highlight: #aaffaa;
+$primary-text: #0c0c0c;
+
+$background: #0c0c0c;
+$background-text: #ffffff;
+$background-border: #383838;
+
+$article: #1a1a1a;
+$article-text: #ffffff;
+$article-text-lowlight: #7a7a7a;
+
+$widget: #333333;
+$widget-highlight: #444444;
+$widget-text: #ffffff;
+
+$error: #ff3333;
+$error-text: #ffffff;
+
+$success: #33ff33;
+$success-text: #0c0c0c;
+
 // Base colors
 
-$white: #ffffff;
+$white: #f0f; //#ffffff;
 
-$black-1: #121212;
-$black-2: #1a1a1a;
+$black-1: #f0f; //#121212;
+$black-2: #f0f; //#1a1a1a;
 
-$gray-1: #232323;
-$gray-2: #2a2a2a;
-$gray-3: #333333;
-$gray-4: #444444;
-$gray-5: #808080;
+$gray-1: #f0f; //#232323;
+$gray-2: #f0f; //#2a2a2a;
+$gray-3: #f0f; //#333333;
+$gray-4: #f0f; //#444444;
+$gray-5: #f0f; //#808080;
 
-$green-1: #002200;
-$green-2: #33ff33;
-$green-3: #aaffbf;
+$green-1: #f0f; //#002200;
+$green-2: #f0f; //#33ff33;
+$green-3: #f0f; //#aaffbf;
 
-$red: #ff3333;
+$red: #f0f; //#ff3333;
 
 // Specialized colors
 
-$shadow: #00000044;
+$shadow: #f0f; //#00000044;

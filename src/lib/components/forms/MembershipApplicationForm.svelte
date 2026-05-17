@@ -92,23 +92,27 @@
 </form>
 
 <style lang="scss">
-	@use "$lib/styles/color";
+	@use "$lib/styles/size";
+	@use "$lib/styles/mixin";
 
 	form {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr 1fr;
-		gap: 0.8rem;
-		position: relative;
+		gap: size.$spacing-s;
+		position: relative; // Need to position overlay correctly
 
-		> :global(:nth-child(3)),
-		> :global(:nth-child(4)) {
-			grid-column: 1 / span 2;
+		@include mixin.on-mobile {
+			display: flex;
+			flex-flow: column nowrap;
 		}
 
-		> :global(:nth-child(5)) {
-			grid-column: 1 / span 2;
-			align-self: flex-end;
+		@include mixin.on-desktop {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+
+			> :global(:nth-child(3)),
+			> :global(:nth-child(4)),
+			> :global(:nth-child(5)) {
+				grid-column: 1 / span 2;
+			}
 		}
 	}
 </style>

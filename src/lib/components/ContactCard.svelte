@@ -7,73 +7,74 @@
 		hackerTag?: string;
 		position: string;
 		email?: string;
-		imageUrl?: string;
+		imageHref?: string;
 	};
+	const { fullName, hackerTag, position, email, imageHref }: Props = $props();
 
-	const { fullName, hackerTag, position, email, imageUrl }: Props = $props();
-	const effectiveImageUrl = $derived(
-		imageUrl ? imageUrl : getAssetUrl("images/contacts/placeholder.png"),
+	const effectiveimageHref = $derived(
+		imageHref ? imageHref : getAssetUrl("images/contacts/placeholder.png"),
 	);
 </script>
 
-<div class="contact-card">
-	<img src={effectiveImageUrl} alt={fullName} />
-	<div class="info">
-		<span class="name">
-			{fullName}
-			{#if hackerTag}@{hackerTag}{/if}
-		</span>
-		<span class="position">{position}</span>
+<div>
+	<img src={effectiveimageHref} alt={fullName} />
+	<span class="name">{fullName}</span>
+	<span class="position">{position}</span>
+	{#if hackerTag}
+		<span class="hacker-tag">@{hackerTag}</span>
+	{/if}
+	{#if email}
 		<span class="email">
-			{#if email !== undefined}
-				<Link href={`mailto:${email}`}>{email}</Link>
-			{:else}
-				(mail coming soon)
-			{/if}
+			<Link href={`mailto:${email}`}>{email}</Link>
 		</span>
-	</div>
+	{/if}
 </div>
 
 <style lang="scss">
 	@use "$lib/styles/color";
+	@use "$lib/styles/size";
 
-	.contact-card {
-		display: flex;
-		flex-direction: row;
-		gap: 0.5rem;
+	div {
+		display: grid;
+		grid-template-columns: 8rem 1fr;
+		grid-template-rows: max-content max-content max-content 1fr max-content;
+		column-gap: size.$spacing-xs;
 
 		img {
-			width: 8rem;
-			height: 8rem;
-			border-radius: 50%;
+			grid-column: 1;
+			grid-row: 1 / -1;
+			width: 100%;
+			aspect-ratio: 1 / 1;
+			border-radius: size.$radius-l;
+			overflow: hidden;
 		}
 
-		.info {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			min-width: 0; // Makes info box take only remaining space when small
+		span {
+			overflow: hidden;
+			text-overflow: ellipsis;
 
-			.name {
-				color: color.$green-2;
-				font-size: 1.175em;
-				font-weight: bold;
-				overflow: hidden;
-				text-overflow: ellipsis;
+			&:first-of-type {
+				margin-top: size.$radius-l;
 			}
 
-			.position {
-				margin-bottom: 1em;
-				overflow: hidden;
-				text-overflow: ellipsis;
+			&:last-of-type {
+				margin-bottom: size.$radius-l;
 			}
+		}
 
-			.email {
-				width: 100%; // Clamps the boundaries of the link
-				align-self: flex-start;
-				overflow: hidden;
-				text-overflow: ellipsis;
-			}
+		.name {
+			color: color.$primary;
+			font-size: 1.175em;
+			font-weight: bold;
+		}
+
+		.hacker-tag {
+			color: color.$article-text-lowlight;
+		}
+
+		.email {
+			grid-row: 5;
+			color: color.$primary;
 		}
 	}
 </style>

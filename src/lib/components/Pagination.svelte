@@ -6,15 +6,14 @@
 		pageCount: number;
 		buttonCount: number;
 	};
-
 	const { currentPage, pageCount, buttonCount }: Props = $props();
 
 	const visiblePages = $derived.by(() => {
-		const leftLinks = Math.floor((buttonCount - 1) / 2);
-		const rightLinks = Math.ceil((buttonCount - 1) / 2);
+		const prevPages = Math.floor((buttonCount - 1) / 2);
+		const nextPages = Math.ceil((buttonCount - 1) / 2);
 
-		let minPage = currentPage - leftLinks;
-		let maxPage = currentPage + rightLinks;
+		let minPage = currentPage - prevPages;
+		let maxPage = currentPage + nextPages;
 
 		if (minPage < 1) {
 			const increase = 1 - minPage;
@@ -34,7 +33,7 @@
 		return Array.from(Array(maxPage - minPage + 1), (_, idx) => idx + minPage);
 	});
 
-	function getPageLink(page: number) {
+	function getPageHref(page: number) {
 		const basePath = pageState.url.pathname;
 		if (page === 1) {
 			return `${basePath}`;
@@ -44,55 +43,51 @@
 	}
 </script>
 
-<div class="pagination">
-	<a href={getPageLink(1)} aria-label="First">
-		<i class="fa-solid fa-angles-left fa-width-auto"></i>
+<div>
+	<a href={getPageHref(1)} aria-label="First">
+		<i class={["fa-solid", "fa-width-auto", "fa-angles-left"]}></i>
 	</a>
 	{#each visiblePages as page (page)}
-		<a class={[currentPage === page && "selected"]} href={getPageLink(page)}>{page}</a>
+		<a class={[currentPage == page && "selected"]} href={getPageHref(page)}>
+			{page}
+		</a>
 	{/each}
-	<a href={getPageLink(pageCount)} aria-label="Last">
-		<i class="fa-solid fa-angles-right fa-width-auto"></i>
+	<a href={getPageHref(pageCount)} aria-label="Last">
+		<i class={["fa-solid", "fa-width-auto", "fa-angles-right"]}></i>
 	</a>
 </div>
 
 <style lang="scss">
 	@use "$lib/styles/color";
 	@use "$lib/styles/mixin";
+	@use "$lib/styles/size";
 
-	.pagination {
+	div {
 		display: flex;
-		flex-direction: row;
+		flex-flow: row wrap;
 		justify-content: center;
-		gap: 0.3rem;
+
+		@include mixin.on-mobile {
+			gap: size.$spacing-xs;
+		}
+
+		@include mixin.on-desktop {
+			gap: size.$spacing-s;
+		}
 
 		a {
-			border: 0.15rem solid color.$green-2;
-			padding: 0.4rem 0.6rem;
-			border-radius: 0.5rem;
-			background-color: color.$black-1;
-			color: color.$green-2;
+			@include mixin.unified-transition(100ms, ease, background-color);
+
+			padding: calc(0.5 * size.$spacing-s) size.$spacing-s;
+			border-radius: size.$radius-l;
+			background-color: color.$primary;
+			color: color.$primary-text;
 			font-weight: bold;
 			line-height: 1;
-			text-decoration: none;
+			cursor: pointer;
 
-			&.selected {
-				background-color: color.$green-2;
-				color: color.$black-1;
-			}
-
-			@include mixin.on-mobile() {
-				transition: none;
-			}
-
-			@include mixin.on-desktop() {
-				@include mixin.unified-transition(150ms, ease, background-color, color, transform);
-
-				&:hover {
-					background-color: color.$green-2;
-					color: color.$black-1;
-					transform: scale(1.1);
-				}
+			&:hover {
+				background-color: color.$primary-highlight;
 			}
 		}
 	}

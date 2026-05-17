@@ -7,10 +7,7 @@
 	import EventArticle from "$lib/components/EventArticle.svelte";
 	import Pagination from "$lib/components/Pagination.svelte";
 
-	type Props = {
-		showPrevious?: boolean;
-	};
-
+	type Props = { showPrevious?: boolean };
 	const { showPrevious }: Props = $props();
 
 	let currentPage = $state(1);
@@ -18,6 +15,8 @@
 	let events = $state<Event[] | undefined>(undefined);
 	let isLoading = $state(true);
 	let error = $state<string | undefined>(undefined);
+
+	const getEvents = $derived(showPrevious ? getPreviousEvents : getUpcomingEvents);
 
 	$effect.pre(() => {
 		const pageParam = page.url.searchParams.get("page") || "1";
@@ -32,24 +31,20 @@
 		isLoading = true;
 		error = undefined;
 
-		let getEvents;
-		if (showPrevious) {
-			getEvents = getPreviousEvents;
-		} else {
-			getEvents = getUpcomingEvents;
-		}
-
 		getEvents(currentPage)
 			.then((response) => {
 				if (response.isSuccessful) {
 					events = response.data!.results;
 					pageCount = response.data!.page_count;
+					if (events.length == 0) {
+						error = `There are no ${showPrevious ? "previous" : "upcoming"} events.`;
+					}
 				} else {
 					error = "There are no events on this page. Please go to a previous page.";
 				}
 			})
 			.catch(() => {
-				error = "There was an error at the server. Please try again later.";
+				error = "Could not reach the server. Please try again later.";
 			})
 			.finally(() => {
 				isLoading = false;
@@ -59,39 +54,68 @@
 
 <ArticleGroup layout="thin">
 	{#if isLoading}
-		<i class="icon loading fa-solid fa-spinner fa-spin-pulse"></i>
-	{:else if events && events.length !== 0}
+		<div class="status-overlay">
+			<i class={["loading", "fa-solid", "fa-spinner", "fa-spin-pulse"]}></i>
+		</div>
+	{:else if error}
+		<div class="status-overlay">
+			<i class={["error", "fa-solid", "fa-heart-crack"]}></i>
+			<p>{error}</p>
+		</div>
+	{:else}
 		{#each events as event (event.title)}
 			<EventArticle {event} />
 		{/each}
-	{:else}
-		<div>
-			<i class="icon error fa-solid fa-heart-crack"></i>
-			<p class="error-message">
-				{error}
-			</p>
-		</div>
 	{/if}
 
-	{#if events}
-		<Pagination {currentPage} {pageCount} buttonCount={5} />
+	{#if events || !isLoading}
+		<div class={["pagination-container", "mobile"]}>
+			<Pagination {currentPage} {pageCount} buttonCount={3} />
+		</div>
+		<div class={["pagination-container", "desktop"]}>
+			<Pagination {currentPage} {pageCount} buttonCount={5} />
+		</div>
 	{/if}
 </ArticleGroup>
 
 <style lang="scss">
 	@use "$lib/styles/color";
+	@use "$lib/styles/mixin";
+	@use "$lib/styles/size";
 
-	.icon {
-		display: block;
-		margin: 0 auto;
-		font-size: 2em;
+	.status-overlay {
+		text-align: center;
 
-		&.error {
-			color: color.$red;
+		i {
+			display: block;
+			margin: 0 auto;
+			font-size: 2em;
+
+			&.error {
+				color: color.$error;
+			}
+		}
+
+		p {
+			margin: size.$spacing-xs 0 0;
 		}
 	}
 
-	.error-message {
-		text-align: center;
+	.pagination-container {
+		&.mobile {
+			display: contents;
+
+			@include mixin.on-desktop {
+				display: none;
+			}
+		}
+
+		&.desktop {
+			display: contents;
+
+			@include mixin.on-mobile {
+				display: none;
+			}
+		}
 	}
 </style>

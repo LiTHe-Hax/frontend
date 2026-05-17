@@ -1,67 +1,86 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
 
-	type Props = { children: Snippet; title: string };
-
+	type Props = {
+		children: Snippet;
+		title: string;
+	};
 	const { children, title }: Props = $props();
+
 	let isCollapsed = $state(true);
-	function toggleCollapsed() {
-		isCollapsed = !isCollapsed;
-	}
+	const toggleCollapsed = () => (isCollapsed = !isCollapsed);
 </script>
 
 <div class="collapsable-section">
 	<button onclick={toggleCollapsed}>
-		<i class={["fa-solid", "fa-caret-right", !isCollapsed && "expanded"]}></i>
+		<i class={["fa-solid", "fa-width-auto", "fa-caret-right", isCollapsed && "collapsed"]}></i>
 		{title}
 	</button>
-	<div class={["content", !isCollapsed && "expanded"]}>
+	<div class={["content", isCollapsed && "collapsed"]}>
 		{@render children()}
 	</div>
 </div>
 
 <style lang="scss">
 	@use "$lib/styles/color";
+	@use "$lib/styles/mixin";
+	@use "$lib/styles/size";
 
-	button {
-		display: block;
-		border: 0;
-		padding: 0.5rem 1rem;
-		width: 100%;
-		border-radius: 0.5rem;
-		background-color: color.$gray-2;
-		color: color.$green-2;
-		font-family: "Fira Sans";
-		font-size: 1em;
-		text-align: left;
-		cursor: pointer;
-		transition: background-color ease 100ms;
+	.collapsable-section {
+		margin: size.$spacing-s 0;
 
-		&:hover {
-			background-color: color.$gray-3;
-		}
+		button {
+			@include mixin.unified-transition(100ms, ease, background-color);
 
-		i {
-			transition: transform ease 100ms;
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			gap: calc(0.5 * size.$spacing-s);
+			padding: calc(0.5 * size.$spacing-s) size.$spacing-s;
+			width: 100%;
+			border-radius: size.$radius-l;
+			background-color: color.$widget;
+			color: color.$primary;
+			font-weight: bold;
+			line-height: 1;
+			cursor: pointer;
 
-			&.expanded {
+			&:hover {
+				background-color: color.$widget-highlight;
+			}
+
+			i {
+				@include mixin.unified-transition(100ms, ease, transform);
+
 				transform: rotate(90deg);
+
+				&.collapsed {
+					transform: rotate(0deg);
+				}
 			}
 		}
-	}
 
-	div.content {
-		padding-left: 0.5rem;
-		height: 0;
-		overflow: hidden;
-		transition: height ease 100ms;
+		.content {
+			@include mixin.unified-transition(100ms, ease, height);
 
-		&.expanded {
+			padding: size.$spacing-s 0 0 size.$spacing-s;
 			height: auto;
-		}
-	}
+			opacity: 1;
+			overflow: hidden;
 
-	div.collapsable-section {
-		margin: 1rem 0;
+			&.collapsed {
+				padding-top: 0;
+				height: 0;
+				opacity: 0;
+			}
+
+			:global {
+				@include mixin.remove-top-bottom-child-margins;
+			}
+
+			@supports (interpolate-size: allow-keywords) {
+				@include mixin.unified-transition(100ms, ease, height, padding, opacity);
+			}
+		}
 	}
 </style>

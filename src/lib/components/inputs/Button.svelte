@@ -1,9 +1,8 @@
 <script lang="ts">
 	import type { HTMLButtonAttributes } from "svelte/elements";
 
-	type ButtonProps = HTMLButtonAttributes;
-
-	const { children, ...restProps }: ButtonProps = $props();
+	type Props = HTMLButtonAttributes;
+	const { children, ...restProps }: Props = $props();
 </script>
 
 <button {...restProps}>{@render children?.()}</button>
@@ -11,25 +10,23 @@
 <style lang="scss">
 	@use "$lib/styles/color";
 	@use "$lib/styles/mixin";
+	@use "$lib/styles/size";
 
 	button {
-		@include mixin.unified-transition(150ms, ease-out, background-color, color, transform);
+		@include mixin.unified-transition(100ms, ease, background-color);
 
-		border: 0;
-		padding: 0.5rem;
-		border-radius: 0.25rem;
-		background-color: color.$gray-1;
-		color: color.$green-2;
-		box-shadow: 0 2px 4px 0 color.$shadow;
-		font-family: inherit;
-		font-size: 1em;
+		padding: calc(0.5 * size.$spacing-s) size.$spacing-s;
+		border-radius: size.$radius-l;
+		background-color: color.$widget;
+		color: color.$primary;
 		font-weight: bold;
-		transform: scaley(1);
+		text-align: center;
+		line-height: 1;
+		cursor: pointer;
 
-		&:hover {
-			background-color: color.$green-2;
-			color: color.$gray-1;
-			transform: scaley(1.1);
+		&:hover,
+		&:focus {
+			background-color: color.$widget-highlight;
 		}
 	}
 </style>

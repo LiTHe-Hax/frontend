@@ -1,37 +1,68 @@
 <script lang="ts">
-	type Props = { link: string };
-
-	const { link }: Props = $props();
+	type Props = { href: string };
+	const { href }: Props = $props();
 
 	const label = $derived.by(() => {
-		const splitLink = link.split("/");
-		return splitLink[splitLink.length - 1];
+		const splitHref = href.split("/");
+		return splitHref[splitHref.length - 1];
 	});
-	const icon = "📄"; // TODO(72): switch to SVG?
+
+	const iconClass = $derived.by(() => {
+		const splitHref = href.split(".");
+		const fileExtension = splitHref[splitHref.length - 1];
+		switch (fileExtension) {
+			case "pdf":
+				return "fa-file-pdf";
+			case "pptx":
+				return "fa-file-powerpoint";
+			case "jpg":
+			case "png":
+			case "webp":
+			case "gif":
+				return "fa-file-image";
+			case "mp4":
+			case "webm":
+				return "fa-file-video";
+			case "mp3":
+				return "fa-file-audio";
+			case "zip":
+			case "gz":
+			case "7z":
+			case "rar":
+				return "fa-file-zipper";
+			default:
+				return "fa-file";
+		}
+	});
 </script>
 
-<span>
-	<a href={link}>
-		<span class="icon">{icon}</span>
-		<span class="label">{label}</span>
-	</a>
-</span>
+<a {href}>
+	<i class={["fa-solid", "fa-width-auto", iconClass]}></i>
+	{label}
+</a>
 
 <style lang="scss">
 	@use "$lib/styles/color";
+	@use "$lib/styles/mixin";
+	@use "$lib/styles/size";
 
 	a {
-		display: inline-flex;
-		flex-direction: row;
-		align-items: center;
-		gap: 0.2ch;
-		color: color.$white;
-		text-decoration: none;
+		@include mixin.unified-transition(100ms, ease, background-color);
 
-		.label {
-			padding: 0.2em;
-			border-radius: 0.2rem;
-			background-color: color.$gray-3;
+		display: inline-block;
+		padding: size.$spacing-xxs;
+		max-width: 100%;
+		border-radius: size.$radius-s;
+		background-color: color.$widget;
+		color: color.$widget-text;
+		overflow: clip;
+		text-overflow: ellipsis;
+		text-wrap: nowrap;
+		line-height: 0;
+		cursor: pointer;
+
+		&:hover {
+			background-color: color.$widget-highlight;
 		}
 	}
 </style>
