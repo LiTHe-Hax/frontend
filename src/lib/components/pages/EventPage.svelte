@@ -68,21 +68,24 @@
 			<EventArticle {event} />
 		{/each}
 	{/if}
-
-	<div class={["pagination-container", "mobile"]}>
-		<Pagination {currentPage} {pageCount} buttonCount={3} />
-	</div>
-	<div class={["pagination-container", "desktop"]}>
-		<Pagination {currentPage} {pageCount} buttonCount={5} />
-	</div>
 </ArticleGroup>
+
+<div class={["pagination-container", "mobile"]}>
+	<Pagination {currentPage} {pageCount} buttonCount={3} />
+</div>
+<div class={["pagination-container", "desktop"]}>
+	<Pagination {currentPage} {pageCount} buttonCount={5} />
+</div>
 
 <style lang="scss">
 	@use "$lib/styles/mixin";
+	@use "$lib/styles/size";
 
 	.pagination-container {
+		display: block;
+
 		&.mobile {
-			display: contents;
+			margin-top: size.$spacing-s;
 
 			@include mixin.on-desktop {
 				display: none;
@@ -90,7 +93,7 @@
 		}
 
 		&.desktop {
-			display: contents;
+			margin-top: size.$spacing-l;
 
 			@include mixin.on-mobile {
 				display: none;
