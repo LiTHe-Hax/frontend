@@ -12,14 +12,19 @@
 	const closeNav = () => (shouldShowNav = !shouldShowNav);
 	const toggleNav = () => (shouldShowNav = !shouldShowNav);
 
-	type NavEntry = { href: Pathname; label: string };
-	const navEntries: NavEntry[] = [
+	type NavEntry = { href: Pathname; label: string; subentries?: NavEntry[] };
+	const topLevelNavEntries: NavEntry[] = [
 		{ href: "/", label: "Home" },
 		{ href: "/new-member", label: "Member" },
-		{ href: "/events", label: "Upcoming Events" },
-		{ href: "/events/previous", label: "Previous Events" },
+		{
+			href: "/events",
+			label: "Events",
+			subentries: [
+				{ href: "/events", label: "Upcoming Events" },
+				{ href: "/events/previous", label: "Previous Events" },
+			],
+		},
 		{ href: "/resources", label: "Hacking Resources" },
-		// TODO(72): Redesign nav links to include dropdowns
 	];
 </script>
 
@@ -32,10 +37,23 @@
 	<img src={getAssetUrl("images/logos/header_logo.svg")} alt="LiTHe Hax logo" />
 {/snippet}
 
-{#snippet navMenu()}
-	{#each navEntries as navEntry (navEntry.href)}
-		<a href={resolve(navEntry.href)} onclick={closeNav}>{navEntry.label}</a>
-	{/each}
+{#snippet navMenu(entries: NavEntry[], isSubMenu?: boolean)}
+	<menu>
+		{#each entries as entry (entry.label)}
+			<li>
+				<a href={resolve(entry.href)} onclick={closeNav}>
+					{entry.label}
+					{#if entry.subentries}
+						{@const iconClass = isSubMenu ? "fa-caret-right" : "fa-caret-down"}
+						<i class={["fa-solid", "fa-width-auto", iconClass]}></i>
+					{/if}
+				</a>
+				{#if entry.subentries}
+					{@render navMenu(entry.subentries, true)}
+				{/if}
+			</li>
+		{/each}
+	</menu>
 {/snippet}
 
 <header class="mobile">
@@ -45,12 +63,12 @@
 	{@render logo()}
 
 	<div class={["nav-backdrop", shouldShowNav && "open"]} onclick={closeNav} role="none"></div>
-	<nav class={[shouldShowNav && "open"]}>{@render navMenu()}</nav>
+	<nav class={[shouldShowNav && "open"]}>{@render navMenu(topLevelNavEntries)}</nav>
 </header>
 
 <header class="desktop">
 	{@render logo()}
-	<nav>{@render navMenu()}</nav>
+	<nav>{@render navMenu(topLevelNavEntries)}</nav>
 </header>
 
 <main>
@@ -138,23 +156,37 @@
 					transform: translateX(0%);
 				}
 
-				a {
-					@include mixin.unified-transition(100ms, ease, color);
+				> menu {
+					> li {
+						border-bottom: size.$widget-border solid color.$background-border;
 
-					display: block;
-					border-bottom: size.$widget-border solid color.$background-border;
-					padding: size.$spacing-s;
-					color: color.$primary;
-					font-weight: bold;
-					line-height: 1;
-					cursor: pointer;
-
-					&:first-child {
-						border-top: size.$widget-border solid color.$background-border;
+						&:first-child {
+							border-top: size.$widget-border solid color.$background-border;
+						}
 					}
 
-					&:hover {
-						color: color.$primary-highlight;
+					menu li {
+						border-top: size.$widget-border solid color.$background-border;
+						border-left: size.$spacing-xs solid color.$background-border;
+					}
+
+					a {
+						@include mixin.unified-transition(100ms, ease, color);
+
+						display: block;
+						padding: size.$spacing-s;
+						color: color.$primary;
+						font-weight: bold;
+						line-height: 1;
+						cursor: pointer;
+
+						&:hover {
+							color: color.$primary-highlight;
+						}
+
+						i {
+							display: none;
+						}
 					}
 				}
 			}
@@ -174,25 +206,74 @@
 				height: 4rem;
 			}
 
-			nav {
+			nav > menu {
 				display: flex;
 				flex-flow: row wrap;
 				justify-content: center;
 				gap: size.$spacing-s;
+				text-wrap: nowrap;
+				list-style: none;
 
 				a {
 					@include mixin.unified-transition(100ms, ease, background-color);
 
+					display: flex;
+					flex-flow: row nowrap;
+					align-items: center;
+					gap: calc(0.5 * size.$spacing-s);
 					padding: calc(0.5 * size.$spacing-s) size.$spacing-s;
 					border-radius: size.$radius-l;
 					background-color: color.$primary;
 					color: color.$primary-text;
+					box-shadow: 0 0 0 size.$spacing-xxs color.$background;
 					font-weight: bold;
 					line-height: 1;
 					cursor: pointer;
 
 					&:hover {
 						background-color: color.$primary-highlight;
+					}
+				}
+
+				li {
+					> menu {
+						@include mixin.unified-transition(100ms, ease, opacity, visibility);
+
+						display: flex;
+						flex-flow: column nowrap;
+						gap: size.$spacing-xxs;
+						opacity: 0;
+						visibility: hidden;
+					}
+
+					&:hover,
+					&:focus-within {
+						> menu {
+							opacity: 1;
+							visibility: visible;
+						}
+					}
+				}
+
+				> li {
+					position: relative;
+
+					> menu {
+						position: absolute;
+						top: 100%;
+						left: 0;
+						padding-top: size.$spacing-xxs;
+
+						li {
+							position: relative;
+
+							menu {
+								position: absolute;
+								top: 0;
+								left: 100%;
+								padding-left: size.$spacing-xxs;
+							}
+						}
 					}
 				}
 			}
