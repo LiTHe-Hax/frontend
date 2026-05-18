@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { createMember } from "$lib/api/member";
 	import type { JsonObject } from "$lib/api/request";
-
+	import { STATUS_SHOW_DURATION } from "$lib/durations";
 	import type { StatusType } from "$lib/types";
 
 	import TextInput from "../inputs/TextInput.svelte";
@@ -9,8 +9,6 @@
 	import Button from "../inputs/Button.svelte";
 	import Overlayed from "../overlays/Overlayed.svelte";
 	import StatusOverlay from "../overlays/StatusOverlay.svelte";
-
-	const STATUS_SHOW_DURATION = 4000;
 
 	let firstName = $state("");
 	let lastName = $state("");
