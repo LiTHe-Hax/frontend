@@ -9,19 +9,9 @@
 	const { children, level, ...restProps }: Props = $props();
 </script>
 
-{#if level === 1}
-	<h1 {...restProps}>{@render children?.()}</h1>
-{:else if level === 2}
-	<h2 {...restProps}>{@render children?.()}</h2>
-{:else if level === 3}
-	<h3 {...restProps}>{@render children?.()}</h3>
-{:else if level === 4}
-	<h4 {...restProps}>{@render children?.()}</h4>
-{:else if level === 5}
-	<h5 {...restProps}>{@render children?.()}</h5>
-{:else}
-	<h6 {...restProps}>{@render children?.()}</h6>
-{/if}
+<svelte:element this={`h${level}`} {...restProps}>
+	{@render children?.()}
+</svelte:element>
 
 <style lang="scss">
 	@use "$lib/styles/color";
