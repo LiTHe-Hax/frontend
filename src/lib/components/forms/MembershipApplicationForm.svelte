@@ -76,20 +76,22 @@
 <div style:position="relative">
 	<Overlayed isDisabled={!showStatusOverlay}>
 		<form onsubmit={requestMembership}>
-			<TextInput
-				type="text"
-				required
-				bind:value={firstName}
-				label="First name"
-				error={firstNameError}
-			/>
-			<TextInput
-				type="text"
-				required
-				bind:value={lastName}
-				label="Last name"
-				error={lastNameError}
-			/>
+			<div class="shared-row">
+				<TextInput
+					type="text"
+					required
+					bind:value={firstName}
+					label="First name"
+					error={firstNameError}
+				/>
+				<TextInput
+					type="text"
+					required
+					bind:value={lastName}
+					label="Last name"
+					error={lastNameError}
+				/>
+			</div>
 			<TextInput type="email" required bind:value={email} label="Email" error={emailError} />
 			<DropdownInput
 				options={[
@@ -113,21 +115,24 @@
 	@use "$lib/styles/mixin";
 
 	form {
+		display: flex;
+		flex-flow: column nowrap;
 		gap: size.$spacing-s;
 
-		@include mixin.on-mobile {
+		.shared-row {
 			display: flex;
-			flex-flow: column nowrap;
-		}
+			gap: inherit;
 
-		@include mixin.on-desktop {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
+			@include mixin.on-mobile {
+				flex-flow: column nowrap;
+			}
 
-			> :global(:nth-child(3)),
-			> :global(:nth-child(4)),
-			> :global(:nth-child(5)) {
-				grid-column: 1 / span 2;
+			@include mixin.on-desktop {
+				flex-flow: row nowrap;
+			}
+
+			> :global(*) {
+				flex-grow: 1;
 			}
 		}
 	}
