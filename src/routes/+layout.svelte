@@ -89,8 +89,8 @@
 		&.mobile {
 			$header-height: 4rem;
 
-			display: flex;
-			flex-flow: row nowrap;
+			display: grid;
+			grid-template-columns: $header-height 1fr $header-height;
 			position: sticky;
 			top: 0;
 
@@ -103,7 +103,6 @@
 
 				$padding: 1rem;
 
-				flex-shrink: 0;
 				z-index: 1;
 				width: $header-height;
 				height: $header-height;
