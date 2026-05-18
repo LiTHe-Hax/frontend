@@ -282,7 +282,7 @@
 
 	main {
 		@include mixin.on-mobile() {
-			padding: 0 size.$spacing-s size.$spacing-s;
+			padding: calc(0.5 * size.$spacing-s) size.$spacing-s size.$spacing-s;
 		}
 
 		@include mixin.on-desktop() {
