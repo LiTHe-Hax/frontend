@@ -1,11 +1,14 @@
 <script lang="ts">
 	import { createMember } from "$lib/api/member";
 	import type { JsonObject } from "$lib/api/request";
+	import { STATUS_SHOW_DURATION } from "$lib/durations";
+	import type { StatusType } from "$lib/types";
 
 	import TextInput from "../inputs/TextInput.svelte";
 	import DropdownInput from "../inputs/DropdownInput.svelte";
-	import FormStatusOverlay from "./FormStatusOverlay.svelte";
 	import Button from "../inputs/Button.svelte";
+	import Overlayed from "../overlays/Overlayed.svelte";
+	import StatusOverlay from "../overlays/StatusOverlay.svelte";
 
 	let firstName = $state("");
 	let lastName = $state("");
@@ -17,98 +20,120 @@
 	let emailError = $state("");
 	let membershipTypeError = $state("");
 
-	let isSubmitting = $state(false);
-	let errorMessage = $state("");
+	let showStatusOverlay = $state(false);
+	let statusMessage = $state("");
+	let statusType = $state<StatusType>("loading");
 
 	function requestMembership(e: SubmitEvent) {
 		e.preventDefault();
-		const isStudent = membershipType === "student";
 
-		isSubmitting = true;
-		errorMessage = "";
+		showStatusOverlay = true;
+		statusMessage = "";
+		statusType = "loading";
+
 		firstNameError = "";
 		lastNameError = "";
 		emailError = "";
 		membershipTypeError = "";
 
+		const isStudent = membershipType === "student";
 		createMember(firstName, lastName, email, isStudent)
 			.then((response) => {
-				if (!response.isSuccessful) {
-					errorMessage = `${response.status} ${response.statusText}`;
+				if (response.isSuccessful) {
+					statusMessage = "You applied for a membership!";
+					statusType = "success";
+				} else {
+					statusMessage = `${response.status} ${response.statusText}`;
+					statusType = "error";
 
 					const data = response.data as JsonObject;
 					if ("first_name" in data) {
-						let mainError = (data.first_name as string[])[0];
-						firstNameError = mainError;
+						firstNameError = (data.first_name as string[])[0];
 					}
 					if ("last_name" in data) {
-						let mainError = (data.last_name as string[])[0];
-						lastNameError = mainError;
+						lastNameError = (data.last_name as string[])[0];
 					}
 					if ("email" in data) {
-						let mainError = (data.email as string[])[0];
-						emailError = mainError;
 						// The only server-side error that occurs for emails is that it's already used
-						errorMessage = "A member has already applied with that email!";
+						statusMessage = "A member has already applied with that email!";
+						emailError = (data.email as string[])[0];
 					}
 					if ("is_student" in data) {
-						let mainError = (data.is_student as string[])[0];
-						membershipTypeError = mainError;
+						membershipTypeError = (data.is_student as string[])[0];
 					}
 				}
 			})
 			.catch(() => {
-				errorMessage = "Couldn't connect to the server...";
+				statusMessage = "Could not connect to the server. Try again later.";
+				statusType = "error";
 			})
 			.finally(() => {
-				isSubmitting = false;
+				setTimeout(() => (showStatusOverlay = false), STATUS_SHOW_DURATION);
 			});
 	}
 </script>
 
-<form onsubmit={requestMembership}>
-	<TextInput
-		type="text"
-		required
-		bind:value={firstName}
-		label="First name"
-		error={firstNameError}
-	/>
-	<TextInput type="text" required bind:value={lastName} label="Last name" error={lastNameError} />
-	<TextInput type="email" required bind:value={email} label="Email" error={emailError} />
-	<DropdownInput
-		options={[
-			{ value: "", label: "--Please select a membership type--" },
-			{ value: "student", label: "Student" },
-			{ value: "non-student", label: "Non-student" },
-		]}
-		required
-		bind:value={membershipType}
-		label="Membership Type"
-		error={membershipTypeError}
-	/>
-	<Button type="submit" disabled={isSubmitting}>Apply for membership</Button>
-	<FormStatusOverlay {isSubmitting} {errorMessage} successMessage="Applied for a membership" />
-</form>
+<div style:position="relative">
+	<Overlayed isDisabled={!showStatusOverlay}>
+		<form onsubmit={requestMembership}>
+			<div class="shared-row">
+				<TextInput
+					type="text"
+					required
+					bind:value={firstName}
+					label="First name"
+					error={firstNameError}
+				/>
+				<TextInput
+					type="text"
+					required
+					bind:value={lastName}
+					label="Last name"
+					error={lastNameError}
+				/>
+			</div>
+			<TextInput type="email" required bind:value={email} label="Email" error={emailError} />
+			<DropdownInput
+				options={[
+					{ value: "", label: "--Please select a membership type--" },
+					{ value: "student", label: "Student" },
+					{ value: "non-student", label: "Non-student" },
+				]}
+				required
+				bind:value={membershipType}
+				label="Membership Type"
+				error={membershipTypeError}
+			/>
+			<Button type="submit" disabled={showStatusOverlay}>Apply for membership</Button>
+		</form>
+	</Overlayed>
+	<StatusOverlay isDisabled={!showStatusOverlay} message={statusMessage} type={statusType} />
+</div>
 
 <style lang="scss">
-	@use "$lib/styles/color";
+	@use "$lib/styles/size";
+	@use "$lib/styles/mixin";
 
 	form {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr 1fr;
-		gap: 0.8rem;
-		position: relative;
+		display: flex;
+		flex-flow: column nowrap;
+		gap: size.$spacing-s;
 
-		> :global(:nth-child(3)),
-		> :global(:nth-child(4)) {
-			grid-column: 1 / span 2;
-		}
+		.shared-row {
+			display: flex;
+			gap: inherit;
 
-		> :global(:nth-child(5)) {
-			grid-column: 1 / span 2;
-			align-self: flex-end;
+			@include mixin.on-mobile {
+				flex-flow: column nowrap;
+			}
+
+			@include mixin.on-desktop {
+				flex-flow: row nowrap;
+			}
+
+			> :global(*) {
+				flex-grow: 1;
+			}
 		}
 	}
 </style>

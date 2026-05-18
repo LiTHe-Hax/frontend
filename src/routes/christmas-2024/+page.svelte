@@ -63,7 +63,7 @@
 
 <ArticleGroup layout="thin">
 	<Article>
-		<Heading level={1} content="Christmas CTF 2024 Leaderboard" />
+		<Heading level={1}>Christmas CTF 2024 Leaderboard</Heading>
 		{#if hasError}
 			<p>Could not load leaderboard, try again later.</p>
 		{:else if leaderboardRows === undefined}
@@ -72,9 +72,9 @@
 			<table>
 				<thead>
 					<tr>
-						<td>#</td>
-						<td>Name</td>
-						<td>Time Cleared</td>
+						<th>#</th>
+						<th>Name</th>
+						<th>Time Cleared</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -93,79 +93,32 @@
 
 <style lang="scss">
 	@use "$lib/styles/color";
+	@use "$lib/styles/size";
 
 	table {
+		border: size.$widget-border solid color.$widget;
 		width: 100%;
-		border-spacing: 0;
+		border-radius: size.$radius-l;
+		text-align: center;
+		overflow: clip;
 
-		thead,
-		tbody {
-			box-shadow: 0 2px 4px 0 #00000044;
-
-			td {
-				padding: 0.25rem;
-				text-align: center;
-
-				&:not(:last-child) {
-					border-right: none;
-				}
-			}
-
-			tr {
-				&:not(:first-child) td {
-					border-top: none;
-				}
-
-				&:first-child td {
-					&:first-child {
-						border-top-left-radius: 0.25rem;
-					}
-
-					&:last-child {
-						border-top-right-radius: 0.25rem;
-					}
-				}
-
-				&:last-child td {
-					&:first-child {
-						border-bottom-left-radius: 0.25rem;
-					}
-
-					&:last-child {
-						border-bottom-right-radius: 0.25rem;
-					}
-				}
-			}
+		th,
+		td {
+			padding: calc(0.5 * size.$spacing-xs) size.$spacing-xs;
 		}
 
-		thead {
-			td {
-				border: 1px solid #333333;
-				background-color: #232323;
-			}
+		th {
+			background-color: color.$widget;
+			font-weight: bold;
 		}
 
-		tbody {
-			&:before {
-				// Adds space between <thead> and <tbody>
-				content: "-";
-				display: block;
-				color: transparent;
-				line-height: 0.25rem;
-			}
-
+		tr {
 			td {
-				border: 1px solid #444444;
+				border-top: size.$widget-border solid color.$widget;
 			}
 
-			tr {
-				&:nth-child(odd) td {
-					background-color: #2a2a2a;
-				}
-
-				&:nth-child(even) td {
-					background-color: #333333;
-				}
+			&:first-of-type td {
+				border-top: 0;
 			}
 		}
 	}

@@ -1,8 +1,10 @@
 <script lang="ts">
 	import type { Snippet } from "svelte";
 
-	type Props = { children: Snippet; translucent?: boolean };
-
+	type Props = {
+		children: Snippet;
+		translucent?: boolean;
+	};
 	const { children, translucent }: Props = $props();
 </script>
 
@@ -15,18 +17,19 @@
 <style lang="scss">
 	@use "$lib/styles/color";
 	@use "$lib/styles/mixin";
+	@use "$lib/styles/size";
 
 	article {
-		border-radius: 0.5rem;
-		background-color: color.$black-2;
-		color: color.$white;
+		border-radius: size.$radius-l;
+		background-color: color.$article;
+		color: color.$article-text;
 
-		@include mixin.on-mobile() {
-			padding: 1rem;
+		@include mixin.on-mobile {
+			padding: size.$spacing-s;
 		}
 
-		@include mixin.on-desktop() {
-			padding: 1.5rem;
+		@include mixin.on-desktop {
+			padding: size.$spacing-m;
 		}
 
 		.contents :global {
@@ -35,23 +38,15 @@
 
 		&.translucent {
 			.contents {
-				@include mixin.unified-transition(150ms, ease, opacity);
+				@include mixin.unified-transition(100ms, ease, opacity, filter);
 
 				opacity: 0.5;
-
-				:global(img) {
-					@include mixin.unified-transition(150ms, ease, filter);
-
-					filter: saturate(50%);
-				}
+				filter: saturate(50%);
 			}
 
 			&:hover .contents {
 				opacity: 1;
-
-				:global(img) {
-					filter: saturate(100%);
-				}
+				filter: saturate(100%);
 			}
 		}
 	}

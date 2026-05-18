@@ -1,24 +1,23 @@
 /// Color-related variables
 
-// Base colors
+$primary: #33ff33;
+$primary-highlight: #aaffaa;
+$primary-text: #0c0c0c;
 
-$white: #ffffff;
+$background: #0c0c0c;
+$background-text: #ffffff;
+$background-border: #383838;
 
-$black-1: #121212;
-$black-2: #1a1a1a;
+$article: #1a1a1a;
+$article-text: #ffffff;
+$article-text-lowlight: #7a7a7a;
 
-$gray-1: #232323;
-$gray-2: #2a2a2a;
-$gray-3: #333333;
-$gray-4: #444444;
-$gray-5: #808080;
+$widget: #333333;
+$widget-highlight: #444444;
+$widget-text: #ffffff;
 
-$green-1: #002200;
-$green-2: #33ff33;
-$green-3: #aaffbf;
+$error: #ff3333;
+$error-text: #ffffff;
 
-$red: #ff3333;
-
-// Specialized colors
-
-$shadow: #00000044;
+$success: #33ff33;
+$success-text: #0c0c0c;

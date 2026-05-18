@@ -14,7 +14,7 @@
 
 <ArticleGroup layout="thin">
 	<Article>
-		<Heading level={1} content="Hacking Resources" />
+		<Heading level={1}>Hacking Resources</Heading>
 		<p>
 			Here is a list of resources to help you with hacking. It is a shorter version of the list on
 			the <Link href="https://www.ida.liu.se/~TDDE61/resources/index.en.shtml">

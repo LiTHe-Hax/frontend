@@ -1,1 +1,1 @@
-export type InputProps = { label?: string; error?: string };
+export type StatusType = "loading" | "error" | "success";

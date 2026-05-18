@@ -1,0 +1,1 @@
+export const STATUS_SHOW_DURATION = 4000;

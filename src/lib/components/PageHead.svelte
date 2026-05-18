@@ -7,8 +7,8 @@
 		title: string;
 		description: string;
 	};
-
 	const { children, title, description }: Props = $props();
+
 	const effectiveTitle = $derived(title ? `LiTHe Hax - ${title}` : "LiTHe Hax");
 </script>
 

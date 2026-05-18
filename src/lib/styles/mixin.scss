@@ -9,19 +9,19 @@
 	transition-property: $properties;
 }
 
-@mixin on-desktop() {
-	@media screen and (min-width: size.$min-desktop-width) {
+@mixin on-desktop {
+	@media screen and (min-width: size.$desktop-width) {
 		@content;
 	}
 }
 
-@mixin on-mobile() {
-	@media screen and (max-width: size.$max-mobile-width) {
+@mixin on-mobile {
+	@media screen and (max-width: calc(size.$desktop-width - 1px)) {
 		@content;
 	}
 }
 
-@mixin remove-top-bottom-child-margins() {
+@mixin remove-top-bottom-child-margins {
 	> *:first-child {
 		margin-top: 0;
 	}
@@ -29,14 +29,4 @@
 	> *:last-child {
 		margin-bottom: 0;
 	}
-}
-
-@mixin text-input() {
-	border: 1px solid color.$gray-4;
-	padding: 0.5rem;
-	border-radius: 0.25rem;
-	background-color: color.$gray-3;
-	color: color.$green-2;
-	box-shadow: inset 0 1px 3px 1px color.$shadow;
-	font-family: inherit;
 }
